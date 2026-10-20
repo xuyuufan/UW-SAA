@@ -1,0 +1,40 @@
+{
+  "bundle_id": "uwsaa_caserta_public_v1",
+  "method": "UWSAA",
+  "implementation": "R.scrp.uwsaa_fast.UWSAAFastSelector",
+  "source_method_name": "TW_UNIFORM (final fast implementation)",
+  "baseline": "NATIVE20",
+  "solvers": [
+    "EM",
+    "GP",
+    "ERI",
+    "EG",
+    "Chain",
+    "Minmax"
+  ],
+  "horizons": [
+    0,
+    2,
+    5,
+    10,
+    20
+  ],
+  "windows": [
+    2,
+    5,
+    10,
+    20
+  ],
+  "scenarios_per_window": 2,
+  "scenario_seed_namespace_preserved": "plan056_tw_saa_public_scenarios_v1",
+  "dataset": "Leveling/data/caserta_table2_840.json",
+  "dataset_sha256": "c28c975c8026a59a1b7995f8afe8a41e9e48b469835b9d2227a9bbe7a5371a12",
+  "dataset_rows": 840,
+  "original_geometry_groups": 21,
+  "rows_per_geometry_group": 40,
+  "evaluation_role": "public benchmark previously used in this project; not sealed or OOD",
+  "entrypoint": "R.experiments.uwsaa_entrypoint",
+  "policy_factory": "make_policy(solver, method, runtime, gp_rule)",
+  "formal_pipeline": "not included; see README.md for the frozen-release boundary",
+  "source_config_sha256": "8ce3a3f1ebd3c003af10db82489e59fa774864440aa8c048780f0afc12da510a"
+}

@@ -1,0 +1,426 @@
+{
+  "check": "cpu_public_one_frame_smoke",
+  "fixture": "public-25-item-one-frame",
+  "methods": [
+    "UWSAA",
+    "NATIVE20"
+  ],
+  "results": {
+    "Chain": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "blocker_is_unknown_tail": true,
+          "blocker_public_rank": 22,
+          "d1": -2,
+          "destination": 6,
+          "fallback_reason": "unknown_current_rank",
+          "policy": "NATIVE20",
+          "requested_h": 20,
+          "rule": "minmax_fallback",
+          "solver": "Chain"
+        }
+      },
+      "UWSAA": {
+        "action": 2,
+        "trace": {
+          "candidate_scores": [
+            {
+              "horizons": [
+                0
+              ],
+              "sequence": [
+                1
+              ],
+              "weighted_saa_Rraw": 18.75
+            },
+            {
+              "horizons": [
+                2
+              ],
+              "sequence": [
+                2
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                5
+              ],
+              "sequence": [
+                3
+              ],
+              "weighted_saa_Rraw": 18.75
+            },
+            {
+              "horizons": [
+                10
+              ],
+              "sequence": [
+                4
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6
+              ],
+              "weighted_saa_Rraw": 18.875
+            }
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 2,
+          "solver": "Chain",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    },
+    "EG": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "cached_moves": 0,
+          "group_start": true,
+          "policy": "FIXED20",
+          "requested_h": 20
+        }
+      },
+      "UWSAA": {
+        "action": 6,
+        "trace": {
+          "cached_move": false,
+          "candidate_scores": [
+            {
+              "horizons": [
+                0,
+                2,
+                5,
+                10
+              ],
+              "sequence": [
+                4,
+                4,
+                5
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6,
+                5,
+                6
+              ],
+              "weighted_saa_Rraw": 18.625
+            }
+          ],
+          "committed_sequence": [
+            6,
+            5,
+            6
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "group_start": true,
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 20,
+          "solver": "EG",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    },
+    "EM": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "policy": "FIXED20",
+          "requested_h": 20
+        }
+      },
+      "UWSAA": {
+        "action": 4,
+        "trace": {
+          "candidate_scores": [
+            {
+              "horizons": [
+                0,
+                2,
+                5,
+                10
+              ],
+              "sequence": [
+                4
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6
+              ],
+              "weighted_saa_Rraw": 18.875
+            }
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 0,
+          "solver": "EM",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    },
+    "ERI": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "policy": "FIXED20",
+          "requested_h": 20
+        }
+      },
+      "UWSAA": {
+        "action": 4,
+        "trace": {
+          "candidate_scores": [
+            {
+              "horizons": [
+                0,
+                2,
+                5,
+                10
+              ],
+              "sequence": [
+                4
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6
+              ],
+              "weighted_saa_Rraw": 18.875
+            }
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 0,
+          "solver": "ERI",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    },
+    "GP": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "policy": "FIXED20",
+          "requested_h": 20
+        }
+      },
+      "UWSAA": {
+        "action": 4,
+        "trace": {
+          "candidate_scores": [
+            {
+              "horizons": [
+                0,
+                2,
+                5,
+                10
+              ],
+              "sequence": [
+                4
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6
+              ],
+              "weighted_saa_Rraw": 18.875
+            }
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 0,
+          "solver": "GP",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    },
+    "Minmax": {
+      "NATIVE20": {
+        "action": 6,
+        "trace": {
+          "blocker_is_unknown_tail": true,
+          "blocker_public_rank": 22,
+          "candidate_p": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              6,
+              20
+            ]
+          ],
+          "destination": 6,
+          "empty_p_value": 23,
+          "policy": "NATIVE20",
+          "requested_h": 20,
+          "selected_score": -2,
+          "solver": "Minmax"
+        }
+      },
+      "UWSAA": {
+        "action": 2,
+        "trace": {
+          "candidate_scores": [
+            {
+              "horizons": [
+                0
+              ],
+              "sequence": [
+                1
+              ],
+              "weighted_saa_Rraw": 18.75
+            },
+            {
+              "horizons": [
+                2
+              ],
+              "sequence": [
+                2
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                5
+              ],
+              "sequence": [
+                3
+              ],
+              "weighted_saa_Rraw": 18.75
+            },
+            {
+              "horizons": [
+                10
+              ],
+              "sequence": [
+                4
+              ],
+              "weighted_saa_Rraw": 18.625
+            },
+            {
+              "horizons": [
+                20
+              ],
+              "sequence": [
+                6
+              ],
+              "weighted_saa_Rraw": 18.875
+            }
+          ],
+          "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
+          "history_weight_status": "not_used",
+          "policy": "UWSAA",
+          "rolling_hit_count": 0,
+          "scenario_count": 8,
+          "scenario_seed_public_state_sha256": "34ae873a63d038b575dcdc612fa0494a8039ff1e41ec349424ff062324c6e78d",
+          "selected_h": 2,
+          "solver": "Minmax",
+          "window_weights": {
+            "10": 0.25,
+            "2": 0.25,
+            "20": 0.25,
+            "5": 0.25
+          }
+        }
+      }
+    }
+  },
+  "scope": "one decision per solver/method; no training, trajectory, or performance evaluation",
+  "solvers": [
+    "EM",
+    "GP",
+    "ERI",
+    "EG",
+    "Chain",
+    "Minmax"
+  ],
+  "status": "PASS"
+}
