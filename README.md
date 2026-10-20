@@ -1,6 +1,6 @@
 # Uniform-Width Sample-Average Approximation (UW-SAA) Bundle
 
-This bundle documents the final fast public selector implementation as **Uniform-Width Sample-Average Approximation (UW-SAA)**, with **UWSAA** as its code identifier. The original source checkout was copied, not moved or edited. The old source identifiers map as follows: `TWUniformFastSelector` → `UWSAAFastSelector`, `TWSAASelector` → `UWSAASelectorBase`, and `TW_UNIFORM` → `UWSAA`. The frozen scenario seed namespace still contains its original `tw_saa` token to preserve the registered scenario draws. The full shared SAA implementation, including its existing completion scorer, is retained.
+This bundle documents the final fast public selector implementation as **Uniform-Width Sample-Average Approximation (UW-SAA)**, with **UWSAA** as its code identifier. The old source identifiers map as follows: `TWUniformFastSelector` → `UWSAAFastSelector`, `TWSAASelector` → `UWSAASelectorBase`, and `TW_UNIFORM` → `UWSAA`. The frozen scenario seed namespace still contains its original `tw_saa` token to preserve the registered scenario draws. The full shared SAA implementation, including its existing completion scorer, is retained.
 
 ## Run one public decision
 
