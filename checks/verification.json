@@ -1,0 +1,65 @@
+{
+  "checks": {
+    "background_processes": [
+      {
+        "pid": 95900,
+        "started": "2026-10-20T10:07:57+08:00",
+        "status": "running"
+      },
+      {
+        "pid": 22992,
+        "started": "2026-10-20T13:58:34+08:00",
+        "status": "running"
+      }
+    ],
+    "json_parse": {
+      "files": 5,
+      "status": "PASS"
+    },
+    "no_compiled_bytecode_files": {
+      "files": 0,
+      "python_runs_used_B": true,
+      "status": "PASS"
+    },
+    "public_smoke": {
+      "methods": [
+        "UWSAA",
+        "NATIVE20"
+      ],
+      "result": "checks/public_smoke_result.json",
+      "script": "checks/public_smoke.py",
+      "solvers": [
+        "EM",
+        "GP",
+        "ERI",
+        "EG",
+        "Chain",
+        "Minmax"
+      ],
+      "status": "PASS"
+    },
+    "python_ast_parse": {
+      "files": 36,
+      "status": "PASS"
+    },
+    "source_bundle_equivalence": {
+      "action_and_normalized_trace_matches": true,
+      "result": "checks/source_bundle_equivalence.json",
+      "solvers": [
+        "EM",
+        "GP",
+        "ERI",
+        "EG",
+        "Chain",
+        "Minmax"
+      ],
+      "status": "PASS"
+    },
+    "source_hashes_unchanged": {
+      "source_entries_checked": 37,
+      "status": "PASS"
+    }
+  },
+  "scope": "one public decision fixture only; no training, trajectory, or performance evaluation",
+  "status": "PASS"
+}
