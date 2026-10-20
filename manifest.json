@@ -416,9 +416,10 @@
       "destination_path": "README.md",
       "operation": "created",
       "source_sha256": null,
-      "final_sha256": "78e69f7b13155b3f4886394fbef3d2d05c86c0012475768bec3483bba6864887",
+      "final_sha256": "9655fe2f67e8adeec81e2585489e39c1a88da73d35d3ab3c4fc0024837cefde7",
       "transformations": [
-        "Adjusted local absolute smoke-command path to repository-root relative invocation for GitHub portability."
+        "Adjusted local absolute smoke-command path to repository-root relative invocation for GitHub portability.",
+        "official_method_name_added_to_title_and_opening"
       ]
     },
     {
