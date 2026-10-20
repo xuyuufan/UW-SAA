@@ -1,52 +1,76 @@
-# Uniform-Width Sample-Average Approximation (UW-SAA) Bundle
+# Uniform-Width Sample-Average Approximation (UW-SAA)
 
-This bundle documents the final fast public selector implementation as **Uniform-Width Sample-Average Approximation (UW-SAA)**, with **UWSAA** as its code identifier. The old source identifiers map as follows: `TWUniformFastSelector` → `UWSAAFastSelector`, `TWSAASelector` → `UWSAASelectorBase`, and `TW_UNIFORM` → `UWSAA`. The frozen scenario seed namespace still contains its original `tw_saa` token to preserve the registered scenario draws. The full shared SAA implementation, including its existing completion scorer, is retained.
+This folder packages the final fast public selector under the name **Uniform-Width Sample-Average Approximation (UW-SAA)**, with `UWSAA` as its code identifier. The source checkout remains unchanged; this bundle contains byte-identical copies, symbol extracts, and local path/name adaptations. `uwsaa/public.py` keeps the registered scenario seed namespace `plan056_tw_saa_public_scenarios_v1` so the random scenarios retain their original draws. That string is a compatibility constant, not a method or import name.
 
-## Run one public decision
+## Contents
 
-Use the Python 3.12 environment already installed for the source workspace. `requirements.txt` records the observed environment versions (`numpy 2.4.4`, `torch 2.13.0+cu132`); it is a snapshot, not an installation recipe. Reuse that environment; do not run a package installation for this bundle. From the repository root, run the CPU-only smoke check:
+```text
+uwsaa/        final fast selector, candidate generation, and local entrypoint
+baseline/     EM, GP, ERI, EG, Chain, and Minmax comparison solvers
+environment/  leakage-safe scalar environment and detached public frame/history contracts
+data/         Caserta Table 2 input (840 instances)
+configs/      UWSAA method config and accepted frozen GP rule
+checks/       one-frame smoke, source parity evidence, and environment/import check
+```
+
+The comparison mapping is `EM → baseline/em.py`, `GP → baseline/gp.py` plus `baseline/gp_expression.py`, `ERI → baseline/eri_eg_public.py`, `EG → baseline/eri_eg_plan059.py`, `Chain → baseline/chain.py`, and `Minmax → baseline/minmax.py`. `NATIVE20` invokes the same solver at fixed horizon 20. Shared offline cores, native actor adapters, public sequence validation, and EG group-transition helpers live alongside these solvers; they contain only solver-independent contracts and the six listed comparison implementations. The generic public history helper was extracted because EG sequence validation requires a decision-fixed public summary.
+
+## Run a public decision
+
+Use the already available Python environment with NumPy. `requirements.txt` records only the runtime dependency; do not install anything for the checks. From this folder:
 
 ```powershell
 py -3.12 -B checks\public_smoke.py
+py -3.12 -B checks\environment_smoke.py
 ```
 
-The check constructs one detached public frame and calls both UWSAA and the `NATIVE20` comparison baseline once for each registered solver: EM, GP, ERI, EG, Chain, and Minmax. It verifies every returned destination is legal and writes the JSON record to `checks/public_smoke_result.json`. This is a small API and correctness check; it does not train, run a trajectory, or produce performance evidence.
+`public_smoke.py` builds one legal detached frame and calls UWSAA and Native20 once for all six solvers. It writes `checks/public_smoke_result.json`. This is a CPU correctness smoke, not a trajectory or performance evaluation.
 
-For an application-owned public frame, use the same public data contract:
+For a live episode, the caller owns the environment and builds a detached frame from the public state. The forecast provider, if used, stays on the evaluator side; pass only its public hit history and `q_t` scalar.
 
 ```python
-from EM.scrp.noise_aware_forecast import PublicObservation
-from R.scrp.r_order_public import PublicHistoryTracker, attach_history_summary
-from R.experiments.uwsaa_entrypoint import load_runtime, load_gp_rule, make_policy
+import numpy as np
+from environment.noise_aware_forecast import PublicObservation
+from environment.online_crp import OnlineCRPEnvironment, load_episode_manifest
+from environment.public_frame import make_public_frame
+from environment.public_history import PublicHistoryTracker, attach_history_summary
+from uwsaa.entrypoint import load_gp_rule, load_runtime, make_policy
 
-# ranks, occupied, and legal_mask are public NumPy arrays with matching shapes.
+episode = load_episode_manifest("data/caserta_table2_840.json")[0]
+env = OnlineCRPEnvironment(episode, lookahead_horizon=20)
+state = env.state                       # public state only
+legal = env.legal_destinations()
+ranks = np.zeros((episode.num_stacks, episode.max_tiers), dtype=np.int32)
+occupied = np.zeros_like(ranks, dtype=np.bool_)
+for stack_id, stack in enumerate(state.stacks):
+    for tier, public_rank in enumerate(stack):
+        occupied[stack_id, tier] = True
+        ranks[stack_id, tier] = public_rank if public_rank else 22  # anonymous tail
+legal_mask = np.zeros(episode.num_stacks, dtype=np.bool_)
+legal_mask[list(legal)] = True
 observation = PublicObservation(
-    rank_tensor=ranks,
-    occupied_mask=occupied,
-    legal_destination_mask=legal_mask,
-    history_hits=(),
-    q_prior=5183 / 9920,
-    q_t=5183 / 9920,
+    rank_tensor=ranks, occupied_mask=occupied,
+    legal_destination_mask=legal_mask, history_hits=(),
+    q_prior=5183 / 9920, q_t=5183 / 9920,
 )
-# frame is a frozen object exposing observation, legal_destinations, max_tiers,
-# retrieval_count, relocation_count, crane_position, and crane_time.
+frame = make_public_frame(observation, state, legal, max_tiers=episode.max_tiers)
 frame = attach_history_summary(frame, PublicHistoryTracker().summary(frame))
-runtime = load_runtime()
-gp_rule = load_gp_rule()
-policy = make_policy("Minmax", "UWSAA", runtime, gp_rule)
+policy = make_policy("EG", "UWSAA", load_runtime(), load_gp_rule())
 action, trace = policy.select(frame)
+# Only the destination crosses back to the environment.
+next_state, reward, terminated = env.step(action)
 ```
 
-The frame must contain only public information: rank `1` is the current target, `2..21` are visible upcoming priorities, and `22` marks anonymous tail items. Its legal-destination tuple must match the observation mask. `checks/public_smoke.py` provides a complete frame constructor. The runtime and GP rule loaders resolve paths relative to this folder and do not fall back to the source checkout.
+`rank_tensor` uses `1` for the current target, `2..21` for visible forecast ranks, `22` for occupied anonymous tail items, and `0` only for empty cells. The legal mask and destination tuple must agree. Do not pass the episode, retrieval sequence, forecast, or environment object to a policy.
 
-`configs/uwsaa.json` records the method, H20 baseline, solver list, and comparison scope. `Leveling/data/caserta_table2_840.json` contains 840 episodes grouped into 21 parameter groups with 40 instances per group. Stack counts and tier limits vary by parameter group; 21 is not the stack count, and 40 is not the tier limit. The table is a benchmark/provenance input, not a new independent or sealed test set. The source records include episode retrieval sequences; policy calls must receive only a detached public frame and must not receive those private episode fields.
+## Data and evaluation boundary
 
-## Formal evaluation boundary
+`data/caserta_table2_840.json` contains 840 instances in 21 parameter groups with 40 instances in each group; the group key describes stack-count/height geometry, so those counts are not “21 stacks by 40 tiers.” The JSON also contains evaluator-only retrieval sequences. This benchmark was previously used in the project and is not a sealed or out-of-distribution test set.
 
-This folder exposes the actual public selector and native H20 comparison policies for one-step use. It does **not** include the official frozen Caserta continuation runner, its full release/receipt tree, or its hash-bound launch protocol. For official experiment reproduction, use the original PLAN-061 runner and registered receipts. The accepted GP prefix/expression is copied from the frozen preparation receipt and identified in `models/gp_accepted_rule.json`. Renaming code changes source hashes, so this bundle's manifest records its own source and final hashes and does not claim the original release hash passes.
+`configs/gp_accepted_rule.json` contains the accepted frozen GP expression and its receipt identity. The original model/release hash binds the pre-rename source; this bundle uses its own manifest hashes. The official frozen Caserta continuation runner, release receipts, and hash-bound launch protocol are not included. Use the original registered runner for formal evaluation; this package provides the real public method and comparison solver entrypoints without claiming a full pipeline reproduction.
 
-Active continuation outputs were excluded while their processes were running; they are not represented as completed results. No archive, broad output directory, or unrelated repository content is included.
+## Integrity and checks
 
-## Integrity
+`manifest.json` records every included file's final SHA-256 and the source-file SHA-256 values. It distinguishes byte copies, symbol extraction, path/name edits, and locally generated checks; extracted modules list the exact source symbols. `checks/semantic_parity.json` records the small source-to-clean comparison: 30 horizon proposals, six UWSAA and six Native20 actions/traces, plus EG's second group move and reset on one legal fixture. `checks/verification.json` records static syntax/import checks and the OnlineCRP load-and-step check. No training, benchmark, performance run, or full trajectory was executed.
 
-`manifest.json` records copied source paths, destination paths, operation type, source SHA-256 where applicable, final SHA-256, and any rename edits. The final verification also records that all source hashes still match their pre-copy values. Recompute target hashes after any local edits. Source files remain in the original checkout.
+Run `py -3.12 -B checks\verify_bundle.py` for a lightweight AST/JSON/import audit. The source parity comparison was performed during bundle extraction; its compact result and comparison fields are retained in `checks/semantic_parity.json`.
