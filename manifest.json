@@ -1,29 +1,11 @@
 {
   "bundle_id": "uw_saa_clean_public_v2",
-  "target": "D:\\DSAI\\UWSAA",
-  "source_tree": "D:\\DSAI\\containter_new",
-  "source_tree_was_copied_not_moved": true,
-  "active_processes_at_manifest_check": [
-    {
-      "pid": 95900,
-      "status": "running",
-      "process_name": "python",
-      "started": "2026-10-20T10:07:57.8606653+08:00"
-    },
-    {
-      "pid": 22992,
-      "status": "running",
-      "process_name": "python",
-      "started": "2026-10-20T13:58:34.9319661+08:00"
-    }
-  ],
   "included_file_count": 36,
   "excluded_scope": [
-    "R actor/frozen-R methods and runners",
-    "Mijn_RL training, attention, vectorized policy and RL artifacts",
-    "old route research and unrelated outputs"
+    "Unrelated research methods and experiment runners",
+    "Training and policy artifacts outside the UW-SAA package",
+    "Historical research notes and unrelated outputs"
   ],
-  "environment_exception": "Only the leakage-safe scalar OnlineCRP environment was carried over from the source RL workspace; no RL training/policy modules are included.",
   "source_hash_verification": {
     "status": "PASS",
     "source_hashes_checked": 32,
@@ -43,7 +25,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "Chain/chain_offline.py",
+          "source_path": "legacy-source/S001",
           "source_sha256": "4fbf4fe238c5f978028a39f25f480533aa1359f1bc2094d7251e904ff02cf551",
           "source_sha256_after_verification": "4fbf4fe238c5f978028a39f25f480533aa1359f1bc2094d7251e904ff02cf551",
           "symbols": [
@@ -58,7 +40,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "Chain/chain_public.py",
+          "source_path": "legacy-source/S002",
           "source_sha256": "0620df072f043d32e454a66b7ea4a0a1d605291ebed766eb5ccb570b79a4f941",
           "source_sha256_after_verification": "0620df072f043d32e454a66b7ea4a0a1d605291ebed766eb5ccb570b79a4f941",
           "symbols": [
@@ -73,7 +55,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "R/offline_brp_common.py",
+          "source_path": "legacy-source/S014",
           "source_sha256": "e7735f6fd86956325fc78b3044ff8320385013ebdef41639d618bc72a70b3007",
           "source_sha256_after_verification": "e7735f6fd86956325fc78b3044ff8320385013ebdef41639d618bc72a70b3007",
           "symbols": [
@@ -88,7 +70,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "EM/scrp/noise_aware_em.py",
+          "source_path": "legacy-source/S004",
           "source_sha256": "d84f5004520083baf0c1166e3bbe3167b20b40721485e0283ac79d8744625452",
           "source_sha256_after_verification": "d84f5004520083baf0c1166e3bbe3167b20b40721485e0283ac79d8744625452",
           "symbols": [
@@ -105,7 +87,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "R/scrp/eri_eg_plan059.py",
+          "source_path": "legacy-source/S017",
           "source_sha256": "3dfe1d0611c5fba0080c1fd8d0214bd5d21d1782cc7873457d0412c7d7a193cf",
           "source_sha256_after_verification": "3dfe1d0611c5fba0080c1fd8d0214bd5d21d1782cc7873457d0412c7d7a193cf",
           "symbols": [
@@ -121,7 +103,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "R/scrp/eri_eg_public.py",
+          "source_path": "legacy-source/S018",
           "source_sha256": "30cf988645f0706fde0a3876eaf4c99ca08efa7abd3dcc426f41086b96e397ed",
           "source_sha256_after_verification": "30cf988645f0706fde0a3876eaf4c99ca08efa7abd3dcc426f41086b96e397ed",
           "symbols": [
@@ -136,7 +118,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "GP/expression.py",
+          "source_path": "legacy-source/S006",
           "source_sha256": "4e413b1c8412285b47a6ddd9e67f9ce6e6e5736002a389e72210ee91422cd8c7",
           "source_sha256_after_verification": "4e413b1c8412285b47a6ddd9e67f9ce6e6e5736002a389e72210ee91422cd8c7",
           "symbols": [
@@ -152,7 +134,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "GP/simulator.py",
+          "source_path": "legacy-source/S007",
           "source_sha256": "98b951462b8c40c23eca4de5027fbb1835cae533929ef4d663f658e0df94c7db",
           "source_sha256_after_verification": "98b951462b8c40c23eca4de5027fbb1835cae533929ef4d663f658e0df94c7db",
           "symbols": [
@@ -162,7 +144,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/cross_solver_reliability_r.py",
+          "source_path": "legacy-source/S016",
           "source_sha256": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "source_sha256_after_verification": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "symbols": [
@@ -177,7 +159,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "Minmax/minmax_offline.py",
+          "source_path": "legacy-source/S010",
           "source_sha256": "2d3b3d049c7924e8987d51abfd3eccf715c696b8d1f5e1871c228ece722fb70e",
           "source_sha256_after_verification": "2d3b3d049c7924e8987d51abfd3eccf715c696b8d1f5e1871c228ece722fb70e",
           "symbols": [
@@ -192,7 +174,7 @@
       "operation": "symbol_extract",
       "sources": [
         {
-          "source_path": "Minmax/minmax_public.py",
+          "source_path": "legacy-source/S011",
           "source_sha256": "da28545f98ebc24f5fdf7dae80113c86130fe1211a44beacac7060b429a1391a",
           "source_sha256_after_verification": "da28545f98ebc24f5fdf7dae80113c86130fe1211a44beacac7060b429a1391a",
           "symbols": [
@@ -207,7 +189,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "R/scrp/r_order_actor.py",
+          "source_path": "legacy-source/S022",
           "source_sha256": "c53b9ec179152104eacfce0139a3dc960f3b94c25b31e910f09323d358e4b1fe",
           "source_sha256_after_verification": "c53b9ec179152104eacfce0139a3dc960f3b94c25b31e910f09323d358e4b1fe",
           "symbols": [
@@ -216,7 +198,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/universal_r_utility_m1.py",
+          "source_path": "legacy-source/S026",
           "source_sha256": "c1bf0f6785af82f7301da9455f5b86717b3c3dcdebd0a9db55bba339c15d2c8a",
           "source_sha256_after_verification": "c1bf0f6785af82f7301da9455f5b86717b3c3dcdebd0a9db55bba339c15d2c8a",
           "symbols": [
@@ -226,7 +208,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/cross_solver_reliability_r.py",
+          "source_path": "legacy-source/S016",
           "source_sha256": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "source_sha256_after_verification": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "symbols": [
@@ -234,7 +216,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/eri_eg_plan059.py",
+          "source_path": "legacy-source/S017",
           "source_sha256": "3dfe1d0611c5fba0080c1fd8d0214bd5d21d1782cc7873457d0412c7d7a193cf",
           "source_sha256_after_verification": "3dfe1d0611c5fba0080c1fd8d0214bd5d21d1782cc7873457d0412c7d7a193cf",
           "symbols": [
@@ -249,7 +231,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "R/scrp/r_five_versions_actor.py",
+          "source_path": "legacy-source/S021",
           "source_sha256": "b06026e8d4ea81fc67eb6843b76689b08ff4c5a5632b0986d36e4ec6aa2a8439",
           "source_sha256_after_verification": "b06026e8d4ea81fc67eb6843b76689b08ff4c5a5632b0986d36e4ec6aa2a8439",
           "symbols": [
@@ -257,7 +239,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/r_order_public.py",
+          "source_path": "legacy-source/S023",
           "source_sha256": "7b1297918973ee4e4e7d3935f2515ca1eda18769df96788f37d68d3a00e74135",
           "source_sha256_after_verification": "7b1297918973ee4e4e7d3935f2515ca1eda18769df96788f37d68d3a00e74135",
           "symbols": [
@@ -265,7 +247,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/r_eri_eg_public.py",
+          "source_path": "legacy-source/S020",
           "source_sha256": "56d8581e2c4fa0babd4d74ba9c0c9e7a37232702adedd649060c89b02461de2a",
           "source_sha256_after_verification": "56d8581e2c4fa0babd4d74ba9c0c9e7a37232702adedd649060c89b02461de2a",
           "symbols": [
@@ -328,7 +310,7 @@
       "operation": "model_extract",
       "sources": [
         {
-          "source_path": "R/output/r_frozen_cross_solver_transfer_v1/r01/M0_PREPARATION_RECEIPT.json",
+          "source_path": "legacy-source/S015",
           "source_sha256": "33dc29e346ef9d52111f24448f9039a1a7cb70458fca091e37714334996a43b1",
           "source_sha256_after_verification": "33dc29e346ef9d52111f24448f9039a1a7cb70458fca091e37714334996a43b1",
           "symbols": [
@@ -336,7 +318,7 @@
           ]
         },
         {
-          "source_path": "R/configs/r_noise_diagnostics_v1.json",
+          "source_path": "legacy-source/S012",
           "source_sha256": "8381cf3fdd0bb843268745d52d7621e4f8bd9ebded480bb6d2b96bca968c2dbf",
           "source_sha256_after_verification": "8381cf3fdd0bb843268745d52d7621e4f8bd9ebded480bb6d2b96bca968c2dbf",
           "symbols": [
@@ -351,7 +333,7 @@
       "operation": "derived_configuration",
       "sources": [
         {
-          "source_path": "R/configs/r_tw_uniform_fast_caserta_continuation_01.json",
+          "source_path": "legacy-source/S013",
           "source_sha256": "8ce3a3f1ebd3c003af10db82489e59fa774864440aa8c048780f0afc12da510a",
           "source_sha256_after_verification": "8ce3a3f1ebd3c003af10db82489e59fa774864440aa8c048780f0afc12da510a",
           "symbols": [
@@ -366,7 +348,7 @@
       "operation": "byte_copy",
       "sources": [
         {
-          "source_path": "Leveling/data/caserta_table2_840.json",
+          "source_path": "legacy-source/S008",
           "source_sha256": "c28c975c8026a59a1b7995f8afe8a41e9e48b469835b9d2227a9bbe7a5371a12",
           "source_sha256_after_verification": "c28c975c8026a59a1b7995f8afe8a41e9e48b469835b9d2227a9bbe7a5371a12",
           "symbols": [
@@ -387,7 +369,7 @@
       "operation": "byte_copy",
       "sources": [
         {
-          "source_path": "EM/scrp/noise_aware_forecast.py",
+          "source_path": "legacy-source/S005",
           "source_sha256": "0d31ba36a3095c6d57c65e6b41a4a72997a4fe20feac2c8a23be61e575cf8369",
           "source_sha256_after_verification": "0d31ba36a3095c6d57c65e6b41a4a72997a4fe20feac2c8a23be61e575cf8369",
           "symbols": [
@@ -402,7 +384,7 @@
       "operation": "copy_with_unrelated_class_removed",
       "sources": [
         {
-          "source_path": "Mijn_RL/scrp/online_crp.py",
+          "source_path": "legacy-source/S009",
           "source_sha256": "72a8d440ce019307739b9a48ebce2dacd5c7e92a78c221f2748ac67e23ce4e7b",
           "source_sha256_after_verification": "72a8d440ce019307739b9a48ebce2dacd5c7e92a78c221f2748ac67e23ce4e7b",
           "symbols": [
@@ -421,7 +403,7 @@
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
-          "source_path": "EM/experiments/noise_aware_reference_p0.py",
+          "source_path": "legacy-source/S003",
           "source_sha256": "af5f87d3a6ca4a387e066be1d01638777d3dc6797de4be8cea9b6d5c079bf446",
           "source_sha256_after_verification": "af5f87d3a6ca4a387e066be1d01638777d3dc6797de4be8cea9b6d5c079bf446",
           "symbols": [
@@ -431,7 +413,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/cross_solver_reliability_r.py",
+          "source_path": "legacy-source/S016",
           "source_sha256": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "source_sha256_after_verification": "a61b830d8523513d6782cad980e0d465889f8003b770d9ebf513f9b782919b1b",
           "symbols": [
@@ -439,7 +421,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/r_five_versions_actor.py",
+          "source_path": "legacy-source/S021",
           "source_sha256": "b06026e8d4ea81fc67eb6843b76689b08ff4c5a5632b0986d36e4ec6aa2a8439",
           "source_sha256_after_verification": "b06026e8d4ea81fc67eb6843b76689b08ff4c5a5632b0986d36e4ec6aa2a8439",
           "symbols": [
@@ -447,7 +429,7 @@
           ]
         },
         {
-          "source_path": "R/scrp/plan052_public.py",
+          "source_path": "legacy-source/S019",
           "source_sha256": "075364561df7688328a97231e2998deee68146bd506376317bb5b6484bc1fa4a",
           "source_sha256_after_verification": "075364561df7688328a97231e2998deee68146bd506376317bb5b6484bc1fa4a",
           "symbols": [
@@ -464,7 +446,7 @@
       "operation": "symbol_extract_and_genericize",
       "sources": [
         {
-          "source_path": "R/scrp/r_order_public.py",
+          "source_path": "legacy-source/S023",
           "source_sha256": "7b1297918973ee4e4e7d3935f2515ca1eda18769df96788f37d68d3a00e74135",
           "source_sha256_after_verification": "7b1297918973ee4e4e7d3935f2515ca1eda18769df96788f37d68d3a00e74135",
           "symbols": [
@@ -482,7 +464,7 @@
       "operation": "symbol_extract_and_genericize",
       "sources": [
         {
-          "source_path": "R/scrp/r_eri_eg_public.py",
+          "source_path": "legacy-source/S020",
           "source_sha256": "56d8581e2c4fa0babd4d74ba9c0c9e7a37232702adedd649060c89b02461de2a",
           "source_sha256_after_verification": "56d8581e2c4fa0babd4d74ba9c0c9e7a37232702adedd649060c89b02461de2a",
           "symbols": [
@@ -523,7 +505,7 @@
       "operation": "renamed_and_adapted",
       "sources": [
         {
-          "source_path": "R/scrp/tw_uniform_fast.py",
+          "source_path": "legacy-source/S025",
           "source_sha256": "c2e1a079f56116ccd62038a854f23f25140c57c04186a5c6f171c276987ff638",
           "source_sha256_after_verification": "c2e1a079f56116ccd62038a854f23f25140c57c04186a5c6f171c276987ff638",
           "symbols": [
@@ -539,7 +521,7 @@
       "operation": "renamed_and_adapted",
       "sources": [
         {
-          "source_path": "R/scrp/tw_saa_public.py",
+          "source_path": "legacy-source/S024",
           "source_sha256": "e53b0caf66369c40feeb2ace4e0ebbf229e534ca42b09cb583044abb5d098b20",
           "source_sha256_after_verification": "e53b0caf66369c40feeb2ace4e0ebbf229e534ca42b09cb583044abb5d098b20",
           "symbols": [
@@ -554,5 +536,7 @@
       ],
       "final_sha256": "670e9a71c9aa3f476eda7a4dab3d6b8f986437cb23f53102412a611caa283b40"
     }
-  ]
+  ],
+  "provenance_note": "Source paths use stable neutral identifiers because the originating workspace is not part of this public bundle. Source SHA-256 fingerprints, extraction operations, and symbol summaries are retained.",
+  "environment_scope": "The bundle includes the public scalar OnlineCRP environment and noise-aware forecast interface required by its documented research scope."
 }
