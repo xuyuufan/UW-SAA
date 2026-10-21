@@ -540,4 +540,3 @@
   "provenance_note": "Source paths use stable neutral identifiers because the originating workspace is not part of this public bundle. Source SHA-256 fingerprints, extraction operations, and symbol summaries are retained.",
   "environment_scope": "The bundle includes the public scalar OnlineCRP environment and noise-aware forecast interface required by its documented research scope."
 }
-
