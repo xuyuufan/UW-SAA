@@ -140,8 +140,8 @@
     },
     {
       "file": "README.md",
-      "sha256": "9eeed62bff72ce8839715159663bf512824496346c174c8a62e26ddc301a7cb0",
-      "bytes": 5085
+      "sha256": "11f8b8f9f3faaa59d4db9553f3ccebecb76790e29c09fdbe9ac55ca79c949b33",
+      "bytes": 4839
     },
     {
       "file": "scripts/generate_figures.py",
