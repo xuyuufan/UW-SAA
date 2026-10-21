@@ -1,0 +1,153 @@
+{
+  "manifest_version": 1,
+  "scope": "Accepted condition-level and solver-level benchmark summaries, with figures generated from the published CSV files.",
+  "method_provenance": {
+    "public_method_name": "UWSAA"
+  },
+  "evidence_boundary": {
+    "statistical_unit": "840 layouts across 21 geometry groups",
+    "primary_endpoint": "R_raw",
+    "secondary_endpoint": "R_over_N",
+    "full_trajectory_data_included": false,
+    "complete_benchmark_runner_included": false,
+    "p1_full_matrix_status": "NOT_RUN_BUDGET_GATE",
+    "p2_status": "NOT_RUN",
+    "snapshot_excludes_ongoing_experiments": true
+  },
+  "row_counts": {
+    "accepted_primary_comparisons": 56,
+    "primary_comparisons": 8,
+    "solvers_per_comparison": 7,
+    "caserta_main_condition_statistics": 1078,
+    "caserta_ablation_condition_statistics": 1344,
+    "p0_condition_solver_results": 49,
+    "p0_solver_condition_cells": 42,
+    "timing_summaries": 14
+  },
+  "public_label_normalizations": [
+    "Source method labels are presented as UWSAA.",
+    "Stage labels are presented as MAIN, ABLATION, and P0.",
+    "Timing arms use the reader-facing labels K8 / UWSAA and P0 deterministic.",
+    "The accepted-comparison identifier uses the reader-facing labels K8_UWSAA and DETERMINISTIC_SINGLE; the direction text uses K8 / UWSAA.",
+    "Unpublished scope-note text is omitted; all estimate and confidence-interval fields are retained."
+  ],
+  "source_artifacts": [
+    {
+      "logical_name": "accepted_primary_comparisons",
+      "source_sha256": "e015e6d9310f0f93af5c8ce3ec687c5181408a0323b6464f1c7ee40eac4399a3",
+      "published_file": "data/accepted_primary_contrasts_all_solvers.csv",
+      "published_sha256": "c49fd4b76f9c4ee59113fde30d71c8b874fff61719a01aebd150aa004e11bfc7",
+      "data_rows": 56
+    },
+    {
+      "logical_name": "caserta_main_condition_statistics",
+      "source_sha256": "b56a484d682ee1d0c03c62e0ff9a910410f15c78d2ce6640994ae80949d592d9",
+      "published_file": "data/caserta_main_condition_effects.csv",
+      "published_sha256": "1d32aeff9a7b894340f24b0ea151aec3afe917473939c174f52326ddb750bc46",
+      "data_rows": 1078
+    },
+    {
+      "logical_name": "caserta_ablation_condition_statistics",
+      "source_sha256": "25e8e0e115e39d17aa5d54676f1a14452cfd971273130352c7f5e4718323b8be",
+      "published_file": "data/caserta_ablation_condition_effects.csv",
+      "published_sha256": "2889981cd9f81641e955db452f57548bf14c84fd1f16ebf8399a5b8a8aeb6026",
+      "data_rows": 1344
+    },
+    {
+      "logical_name": "p0_condition_solver_results",
+      "source_sha256": "ac7238222d1d014a56ed947cbcabcf51b27433209ad0956756d0c15fbe96a39d",
+      "published_file": "data/p0_condition_solver_results.csv",
+      "published_sha256": "ac7238222d1d014a56ed947cbcabcf51b27433209ad0956756d0c15fbe96a39d",
+      "data_rows": 49
+    },
+    {
+      "logical_name": "descriptive_timing_summary",
+      "source_sha256": "906d46c94a9ed449ceb4e778e7865587e8c85fd0e475c3a570d4ff6c5af4f1d6",
+      "published_file": "data/p0_k8_timing_by_solver.csv",
+      "published_sha256": "d124c08bafbc8994ddcbee0dffa46233e8f8020ba8816ea6159c7f1df1e66b48",
+      "data_rows": 14
+    }
+  ],
+  "acceptance_evidence_sha256": [
+    {
+      "evidence": "caserta_main_and_ablation_acceptance",
+      "sha256": "47499217cc3f1bdf094d1f2af071c3c7b51f33b0941e759c974f0a7a2040a16e"
+    },
+    {
+      "evidence": "p0_result_acceptance",
+      "sha256": "1dc78baad9a8c318790f8da4d3acdb5524cd6da64fffa87a40321c5deabeee3e"
+    },
+    {
+      "evidence": "final_result_scope_acceptance",
+      "sha256": "122d93deb928fe207ee167f734c8895b9cc78cd3df16a1699e46efdb76fe01f5"
+    }
+  ],
+  "published_file_sha256": [
+    {
+      "file": "data/accepted_primary_contrasts_all_solvers.csv",
+      "sha256": "c49fd4b76f9c4ee59113fde30d71c8b874fff61719a01aebd150aa004e11bfc7",
+      "bytes": 10528
+    },
+    {
+      "file": "data/caserta_ablation_condition_effects.csv",
+      "sha256": "2889981cd9f81641e955db452f57548bf14c84fd1f16ebf8399a5b8a8aeb6026",
+      "bytes": 640097
+    },
+    {
+      "file": "data/caserta_main_condition_effects.csv",
+      "sha256": "1d32aeff9a7b894340f24b0ea151aec3afe917473939c174f52326ddb750bc46",
+      "bytes": 498388
+    },
+    {
+      "file": "data/p0_condition_solver_results.csv",
+      "sha256": "ac7238222d1d014a56ed947cbcabcf51b27433209ad0956756d0c15fbe96a39d",
+      "bytes": 5386
+    },
+    {
+      "file": "data/p0_k8_timing_by_solver.csv",
+      "sha256": "d124c08bafbc8994ddcbee0dffa46233e8f8020ba8816ea6159c7f1df1e66b48",
+      "bytes": 4228
+    },
+    {
+      "file": "figures/accepted_mean6_comparisons.pdf",
+      "sha256": "e22d2844d5b66d8212051fa40d63b872acb5f88df3167b5b7501ad9a6cb443c7",
+      "bytes": 41939
+    },
+    {
+      "file": "figures/accepted_mean6_comparisons.png",
+      "sha256": "d040eaea1fefbb94a6990a79ebb294e7dc94c90e1f1784e23455aff7daac00f4",
+      "bytes": 141596
+    },
+    {
+      "file": "figures/descriptive_timing_by_solver.pdf",
+      "sha256": "d6fce854232ff101db1309fedb623da4c04a7df3e755eeb0ab418c0b858d8be1",
+      "bytes": 37587
+    },
+    {
+      "file": "figures/descriptive_timing_by_solver.png",
+      "sha256": "53b6e4fd9b117ed805fc9ee83b8ec7f784b453088199a778aad8078a4f6f3379",
+      "bytes": 113513
+    },
+    {
+      "file": "figures/p0_condition_solver_effects.pdf",
+      "sha256": "57ced0c2265ca7762426fbfa9b3a641d23629a49ba9e4d715ecff19992e409fa",
+      "bytes": 41562
+    },
+    {
+      "file": "figures/p0_condition_solver_effects.png",
+      "sha256": "40326dc5213f167626ff2a5760371435d9ba0bc6a7d5bceb12c3babdd5bba5b1",
+      "bytes": 126566
+    },
+    {
+      "file": "README.md",
+      "sha256": "11f8b8f9f3faaa59d4db9553f3ccebecb76790e29c09fdbe9ac55ca79c949b33",
+      "bytes": 4839
+    },
+    {
+      "file": "scripts/generate_figures.py",
+      "sha256": "6bd19f64ca9bf4736bbafbdc51c569a7760ab2a92910bddf3e48ec8bbde5d6d9",
+      "bytes": 12764
+    }
+  ],
+  "manifest_self_hash": "not included"
+}
