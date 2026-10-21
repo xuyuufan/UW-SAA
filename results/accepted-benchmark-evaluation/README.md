@@ -2,7 +2,7 @@
 
 This package is a snapshot of the accepted condition-level and solver-level results for UW-SAA on the public Caserta benchmark; ongoing experiments are not included. It provides the result tables, a compact set of figures, and a script that regenerates those figures from the included CSV files.
 
-Caserta is a previously used public benchmark. These results are not sealed or out-of-distribution evidence and do not represent an independent test set. The package provides accepted summaries; it does not include full trajectory-level data or a complete benchmark runner.
+Caserta is a public benchmark previously evaluated in other project routes. Relative to DEV100, this method and protocol were frozen before the Caserta run, which served as a confirmation holdout; the record states that no tuning or method selection was based on Caserta. This is confirmation evidence for the frozen method and protocol, but because the benchmark is public and was evaluated elsewhere in the project, it is not a sealed test set, does not show that the wider project had never encountered Caserta, and is not out-of-distribution evidence. The package provides accepted summaries; it does not include full trajectory-level data or a complete benchmark runner.
 
 ## Statistical scope
 
