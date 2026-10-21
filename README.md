@@ -85,3 +85,7 @@ The method name can be set to `NATIVE20` to use the selected solver at fixed hor
 The included [Caserta Table 2 file](data/caserta_table2_840.json) contains 840 instances in 21 parameter groups of 40 instances each. Records include retrieval sequences used by the environment/evaluator. A policy call should receive only the corresponding public decision frame.
 
 This repository provides the UW-SAA method, baseline decision interfaces, configuration and data files, and small correctness checks. It does not include a full trajectory benchmark runner or a complete evaluation protocol. The included smoke checks are not benchmark results and do not establish comparative performance or generalization.
+
+## Accepted benchmark results
+
+A separate package contains accepted condition-level and solver-level benchmark summaries, with data tables, confidence intervals, figures, and a figure-generation script: [accepted benchmark evaluation](results/accepted-benchmark-evaluation/README.md). It does not include full trajectory-level data or a complete benchmark runner. The repository smoke checks remain interface and correctness checks, not benchmark results.
