@@ -1,0 +1,274 @@
+{
+  "schema": "uwsaa_source_differential_smoke_v1",
+  "status": "PASS",
+  "scope": "one detached Caserta frame; source/public action and score parity; no performance run",
+  "episode_id": "caserta-3-8-08",
+  "layout_fingerprint": "5c931b7b9e330bc1fc6d4600ba2ec6ced398ab191cec6df6f61f4eb93a8f9458",
+  "source_files_sha256": {
+    "uw_saa/scrp/uw_saa_public.py": "75ce9e955e5d885ab09fb00da675d2353e95056494265f220c364329841c161e",
+    "uw_saa/scrp/uw_saa_fast.py": "836d59a891b45781cc2bb0fb99c77914380c2c7b2693d47f32ba0611150e89f7",
+    "uw_saa/scrp/uw_saa_followup.py": "7b029a9889e50b6ebb8d0101ed9cedb13e0989e4632a9c7095817710b62befe8",
+    "uw_saa/scrp/uw_saa_deterministic_single.py": "389856a0996694beb40e12823288ab4cbeeaad011e516972db5f54cd842756f2",
+    "uw_saa/scrp/uw_saa_plan063_multik.py": "bff742628f9aeb4798a886064d20bab5dac9d0fc04cc9fa5860b98158957c2a8",
+    "uw_saa/scrp/r_order_actor.py": "f1239caa84256cb16ad034b4956639b66fe0a5d704ba554fa1ae1dfcd5db2a08",
+    "uw_saa/scrp/r_five_versions_actor.py": "27ced8d4ffbf274f1ebf67c2af9c8db0727871a46fb5cd29cd35c6333adc0595",
+    "uw_saa/scrp/r_eri_eg_public.py": "56d8581e2c4fa0babd4d74ba9c0c9e7a37232702adedd649060c89b02461de2a",
+    "uw_saa/scrp/universal_r_utility_m1.py": "b24e4d58c51c3fc4489da99865ded352c5fcc471953f21ed6a1739159530f38a"
+  },
+  "public_files_sha256": {
+    "checks/source_differential_smoke.py": "7ff4c2edbff4bac53ea7a3f3801636968c7d0c61b7c6a0f92f6d79303867ad85",
+    "reproducibility/runner.py": "56e52a1c8e4ae63478d2642309524036dcb6d35e491d201ebb53dd87916d52c4",
+    "reproducibility/protocol.py": "413be8357717d101b7b4ca2fc496c8631561da60d113a9b68b86165ffce98b80",
+    "uwsaa/variants.py": "bde10eb54f064782f3a12dbc7f047ad74ca8907449c86dc873eadf8ff7f9567a",
+    "uwsaa/fast.py": "3ada9c7c219448109987531cff12264b15cca593cfa5a6b58fca10f7108c1284"
+  },
+  "source_parity": {
+    "policies_checked": 38,
+    "unknown_tail_items": 1,
+    "nontrivial_candidate_score_menus_by_arm": {
+      "ablation/UWSAA_NO_WINDOW_SHUFFLE_K8": 2,
+      "ablation/UWSAA_SINGLE_WINDOW_B2": 2,
+      "ablation/UWSAA_SINGLE_WINDOW_B5": 2,
+      "ablation/UWSAA_SINGLE_WINDOW_B10": 2,
+      "ablation/UWSAA_SINGLE_WINDOW_B20": 2,
+      "p0/UWSAA_DETERMINISTIC_SINGLE": 2,
+      "multik/UWSAA_K1_ROLLOUT": 2,
+      "multik/UWSAA_K2_ROLLOUT": 2,
+      "multik/UWSAA_K4_ROLLOUT": 2,
+      "multik/UWSAA_K16_ROLLOUT": 2,
+      "multik/UWSAA_K1_LB1": 2,
+      "multik/UWSAA_K8_LB1": 2
+    },
+    "cached_eg_actions_checked": 13,
+    "source_parity": {
+      "main/UWSAA/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/NATIVE20/EM": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/UWSAA/GP": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/NATIVE20/GP": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/UWSAA/ERI": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/NATIVE20/ERI": {
+        "action": 2,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/UWSAA/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "main/NATIVE20/EG": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 2
+      },
+      "main/UWSAA/Chain": {
+        "action": 3,
+        "candidate_sequences": 4,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/NATIVE20/Chain": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/UWSAA/Minmax": {
+        "action": 3,
+        "candidate_sequences": 4,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "main/NATIVE20/Minmax": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_NO_WINDOW_SHUFFLE_K8/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B2/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B5/EM": {
+        "action": 2,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B10/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B20/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_BEST_FIXED_H/EM": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "p0/UWSAA_DETERMINISTIC_SINGLE/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "ablation/UWSAA_NO_WINDOW_SHUFFLE_K8/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B2/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B5/EG": {
+        "action": 2,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B10/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "ablation/UWSAA_SINGLE_WINDOW_B20/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "ablation/UWSAA_BEST_FIXED_H/EG": {
+        "action": 3,
+        "candidate_sequences": 0,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 2
+      },
+      "p0/UWSAA_DETERMINISTIC_SINGLE/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K1_ROLLOUT/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K2_ROLLOUT/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K4_ROLLOUT/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K16_ROLLOUT/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K1_LB1/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K8_LB1/EM": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 0,
+        "committed_sequence_length": 0
+      },
+      "multik/UWSAA_K1_ROLLOUT/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K2_ROLLOUT/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K4_ROLLOUT/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K16_ROLLOUT/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K1_LB1/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      },
+      "multik/UWSAA_K8_LB1/EG": {
+        "action": 3,
+        "candidate_sequences": 2,
+        "cached_eg_actions_checked": 1,
+        "committed_sequence_length": 2
+      }
+    }
+  }
+}

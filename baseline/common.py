@@ -1,4 +1,4 @@
-"""Small offline-only physics and result types shared by PLAN-052 solvers."""
+"""Small offline-only physics and result types shared by public solvers."""
 
 from __future__ import annotations
 

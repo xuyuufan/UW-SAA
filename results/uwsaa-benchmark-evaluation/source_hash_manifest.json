@@ -1,0 +1,351 @@
+{
+  "manifest_version": 3,
+  "title": "UWSAA benchmark result artifact manifest",
+  "scope": "Reader-facing normalized benchmark result tables, scenario-ablation and descriptive cost tables, figures, generation scripts, and linked evidence; row-level endpoint records and their evidence inventory are in reproducibility/data.",
+  "evidence_boundary": {
+    "statistical_unit": "Layout; MAIN has 840 layouts across 21 geometry groups, 40 per geometry.",
+    "primary_metric": "relocations; lower is better.",
+    "secondary_metric": "relocations_per_container.",
+    "summary_numeric_cells_preserved": "All 15,393 numeric source cells in the five replaced summary tables passed exact text/value comparison.",
+    "scenario_status": "Current executed and historical evidence status is listed by study group in reproducibility/data_inventory.json.",
+    "negative_results": "Registered speedup and dev100 clean gates failed and remain in the endpoint inventory.",
+    "bootstrap_payload_manifest": "reproducibility/artifacts/bootstrap_manifest.json",
+    "scenario_ablation": "Accepted seven-condition scenario ablation: 211,680 newly executed endpoint rows plus 35,280 reused K=8 reference rows; seven contrasts are summarized for six solvers and MEAN6.",
+    "scenario_confidence_intervals": "Published scenario-ablation confidence intervals and bootstrap evidence are source-preserved; no new bootstrap intervals were recomputed for public-label changes.",
+    "cost_measurements": "P5 trajectory and decision-selection timing outputs are descriptive on-policy measurements; they do not have confidence intervals or controlled-hardware speedup interpretation.",
+    "scenario_artifact_manifest": "reproducibility/artifacts/scenario-ablation/uwsaa_scenario_ablation_manifest.json"
+  },
+  "public_files": [
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/accepted_primary_contrasts_all_solvers.csv",
+      "bytes": 11450,
+      "sha256": "8518dda3e9b2a4c166644b1793f2b1d1534fd896a48476d0197f7f809a0a4000",
+      "data_rows": 56
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/caserta_ablation_condition_effects.csv",
+      "bytes": 681591,
+      "sha256": "fd2b991f00262686ad402c56c72430b9bedf106162af58e4ec29419b04eae83d",
+      "data_rows": 1344
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/caserta_main_condition_effects.csv",
+      "bytes": 523495,
+      "sha256": "8423fd68ce8e636d007eada8338163bb3eaf3ccd285ae88de838b018f51d787e",
+      "data_rows": 1078
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/deterministic_single_condition_solver_results.csv",
+      "bytes": 6272,
+      "sha256": "c96bbda2f1fef35166192f0eb583babd4196c8f87f69938fc95cb4d65e5c851d",
+      "data_rows": 49
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv",
+      "bytes": 19815,
+      "sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c",
+      "data_rows": 49,
+      "source_sha256": "11b6c45e61dfc9e8446bf97faf148ed4d3e1d3c125312a8ebe70d8ba7df766a3"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_rollout_vs_deterministic_timing.csv",
+      "bytes": 4340,
+      "sha256": "7546c9d21e94a4d493984291d056f9775332869fb531659b8fae6b2fc2c61e4b",
+      "data_rows": 14
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/deterministic_single_condition_solver_effects.pdf",
+      "bytes": 45490,
+      "sha256": "bf7edc7f311961494b67df3286d0f1745389423066f3381d61737f4e6936a13b"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/deterministic_single_condition_solver_effects.png",
+      "bytes": 171300,
+      "sha256": "478e9cc415bf036389ff1534bba10317a1a4b39c744bfaa08027c4a9d90c6fdc"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_accepted_mean6_comparisons.pdf",
+      "bytes": 41306,
+      "sha256": "c791b1e1f9e0ddae433d5db803d13fd63c26e9c74932bf3521691bd54f118a2d"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_accepted_mean6_comparisons.png",
+      "bytes": 143123,
+      "sha256": "a9b2fb7256c345de248d29e6ea071c3acaa1e7b32d160d1f6575f2ff4c0e988f"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_descriptive_timing_by_solver.pdf",
+      "bytes": 38176,
+      "sha256": "9354502dfdd8bb5a45ee470fe5e6f9575df7860328e93d89db7e46b44e1e59a2"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_descriptive_timing_by_solver.png",
+      "bytes": 116665,
+      "sha256": "a2a76615e54e7242e26e82359109bf90be839c1debd5f0f05789152994ced627"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/README.md",
+      "bytes": 8028,
+      "sha256": "b171ca55091d981d3f5701aaf308e62b198274d4bb83806b0b45deaabc99f0b5"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/scripts/generate_figures.py",
+      "bytes": 13163,
+      "sha256": "8b18bf3593b156c9aff2a303bd9689873cf9ed8bbbd6a1d7c06b0c2a9181f0c5"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_condition_effects.csv",
+      "bytes": 29436,
+      "sha256": "6c7d8a76ff5f30c800250ec5d9879cf826447a4f2333217131e964c30cf464e2",
+      "data_rows": 42,
+      "source_sha256": "b106024d83f1cbf54d33e1320ab5fe6a906ff48c042d5c8fa1582abab6c03b2a"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_geometry_outcomes.csv",
+      "bytes": 716508,
+      "sha256": "07669d4a5937cb3525ebb1f63eae9ed367c5b4afda391b5f10f4913373e3806a",
+      "data_rows": 7203,
+      "source_sha256": "d3589bdf1505ac2c7f40014d87b23db0a1aff6102e357aea7b898613d081ca7f"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv",
+      "bytes": 29410,
+      "sha256": "d543e731ce8439d6c96d4f4883ca3cfe69be8acbcfc702d52242e9291d909824",
+      "data_rows": 54,
+      "source_sha256": "15604dc37a40e3c1b8d1197b129d1d0e56285eed229bb06ae42b9b23e6575d4c"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_by_registered_condition.csv",
+      "bytes": 97944,
+      "sha256": "0295db8a4dbb99b53f68ba7abb5d0973c81067a25a0414ec5c0b950a03a07f95",
+      "data_rows": 378,
+      "source_sha256": "259fe39d440f481e42f32cc7dc9621b06ae9f0dac2ea6e1dc00c789f3fa88e30"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_layout_seven_condition_sums.csv",
+      "bytes": 12047971,
+      "sha256": "dd18a0ad27cda37f40e2f623c0846aee6c8437f286595b5ef845cae1369297c7",
+      "data_rows": 45360,
+      "source_sha256": "09ba5e2752160c5f3b6b6d0cdd36e5c658c90b2d110fcd338181e4168c7053f4"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_trajectory_rows.csv.gz",
+      "bytes": 24861791,
+      "sha256": "3492acc00b44b985eeb171ecce571b3ab23d061bc05c008222a6a8aca6d04582",
+      "data_rows": 317520,
+      "source_sha256": "c73ae5b3dea014cafb72e5ede159ae5745c4dcd1bdb1279f5ec75ff6adc0bc0a"
+    },
+    {
+      "path": "reproducibility/artifacts/scenario-ablation/uwsaa_paired_analysis.json",
+      "bytes": 2033585,
+      "sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
+      "source_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614"
+    },
+    {
+      "path": "reproducibility/artifacts/scenario-ablation/uwsaa_bootstrap_indices.npz",
+      "bytes": 8085146,
+      "sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "source_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-001",
+      "bytes": 40000000,
+      "sha256": "4676845d2c81bb37bffa90f5a23ae1aa90db0583a0ed10bf012ee62df5640e15"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-002",
+      "bytes": 40000000,
+      "sha256": "4c3b17e64ce780201bd558f891dea0ca3023606ffabe5a3fd6c95cf8a7514d49"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-003",
+      "bytes": 40000000,
+      "sha256": "23f01608539b016ad580199784ea299db96e76780dee9a0e6ddd96724aee3710"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-004",
+      "bytes": 40000000,
+      "sha256": "efcebaafb56708f8fb6f903c1a1f8d0293a31a77c1121542fc081c2da95dda98"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-005",
+      "bytes": 32643293,
+      "sha256": "d7d39a8166210faa674ce8b6e5b728eacb757eeff2d2d36c448b452e3be198ae"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.parts.json",
+      "bytes": 1382,
+      "sha256": "1ebe9f8fc30896c5dcb8220e2d38cc1746b8bbebbd241786334f79d3ddc6f1eb",
+      "data_rows": 11325741
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_pairwise.png",
+      "bytes": 255405,
+      "sha256": "3fed0a43c676fc112fe5a54350306a3e973c12c854416cb890ef9075327e8261",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_pairwise.pdf",
+      "bytes": 57407,
+      "sha256": "31bd91ef4a9a50a33b42b34e2b334c9122abfe3913bcd25fac9abd6f58678a60",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_absolute_interaction.png",
+      "bytes": 90691,
+      "sha256": "33f800c3fb348d9af0a84b947cdf8bbeadc485f174f21d6347ad1b5a5a6b0b1a",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_absolute_interaction.pdf",
+      "bytes": 41956,
+      "sha256": "efa8a8c54faa5f2bb4508af44279288b51e966b0af163a29210c3fbda1157233",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_cost_wall_time_ratio.png",
+      "bytes": 213476,
+      "sha256": "10844bbd1af349ab5887e95fb443f260ddfcb4bfdc1781ad1b35b94d07b0124b",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/figures/uwsaa_cost_wall_time_ratio.pdf",
+      "bytes": 40179,
+      "sha256": "1c7c693935dd4401b44ec70405f82668badb495e968198662c543688992aeedd",
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv"
+    },
+    {
+      "path": "results/uwsaa-benchmark-evaluation/scripts/generate_scenario_figures.py",
+      "bytes": 7768,
+      "sha256": "c610b08a26e35dfc32401d6d1796dc0340acdfdc79d47678c8e6218cc55f6458"
+    },
+    {
+      "path": "reproducibility/artifacts/scenario-ablation/uwsaa_scenario_ablation_manifest.json",
+      "bytes": 11130,
+      "sha256": "0313078b2069885a94a59f328c026893fafa3d913de07371ccd131eae31884fd"
+    }
+  ],
+  "source_to_public_mapping": [
+    {
+      "logical_name": "accepted_primary_comparisons",
+      "source_sha256": "e015e6d9310f0f93af5c8ce3ec687c5181408a0323b6464f1c7ee40eac4399a3",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/accepted_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "logical_name": "caserta_main_condition_statistics",
+      "source_sha256": "b56a484d682ee1d0c03c62e0ff9a910410f15c78d2ce6640994ae80949d592d9",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/caserta_main_condition_effects.csv"
+    },
+    {
+      "logical_name": "caserta_ablation_condition_statistics",
+      "source_sha256": "25e8e0e115e39d17aa5d54676f1a14452cfd971273130352c7f5e4718323b8be",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/caserta_ablation_condition_effects.csv"
+    },
+    {
+      "logical_name": "deterministic_single_condition_statistics",
+      "source_sha256": "ac7238222d1d014a56ed947cbcabcf51b27433209ad0956756d0c15fbe96a39d",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/deterministic_single_condition_solver_results.csv"
+    },
+    {
+      "logical_name": "descriptive_timing_summary",
+      "source_sha256": "906d46c94a9ed449ceb4e778e7865587e8c85fd0e475c3a570d4ff6c5af4f1d6",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_rollout_vs_deterministic_timing.csv"
+    },
+    {
+      "logical_name": "scenario_ablation_primary_contrasts",
+      "source_sha256": "11b6c45e61dfc9e8446bf97faf148ed4d3e1d3c125312a8ebe70d8ba7df766a3",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv",
+      "published_sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c",
+      "data_rows": 49
+    },
+    {
+      "logical_name": "scenario_ablation_condition_effects",
+      "source_sha256": "b106024d83f1cbf54d33e1320ab5fe6a906ff48c042d5c8fa1582abab6c03b2a",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_condition_effects.csv",
+      "published_sha256": "6c7d8a76ff5f30c800250ec5d9879cf826447a4f2333217131e964c30cf464e2",
+      "data_rows": 42
+    },
+    {
+      "logical_name": "scenario_ablation_geometry_outcomes",
+      "source_sha256": "d3589bdf1505ac2c7f40014d87b23db0a1aff6102e357aea7b898613d081ca7f",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_geometry_outcomes.csv",
+      "published_sha256": "07669d4a5937cb3525ebb1f63eae9ed367c5b4afda391b5f10f4913373e3806a",
+      "data_rows": 7203
+    },
+    {
+      "logical_name": "uwsaa_cost_summary_by_solver_arm",
+      "source_sha256": "15604dc37a40e3c1b8d1197b129d1d0e56285eed229bb06ae42b9b23e6575d4c",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv",
+      "published_sha256": "d543e731ce8439d6c96d4f4883ca3cfe69be8acbcfc702d52242e9291d909824",
+      "data_rows": 54
+    },
+    {
+      "logical_name": "uwsaa_cost_by_registered_condition",
+      "source_sha256": "259fe39d440f481e42f32cc7dc9621b06ae9f0dac2ea6e1dc00c789f3fa88e30",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_by_registered_condition.csv",
+      "published_sha256": "0295db8a4dbb99b53f68ba7abb5d0973c81067a25a0414ec5c0b950a03a07f95",
+      "data_rows": 378
+    },
+    {
+      "logical_name": "uwsaa_cost_layout_seven_condition_sums",
+      "source_sha256": "09ba5e2752160c5f3b6b6d0cdd36e5c658c90b2d110fcd338181e4168c7053f4",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_layout_seven_condition_sums.csv",
+      "published_sha256": "dd18a0ad27cda37f40e2f623c0846aee6c8437f286595b5ef845cae1369297c7",
+      "data_rows": 45360
+    },
+    {
+      "logical_name": "uwsaa_cost_trajectory_rows",
+      "source_sha256": "c73ae5b3dea014cafb72e5ede159ae5745c4dcd1bdb1279f5ec75ff6adc0bc0a",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_trajectory_rows.csv.gz",
+      "published_sha256": "3492acc00b44b985eeb171ecce571b3ab23d061bc05c008222a6a8aca6d04582",
+      "data_rows": 317520
+    },
+    {
+      "logical_name": "paired_analysis_evidence",
+      "source_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
+      "published_path": "reproducibility/artifacts/scenario-ablation/uwsaa_paired_analysis.json",
+      "published_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614"
+    },
+    {
+      "logical_name": "bootstrap_indices_evidence",
+      "source_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "published_path": "reproducibility/artifacts/scenario-ablation/uwsaa_bootstrap_indices.npz",
+      "published_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344"
+    },
+    {
+      "logical_name": "uwsaa_cost_decision_select_seconds",
+      "source_sha256": "9d0634ff47ff6868cb5dc4feaf824c4beb0bcf83142c90aab9b5f8525845423d",
+      "published_path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.parts.json",
+      "published_sha256": "c7b51b25df9f462602feafc70d9614bb48d24fdb343cad34e38aa2a7e077a9c4",
+      "payload_sha256": "d543e3069a9124676b03d2ca0c2dda0bdb4c3d0f7418f5230146216e2e304ae0",
+      "parts": [
+        {
+          "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-001",
+          "sha256": "4676845d2c81bb37bffa90f5a23ae1aa90db0583a0ed10bf012ee62df5640e15",
+          "bytes": 40000000
+        },
+        {
+          "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-002",
+          "sha256": "4c3b17e64ce780201bd558f891dea0ca3023606ffabe5a3fd6c95cf8a7514d49",
+          "bytes": 40000000
+        },
+        {
+          "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-003",
+          "sha256": "23f01608539b016ad580199784ea299db96e76780dee9a0e6ddd96724aee3710",
+          "bytes": 40000000
+        },
+        {
+          "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-004",
+          "sha256": "efcebaafb56708f8fb6f903c1a1f8d0293a31a77c1121542fc081c2da95dda98",
+          "bytes": 40000000
+        },
+        {
+          "path": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-005",
+          "sha256": "d7d39a8166210faa674ce8b6e5b728eacb757eeff2d2d36c448b452e3be198ae",
+          "bytes": 32643293
+        }
+      ],
+      "data_rows": 11325741
+    }
+  ]
+}

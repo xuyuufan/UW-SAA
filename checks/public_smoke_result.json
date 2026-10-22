@@ -29,46 +29,46 @@
               "horizons": [
                 0
               ],
+              "mean_relocations": 18.75,
               "sequence": [
                 1
-              ],
-              "weighted_saa_Rraw": 18.75
+              ]
             },
             {
               "horizons": [
                 2
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 2
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 5
               ],
+              "mean_relocations": 18.75,
               "sequence": [
                 3
-              ],
-              "weighted_saa_Rraw": 18.75
+              ]
             },
             {
               "horizons": [
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.875,
               "sequence": [
                 6
-              ],
-              "weighted_saa_Rraw": 18.875
+              ]
             }
           ],
           "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
@@ -110,23 +110,23 @@
                 5,
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4,
                 4,
                 5
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 6,
                 5,
                 6
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             }
           ],
           "committed_sequence": [
@@ -171,19 +171,19 @@
                 5,
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.875,
               "sequence": [
                 6
-              ],
-              "weighted_saa_Rraw": 18.875
+              ]
             }
           ],
           "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
@@ -222,19 +222,19 @@
                 5,
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.875,
               "sequence": [
                 6
-              ],
-              "weighted_saa_Rraw": 18.875
+              ]
             }
           ],
           "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
@@ -273,19 +273,19 @@
                 5,
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.875,
               "sequence": [
                 6
-              ],
-              "weighted_saa_Rraw": 18.875
+              ]
             }
           ],
           "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",
@@ -353,46 +353,46 @@
               "horizons": [
                 0
               ],
+              "mean_relocations": 18.75,
               "sequence": [
                 1
-              ],
-              "weighted_saa_Rraw": 18.75
+              ]
             },
             {
               "horizons": [
                 2
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 2
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 5
               ],
+              "mean_relocations": 18.75,
               "sequence": [
                 3
-              ],
-              "weighted_saa_Rraw": 18.75
+              ]
             },
             {
               "horizons": [
                 10
               ],
+              "mean_relocations": 18.625,
               "sequence": [
                 4
-              ],
-              "weighted_saa_Rraw": 18.625
+              ]
             },
             {
               "horizons": [
                 20
               ],
+              "mean_relocations": 18.875,
               "sequence": [
                 6
-              ],
-              "weighted_saa_Rraw": 18.875
+              ]
             }
           ],
           "continuation": "fixed Minmax rule on synthetic complete priority ranks; surrogate, not an unbiased online cost estimate",

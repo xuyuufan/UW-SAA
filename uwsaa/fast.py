@@ -1,4 +1,4 @@
-"""Semantics-preserving indexed completion for the frozen public TW selector."""
+"""Indexed completion scoring for the frozen public UWSAA selector."""
 
 from __future__ import annotations
 
@@ -127,7 +127,7 @@ class UWSAAFastSelector(UWSAASelectorBase):
         ranks, occupied, k, original_n, remaining_count, _visible_count, _stacks, _unknown = _public_state(frame)
         proposals = _candidate_sequences(frame, self.solver, self.runtime, self.gp_rule)
         if set(proposals) != set(HORIZONS) or not proposals[20]:
-            raise ValueError("PLAN-056 candidate menu is missing a registered horizon")
+            raise ValueError("UWSAA candidate menu is missing a registered horizon")
         unique: dict[tuple[int, ...], list[int]] = {}
         for horizon in HORIZONS:
             unique.setdefault(proposals[horizon], []).append(horizon)
@@ -142,7 +142,7 @@ class UWSAAFastSelector(UWSAASelectorBase):
 
         scenarios, seed, scenario_remaining_count = _scenarios(frame)
         if len(scenarios) != 8:
-            raise AssertionError("PLAN-056 must generate K=2 common scenarios for all four widths")
+            raise AssertionError("UWSAA must generate two common scenarios for all four widths")
         width_weights = {width: 0.25 for width in WINDOWS}
         max_tiers = int(getattr(frame, "max_tiers"))
         scored: dict[tuple[int, ...], float] = {}
@@ -163,7 +163,7 @@ class UWSAAFastSelector(UWSAASelectorBase):
             "solver": self.solver, "policy": self.method,
             "selected_h": int(selected_h),
             "candidate_scores": [
-                {"sequence": list(sequence), "horizons": unique[sequence], "weighted_saa_Rraw": score}
+                {"sequence": list(sequence), "horizons": unique[sequence], "mean_relocations": score}
                 for sequence, score in sorted(scored.items(), key=lambda item: min(unique[item[0]]))
             ],
             "window_weights": {str(width): float(width_weights[width]) for width in WINDOWS},

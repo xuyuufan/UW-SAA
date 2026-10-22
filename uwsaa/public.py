@@ -1,4 +1,4 @@
-"""Final public UWSAA scenario sampler and candidate-sequence support."""
+"""Public UWSAA scenario sampling and candidate-sequence support."""
 from __future__ import annotations
 import hashlib,json
 from typing import Any,Mapping,Sequence
@@ -10,6 +10,7 @@ from environment.public_frame import require_public_frame
 
 WINDOWS=(2,5,10,20)
 SCENARIOS_PER_WINDOW=2
+# Historical sampling namespace is an exact compatibility token, not a method label.
 NAMESPACE="plan056_tw_saa_public_scenarios_v1"
 
 def _public_state(frame: object) -> tuple[np.ndarray, np.ndarray, int, int, int, int, list[list[Any]], list[Any]]:
@@ -127,7 +128,7 @@ def _candidate_sequences(
             from baseline.minmax import propose
 
         return {h: (int(propose(frame, h)[0]),) for h in HORIZONS}
-    raise ValueError(f"unknown PLAN-056 solver {solver!r}")
+    raise ValueError(f"unknown public UWSAA solver {solver!r}")
 
 class UWSAASelectorBase:
     """Shared public validation and EG group commitment for the final fast selector."""

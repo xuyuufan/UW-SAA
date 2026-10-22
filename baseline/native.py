@@ -7,7 +7,7 @@ from environment.noise_aware_forecast import HORIZONS
 from environment.public_frame import truncate_public_frame, public_frame_to_legacy_state
 from baseline.em import select_em_destination
 from baseline.eri_eg_public import select_eri20_destination
-from baseline import eri_eg_plan059
+from baseline import eri_eg
 from baseline.gp import select_destination as gp_select_destination
 from baseline import chain, minmax
 
