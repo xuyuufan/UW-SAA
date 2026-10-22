@@ -1,0 +1,36 @@
+{
+  "format_version": 1,
+  "logical_file": "uwsaa_cost_decision_select_seconds.csv.gz",
+  "encoding": "gzip-compressed CSV; concatenate parts in listed order to reassemble",
+  "rows": 11325741,
+  "payload_bytes": 192643293,
+  "payload_sha256": "d543e3069a9124676b03d2ca0c2dda0bdb4c3d0f7418f5230146216e2e304ae0",
+  "source_sha256": "9d0634ff47ff6868cb5dc4feaf824c4beb0bcf83142c90aab9b5f8525845423d",
+  "parts": [
+    {
+      "filename": "uwsaa_cost_decision_select_seconds.csv.gz.part-001",
+      "bytes": 40000000,
+      "sha256": "4676845d2c81bb37bffa90f5a23ae1aa90db0583a0ed10bf012ee62df5640e15"
+    },
+    {
+      "filename": "uwsaa_cost_decision_select_seconds.csv.gz.part-002",
+      "bytes": 40000000,
+      "sha256": "4c3b17e64ce780201bd558f891dea0ca3023606ffabe5a3fd6c95cf8a7514d49"
+    },
+    {
+      "filename": "uwsaa_cost_decision_select_seconds.csv.gz.part-003",
+      "bytes": 40000000,
+      "sha256": "23f01608539b016ad580199784ea299db96e76780dee9a0e6ddd96724aee3710"
+    },
+    {
+      "filename": "uwsaa_cost_decision_select_seconds.csv.gz.part-004",
+      "bytes": 40000000,
+      "sha256": "efcebaafb56708f8fb6f903c1a1f8d0293a31a77c1121542fc081c2da95dda98"
+    },
+    {
+      "filename": "uwsaa_cost_decision_select_seconds.csv.gz.part-005",
+      "bytes": 32643293,
+      "sha256": "d7d39a8166210faa674ce8b6e5b728eacb757eeff2d2d36c448b452e3be198ae"
+    }
+  ]
+}

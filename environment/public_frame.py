@@ -188,7 +188,7 @@ def truncate_public_frame(
     return replace(frame, observation=prefix)
 
 def public_prefix(frame: object, horizon: int) -> object:
-    """Validate and censor a full public frame using PLAN-051's H rule."""
+    """Validate and censor a full public frame to a registered horizon."""
     if isinstance(horizon, bool) or int(horizon) != horizon or int(horizon) not in HORIZONS:
         raise ValueError(f"horizon must be one of {HORIZONS}")
     from environment.public_frame import require_public_frame

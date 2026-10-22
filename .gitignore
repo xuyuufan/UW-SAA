@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+local-archive/
+reproducibility/results/
+/reproducibility/data/uwsaa_trajectory_endpoints.csv.gz
+analysis/
+/results/uwsaa-benchmark-evaluation/data/.*.tmp

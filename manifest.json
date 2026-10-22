@@ -1,5 +1,5 @@
 {
-  "bundle_id": "uw_saa_clean_public_v2",
+  "bundle_id": "uwsaa_public_core_v1",
   "included_file_count": 36,
   "excluded_scope": [
     "Unrelated research methods and experiment runners",
@@ -33,7 +33,7 @@
           ]
         }
       ],
-      "final_sha256": "9bacb0df06e2e5b414e0f611d87b1984131fb79dd827ee44fb03d1f05db9943c"
+      "final_sha256": "faa9791468667d66adc9e7c33bd13c95ef689fd63f54538758382d6d1ad7d358"
     },
     {
       "destination_path": "baseline/chain.py",
@@ -48,7 +48,7 @@
           ]
         }
       ],
-      "final_sha256": "9817cb4b0bd82248aa0f9ca7fd3e81a7a5e510a7748e46061f21a9dc65d713c2"
+      "final_sha256": "4d2187eda0db5fd70dab94cb60eade4483ebe9601696d25893206cf07558bad7"
     },
     {
       "destination_path": "baseline/common.py",
@@ -63,7 +63,7 @@
           ]
         }
       ],
-      "final_sha256": "e7735f6fd86956325fc78b3044ff8320385013ebdef41639d618bc72a70b3007"
+      "final_sha256": "170423f4e4d00eec4c902d1f0f0c5c7d32f80e18508d96a7b3b50099c1a1040f"
     },
     {
       "destination_path": "baseline/em.py",
@@ -80,10 +80,10 @@
           ]
         }
       ],
-      "final_sha256": "b04e1c04ed2dc0d7256f9e87bf1d625c1d7da884cb8490dbaa1dbe5ace9f9acb"
+      "final_sha256": "7609c8587adcc3f04928ef4ae380f63d571e652d8f621247d89107b73b7a69d9"
     },
     {
-      "destination_path": "baseline/eri_eg_plan059.py",
+      "destination_path": "baseline/eri_eg.py",
       "operation": "symbol_extract_and_adapt",
       "sources": [
         {
@@ -96,7 +96,7 @@
           ]
         }
       ],
-      "final_sha256": "a65a77ee4927278d8268823d176283f84d2ce3aaf9d248aa22107199b01c9b4d"
+      "final_sha256": "b073d616b87741b6ecf9690eae4d2ad50f190efc11cef40fbd53854bb7770dfb"
     },
     {
       "destination_path": "baseline/eri_eg_public.py",
@@ -127,7 +127,7 @@
           ]
         }
       ],
-      "final_sha256": "c94af21d3da87c660701be46956461dda9d8dc721f2c0eb28e1d9d9368c9d112"
+      "final_sha256": "57d3ab6474bc2448dea31354aa042d119068a4d372d5ccdfc7aee7426531e465"
     },
     {
       "destination_path": "baseline/gp.py",
@@ -152,7 +152,7 @@
           ]
         }
       ],
-      "final_sha256": "a45996040fe0c306b3dc7b3c80363958c723fe8b6c8cfbfd54e1c0c94763b6ae"
+      "final_sha256": "9a8f4d15bfa7f57c3295f75776c34d1eef1a49e7133dda1e370ab66b5cdfb976"
     },
     {
       "destination_path": "baseline/minmax_core.py",
@@ -167,7 +167,7 @@
           ]
         }
       ],
-      "final_sha256": "546ed72010ad19478b26d0ab5338f26481c9b282a6b5e6124b94166760436a29"
+      "final_sha256": "7b964cec91f28c31dd02f710b82b081b9ded8dfd4fd083e12821877ad05f2428"
     },
     {
       "destination_path": "baseline/minmax.py",
@@ -182,7 +182,7 @@
           ]
         }
       ],
-      "final_sha256": "19c760ad4c9dfc7a3e0b2bd14667207ba2091b2855a3c597da02bd2c23cf0b46"
+      "final_sha256": "eaf14ff4281030566377dc7f82ddbef3350dff90adf704bdcdc581fd6ff6dd90"
     },
     {
       "destination_path": "baseline/native.py",
@@ -224,7 +224,7 @@
           ]
         }
       ],
-      "final_sha256": "800d5a7af0631d97aa9dd856608e2ae7ab1ff7925547bf9798a2687a9fb99c4d"
+      "final_sha256": "106d158a1178894454297d55068eee459508914210fae092caebfd3c6a67616f"
     },
     {
       "destination_path": "baseline/sequence_commit.py",
@@ -255,13 +255,13 @@
           ]
         }
       ],
-      "final_sha256": "7b3b341fe252cc3cef20faa01ea3f82a2142e49717d0599a143e20c8d8d427ad"
+      "final_sha256": "ef95406c98173fedb64826e60877ee56d9ead74aec750a56cbfd6cceef252934"
     },
     {
       "destination_path": "checks/environment_smoke_result.json",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "c93b48a51fc95c1be21c7c975387fbb074fbb279b4b5ab4b43dc99fbb97c19ca"
+      "final_sha256": "3927188ac35f08bba2ec4d403b79af599a38dbe67d8f9873832e77e0a0580dec"
     },
     {
       "destination_path": "checks/environment_smoke.py",
@@ -273,31 +273,31 @@
       "destination_path": "checks/public_smoke_result.json",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "b61624e76ac344bec7b34618722ea78441f6fc0d161e832bfe4ef44415f47238"
+      "final_sha256": "068d228770468f80dfd6d65d5db9996602eb58e5d402c36c029c9cb37b208d59"
     },
     {
       "destination_path": "checks/public_smoke.py",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "bd382a29f45ad8566201e4ee3967192072a9fdab70d0a4ddb2c9c4f22c694aa6"
+      "final_sha256": "278ee2c7c8350c797783f78a8b2ed2893f2f7ab8c3475c7bb3975321e5158615"
     },
     {
       "destination_path": "checks/semantic_parity.json",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "813e69e85a32be9656de7e728a4970cbff073895fdc28ada645dfc3747dc4036"
+      "final_sha256": "546aa028c9c9097dd78c7a7eef55c49d35922e1dac1952e3a7b81d589485dc38"
     },
     {
       "destination_path": "checks/verification.json",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "f621312184af342e770eb45307cdceed0cd41b6e831b71400cf6b3586eb5f2b4"
+      "final_sha256": "1c5aedb8a69717aeed192661e1f5218ef5930b94bcdaab24c46413c20b1fec6a"
     },
     {
       "destination_path": "checks/verify_bundle.py",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "3ac3188761127be2bdd6afe0d37326b5171db4e4026a550c59ce0836ce115813"
+      "final_sha256": "478bf637a85e8b084ec1d700633d8ed3632b5fe08782140dede4fc5e9dfc95a8"
     },
     {
       "destination_path": "checks/verify_semantic_parity_record.py",
@@ -341,7 +341,7 @@
           ]
         }
       ],
-      "final_sha256": "25f77cd47327c30384b8a549cdcf46eb0aea9694594ab1a671c4306bc1e1fdae"
+      "final_sha256": "3d27585bad65f40d1680344b948091812020b6a4c382c41c72cb164dfbdf7cf5"
     },
     {
       "destination_path": "data/caserta_table2_840.json",
@@ -356,7 +356,7 @@
           ]
         }
       ],
-      "final_sha256": "c28c975c8026a59a1b7995f8afe8a41e9e48b469835b9d2227a9bbe7a5371a12"
+      "final_sha256": "bb471dc334ad186523bcbd436bbe103dd81e517554999d35132a5e0692c98448"
     },
     {
       "destination_path": "environment/__init__.py",
@@ -377,7 +377,7 @@
           ]
         }
       ],
-      "final_sha256": "0d31ba36a3095c6d57c65e6b41a4a72997a4fe20feac2c8a23be61e575cf8369"
+      "final_sha256": "5755459bd5a6000ca0d61f90070aad865b40b38dfe3104094788473fa651acdb"
     },
     {
       "destination_path": "environment/online_crp.py",
@@ -439,7 +439,7 @@
           ]
         }
       ],
-      "final_sha256": "9c2075c1e29cec37c0c74bbbeabc683c5b693c70be9f9e2270ed84ba29b71f85"
+      "final_sha256": "8a0428a110abeea287912d71e99c9ce17f5d6ac2972bea3a4c10df50555f3665"
     },
     {
       "destination_path": "environment/public_history.py",
@@ -457,7 +457,7 @@
           ]
         }
       ],
-      "final_sha256": "9e1d379610119e466c231d19cfe67b4ec2ce3f5317f5561f1b9ceafc0a52acf3"
+      "final_sha256": "ab02a44343c90cee702aa7f3ee32957b6f0bd002dea50de8c8a5c8b1ba3f5a48"
     },
     {
       "destination_path": "environment/sequence_transition.py",
@@ -474,19 +474,19 @@
           ]
         }
       ],
-      "final_sha256": "be28ba4a86b7701f645265e555b373e4b509a27ddc666abd8792e3438d784318"
+      "final_sha256": "888482ebd3a8ca741407e89632075fd2d542b7c0bdff22eafe63e793c75e689f"
     },
     {
       "destination_path": "README.md",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "61aaf025528fe2a5ecb60f0660828ec402eb4f5d17119c42033d06b5b6f588f1"
+      "final_sha256": "4ee442d3f3dd35b7ff6d108c7442dc7d784e4ca77e57109dfa38964c4740d6b6"
     },
     {
       "destination_path": "requirements.txt",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "26d58e42cca83c41d14253ddd5bc33ec22da6c2a3b40fcc93914eff5e0c5ed34"
+      "final_sha256": "e5f223cf307a68a2b0f25aba3e415f62caa06e2fdd7cf008f901af18dd6e31aa"
     },
     {
       "destination_path": "uwsaa/__init__.py",
@@ -498,7 +498,7 @@
       "destination_path": "uwsaa/entrypoint.py",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "70ffe92e9e9a422e339f55d2d817ee1ea8a578f4cc81a01727159ce2e7306513"
+      "final_sha256": "f7c0301a7420952dcc5ab7b9b3a602ed489eb509bc86b2126672c8daa18faf47"
     },
     {
       "destination_path": "uwsaa/fast.py",
@@ -509,12 +509,12 @@
           "source_sha256": "c2e1a079f56116ccd62038a854f23f25140c57c04186a5c6f171c276987ff638",
           "source_sha256_after_verification": "c2e1a079f56116ccd62038a854f23f25140c57c04186a5c6f171c276987ff638",
           "symbols": [
-            "TWUniformFastSelector renamed UWSAAFastSelector",
+            "UWSAAFastSelector adapter; indexed Minmax completion",
             "indexed Minmax completion"
           ]
         }
       ],
-      "final_sha256": "74d5e2ea048e39b87a2ff8d9fe931ba25996052b9a95c7e28479ca1ce4f5ad10"
+      "final_sha256": "d23f5cda14441075e27581c392d3201bb2fa797dbe3429c3653f4f80f5c14d50"
     },
     {
       "destination_path": "uwsaa/public.py",
@@ -534,7 +534,7 @@
           ]
         }
       ],
-      "final_sha256": "670e9a71c9aa3f476eda7a4dab3d6b8f986437cb23f53102412a611caa283b40"
+      "final_sha256": "3d538f424be4cd96d51b75f1f8e98eec0df4cf626cf31a19fae580b7ee502cdd"
     }
   ],
   "provenance_note": "Source paths use stable neutral identifiers because the originating workspace is not part of this public bundle. Source SHA-256 fingerprints, extraction operations, and symbol summaries are retained.",

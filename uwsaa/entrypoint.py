@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Mapping
 from uwsaa.fast import UWSAAFastSelector
 from baseline.native import SOLVERS,FixedHorizonActor,SingleStepPolicy
-from baseline import eri_eg_plan059,chain,minmax
+from baseline import eri_eg,chain,minmax
 from baseline.em import select_em_destination
 from baseline.eri_eg_public import select_eri20_destination
 from environment.public_frame import truncate_public_frame,public_frame_to_legacy_state
@@ -14,7 +14,7 @@ from baseline.gp import select_destination as gp_select_destination
 ROOT=Path(__file__).resolve().parents[1]
 
 def load_runtime()->dict[str,Any]:
-    return {"truncate_public_frame":truncate_public_frame,"public_frame_to_legacy_state":public_frame_to_legacy_state,"em_select":select_em_destination,"eri_select":select_eri20_destination,"eri_eg":eri_eg_plan059}
+    return {"truncate_public_frame":truncate_public_frame,"public_frame_to_legacy_state":public_frame_to_legacy_state,"em_select":select_em_destination,"eri_select":select_eri20_destination,"eri_eg":eri_eg}
 
 def load_gp_rule()->dict[str,Any]:
     from baseline.gp_expression import Node

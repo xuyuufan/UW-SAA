@@ -1,0 +1,12 @@
+{
+  "source": "development fixed-horizon selection evidence",
+  "selection_rule": "selected once from the registered development horizon grid; never selected on Caserta main or ablation outcomes",
+  "selected_h_by_solver": {
+    "EM": 20,
+    "GP": 20,
+    "ERI": 10,
+    "EG": 20,
+    "Chain": 20,
+    "Minmax": 20
+  }
+}

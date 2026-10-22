@@ -1,0 +1,221 @@
+{
+  "manifest_version": 1,
+  "scope": "Scenario and rollout ablation results, accepted bootstrap evidence, and descriptive P5 timing outputs.",
+  "public_method_name": "UWSAA",
+  "evidence_boundary": {
+    "scenario_primary_rows": 49,
+    "registered_solvers": [
+      "EM",
+      "GP",
+      "ERI",
+      "EG",
+      "Chain",
+      "Minmax",
+      "MEAN6"
+    ],
+    "registered_contrasts": 7,
+    "condition_effect_rows": 42,
+    "geometry_outcome_rows": 7203,
+    "trajectory_timing_rows": 317520,
+    "decision_timing_rows": 11325741,
+    "p5_timing_interpretation": "descriptive on-policy; no confidence intervals or hardware-load control",
+    "bootstrap_recomputed": false,
+    "private_absolute_source_paths_in_manifest": false
+  },
+  "compatibility_and_label_mappings": {
+    "contrast_id_column": "Legacy contrast IDs are retained for verifier compatibility; contrast_label, candidate, and baseline are reader-facing UWSAA labels.",
+    "contrast_ids": {
+      "P1_K1_vs_K8": "UWSAA K=8 rollout vs K=1 rollout",
+      "P1_K2_vs_K8": "UWSAA K=8 rollout vs K=2 rollout",
+      "P1_K4_vs_K8": "UWSAA K=8 rollout vs K=4 rollout",
+      "P1_K16_vs_K8": "UWSAA K=8 rollout vs K=16 rollout",
+      "P3_LB1_vs_K8_rollout": "UWSAA K=8 LB1 vs K=8 rollout",
+      "P4_LB1_vs_K1_rollout": "UWSAA K=1 LB1 vs K=1 rollout",
+      "absolute_interaction": "Absolute interaction: LB1 effect at K=1 minus K=8"
+    },
+    "arm_labels": {
+      "K8 rollout": "UWSAA_K8_ROLLOUT",
+      "K=1 rollout": "UWSAA_K1_ROLLOUT",
+      "K1 rollout": "UWSAA_K1_ROLLOUT",
+      "K=2 rollout": "UWSAA_K2_ROLLOUT",
+      "K=4 rollout": "UWSAA_K4_ROLLOUT",
+      "K=16 rollout": "UWSAA_K16_ROLLOUT",
+      "P3 K8 LB1": "UWSAA_K8_LB1",
+      "P4 K1 LB1": "UWSAA_K1_LB1",
+      "BEST_FIXED_H": "UWSAA_BEST_FIXED_H"
+    },
+    "condition_family_labels": {
+      "SS": "subset_shuffle",
+      "DP": "delayed_positions",
+      "TW": "time_window_shuffle",
+      "CLEAN": "clean"
+    },
+    "metric_headers": {
+      "R_raw": "relocations",
+      "R_over_N": "relocations_per_container",
+      "R_raw_mean": "relocations_mean",
+      "R_over_N_mean": "relocations_per_container_mean"
+    },
+    "plot_units": "Pairwise effects use source relative-reduction fractions rendered as percent; absolute interaction uses source values in relocations without rescaling.",
+    "confidence_intervals": "Ordinary 95% intervals and source adjusted levels are shown per panel; adjusted levels differ by registered contrast.",
+    "decision_timing_reassembly": "py reproducibility/data/reassemble_endpoints.py --index results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.parts.json --output <path>/uwsaa_cost_decision_select_seconds.csv.gz"
+  },
+  "source_artifacts": [
+    {
+      "logical_name": "scenario_ablation_primary_contrasts",
+      "source_sha256": "11b6c45e61dfc9e8446bf97faf148ed4d3e1d3c125312a8ebe70d8ba7df766a3",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv",
+      "published_sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c",
+      "published_bytes": 19815,
+      "data_rows": 49
+    },
+    {
+      "logical_name": "scenario_ablation_condition_effects",
+      "source_sha256": "b106024d83f1cbf54d33e1320ab5fe6a906ff48c042d5c8fa1582abab6c03b2a",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_condition_effects.csv",
+      "published_sha256": "6c7d8a76ff5f30c800250ec5d9879cf826447a4f2333217131e964c30cf464e2",
+      "published_bytes": 29436,
+      "data_rows": 42
+    },
+    {
+      "logical_name": "scenario_ablation_geometry_outcomes",
+      "source_sha256": "d3589bdf1505ac2c7f40014d87b23db0a1aff6102e357aea7b898613d081ca7f",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_geometry_outcomes.csv",
+      "published_sha256": "07669d4a5937cb3525ebb1f63eae9ed367c5b4afda391b5f10f4913373e3806a",
+      "published_bytes": 716508,
+      "data_rows": 7203
+    },
+    {
+      "logical_name": "uwsaa_cost_summary_by_solver_arm",
+      "source_sha256": "15604dc37a40e3c1b8d1197b129d1d0e56285eed229bb06ae42b9b23e6575d4c",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv",
+      "published_sha256": "d543e731ce8439d6c96d4f4883ca3cfe69be8acbcfc702d52242e9291d909824",
+      "published_bytes": 29410,
+      "data_rows": 54
+    },
+    {
+      "logical_name": "uwsaa_cost_by_registered_condition",
+      "source_sha256": "259fe39d440f481e42f32cc7dc9621b06ae9f0dac2ea6e1dc00c789f3fa88e30",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_by_registered_condition.csv",
+      "published_sha256": "0295db8a4dbb99b53f68ba7abb5d0973c81067a25a0414ec5c0b950a03a07f95",
+      "published_bytes": 97944,
+      "data_rows": 378
+    },
+    {
+      "logical_name": "uwsaa_cost_layout_seven_condition_sums",
+      "source_sha256": "09ba5e2752160c5f3b6b6d0cdd36e5c658c90b2d110fcd338181e4168c7053f4",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_layout_seven_condition_sums.csv",
+      "published_sha256": "dd18a0ad27cda37f40e2f623c0846aee6c8437f286595b5ef845cae1369297c7",
+      "published_bytes": 12047971,
+      "data_rows": 45360
+    },
+    {
+      "logical_name": "uwsaa_cost_trajectory_rows",
+      "source_sha256": "c73ae5b3dea014cafb72e5ede159ae5745c4dcd1bdb1279f5ec75ff6adc0bc0a",
+      "published_file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_trajectory_rows.csv.gz",
+      "published_sha256": "3492acc00b44b985eeb171ecce571b3ab23d061bc05c008222a6a8aca6d04582",
+      "published_bytes": 24861791,
+      "data_rows": 317520
+    },
+    {
+      "logical_name": "paired_analysis_evidence",
+      "source_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
+      "published_file": "reproducibility/artifacts/scenario-ablation/uwsaa_paired_analysis.json",
+      "published_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
+      "published_bytes": 2033585,
+      "source_byte_preserved": true
+    },
+    {
+      "logical_name": "bootstrap_indices_evidence",
+      "source_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "published_file": "reproducibility/artifacts/scenario-ablation/uwsaa_bootstrap_indices.npz",
+      "published_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "published_bytes": 8085146,
+      "source_byte_preserved": true
+    }
+  ],
+  "decision_timing_split_artifact": {
+    "logical_name": "uwsaa_cost_decision_select_seconds",
+    "source_sha256": "9d0634ff47ff6868cb5dc4feaf824c4beb0bcf83142c90aab9b5f8525845423d",
+    "published_index": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.parts.json",
+    "published_index_sha256": "1ebe9f8fc30896c5dcb8220e2d38cc1746b8bbebbd241786334f79d3ddc6f1eb",
+    "payload_sha256": "d543e3069a9124676b03d2ca0c2dda0bdb4c3d0f7418f5230146216e2e304ae0",
+    "payload_bytes": 192643293,
+    "data_rows": 11325741,
+    "parts": [
+      {
+        "file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-001",
+        "bytes": 40000000,
+        "sha256": "4676845d2c81bb37bffa90f5a23ae1aa90db0583a0ed10bf012ee62df5640e15"
+      },
+      {
+        "file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-002",
+        "bytes": 40000000,
+        "sha256": "4c3b17e64ce780201bd558f891dea0ca3023606ffabe5a3fd6c95cf8a7514d49"
+      },
+      {
+        "file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-003",
+        "bytes": 40000000,
+        "sha256": "23f01608539b016ad580199784ea299db96e76780dee9a0e6ddd96724aee3710"
+      },
+      {
+        "file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-004",
+        "bytes": 40000000,
+        "sha256": "efcebaafb56708f8fb6f903c1a1f8d0293a31a77c1121542fc081c2da95dda98"
+      },
+      {
+        "file": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_decision_select_seconds.csv.gz.part-005",
+        "bytes": 32643293,
+        "sha256": "d7d39a8166210faa674ce8b6e5b728eacb757eeff2d2d36c448b452e3be198ae"
+      }
+    ]
+  },
+  "generated_figures": [
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_pairwise.png",
+      "sha256": "3fed0a43c676fc112fe5a54350306a3e973c12c854416cb890ef9075327e8261",
+      "bytes": 255405,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_pairwise.pdf",
+      "sha256": "31bd91ef4a9a50a33b42b34e2b334c9122abfe3913bcd25fac9abd6f58678a60",
+      "bytes": 57407,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_absolute_interaction.png",
+      "sha256": "33f800c3fb348d9af0a84b947cdf8bbeadc485f174f21d6347ad1b5a5a6b0b1a",
+      "bytes": 90691,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_scenario_ablation_absolute_interaction.pdf",
+      "sha256": "efa8a8c54faa5f2bb4508af44279288b51e966b0af163a29210c3fbda1157233",
+      "bytes": 41956,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv"
+    },
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_cost_wall_time_ratio.png",
+      "sha256": "10844bbd1af349ab5887e95fb443f260ddfcb4bfdc1781ad1b35b94d07b0124b",
+      "bytes": 213476,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv"
+    },
+    {
+      "file": "results/uwsaa-benchmark-evaluation/figures/uwsaa_cost_wall_time_ratio.pdf",
+      "sha256": "1c7c693935dd4401b44ec70405f82668badb495e968198662c543688992aeedd",
+      "bytes": 40179,
+      "generated_from": "results/uwsaa-benchmark-evaluation/data/uwsaa_cost_summary_by_solver_arm.csv"
+    }
+  ],
+  "figure_generator": {
+    "file": "results/uwsaa-benchmark-evaluation/scripts/generate_scenario_figures.py",
+    "sha256": "c610b08a26e35dfc32401d6d1796dc0340acdfdc79d47678c8e6218cc55f6458"
+  },
+  "numeric_text_validation": {
+    "primary_contrast_values": "49 rows x 7 estimate/CI fields preserved exactly; independently verified by package verifier.",
+    "decision_timing_values": "11,325,741 rows; decision_index, select_seconds, select_ms compared row by row to source and matched exactly.",
+    "trajectory_timing_values": "317,520 rows; horizon, decision_count, actor and wall-time values compared row by row to source and matched exactly.",
+    "other_csvs": "Transformations changed only public labels and metric headers; source numeric strings were written through without numeric conversion."
+  }
+}

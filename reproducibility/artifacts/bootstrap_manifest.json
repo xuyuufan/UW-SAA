@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "artifact_id": "caserta_main_bootstrap_draws",
+      "path": "reproducibility/artifacts/bootstrap/caserta-main-bootstrap-draws.npz",
+      "source_sha256": "66ae35394e37bbe67e5e031a31a19ef9aae815159d45206155463c4832882c2e",
+      "sha256": "66ae35394e37bbe67e5e031a31a19ef9aae815159d45206155463c4832882c2e",
+      "bytes": 9161044,
+      "description": "Accepted Caserta MAIN bootstrap draws used for the published paired summaries."
+    },
+    {
+      "artifact_id": "caserta_ablation_bootstrap_draws",
+      "path": "reproducibility/artifacts/bootstrap/caserta-ablation-bootstrap-draws.npz",
+      "source_sha256": "51ab96003dd703f24ce803a66261d257a18cc8138185f3f6d245211b61346ba8",
+      "sha256": "51ab96003dd703f24ce803a66261d257a18cc8138185f3f6d245211b61346ba8",
+      "bytes": 17509709,
+      "description": "Accepted Caserta ablation bootstrap draws used for the published paired summaries."
+    },
+    {
+      "artifact_id": "deterministic_single_bootstrap_indices",
+      "path": "reproducibility/artifacts/bootstrap/uwsaa-deterministic-single-bootstrap-indices.npz",
+      "source_sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "sha256": "87177f786a404ab5f9b0ee02bb91b9f0741cfca35f659e4ebe81e19088ab8344",
+      "bytes": 8085146,
+      "description": "Bootstrap index array for the deterministic-single evaluation; the public label distinguishes it from K=1 rollout."
+    }
+  ]
+}

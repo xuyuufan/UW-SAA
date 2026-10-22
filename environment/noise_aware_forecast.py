@@ -1,4 +1,4 @@
-"""Private forecast generation and detached public observations for PLAN-036."""
+"""Evaluator forecast generation and detached public observations."""
 
 from __future__ import annotations
 

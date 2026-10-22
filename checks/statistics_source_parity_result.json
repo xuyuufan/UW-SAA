@@ -1,0 +1,25 @@
+{
+  "schema": "uwsaa_statistics_source_parity_v1",
+  "status": "PASS",
+  "scope": "synthetic paired matrix; exact estimator and bootstrap-index comparison; no experiment run",
+  "source_file_ids_sha256": {
+    "registered_paired_macro_estimator": "492a16cc1a4aa715a725b44b814d79e02c152416ef76938ef8f83d8913fff5e2"
+  },
+  "public_file_sha256": {
+    "reproducibility/statistics.py": "10486cf67bdcacfaee2a8533e10dc9a518fb00f6f59ed24c5fc94bbc8da12d8f"
+  },
+  "bootstrap_seed": 202610195903,
+  "bootstrap_draws": 10000,
+  "bootstrap_indices_match": true,
+  "solver_effects_checked": 6,
+  "family_solver_effects_checked": 18,
+  "clean_one_sided_quantiles_checked": [
+    0.05,
+    0.008333333333333333
+  ],
+  "estimate_mean6": 0.08785111748222445,
+  "mean6_interval": [
+    0.0878184321505062,
+    0.08788299286482985
+  ]
+}

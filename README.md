@@ -1,91 +1,113 @@
-# Uniform-Width Sample-Average Approximation (UW-SAA)
+# UW-SAA trajectory benchmark
 
-UW-SAA is a public-state decision method for container relocation. This repository exposes the implementation through the API identifier `UWSAA` and includes six solver baselines with `NATIVE20` comparison policies.
+This repository contains the public UW-SAA decision method, its six solver baselines, the Caserta input set, a complete trajectory endpoint runner, the registered evaluation protocol, and endpoint-level results. The public method identifier is `UWSAA`; all result metrics use the names `relocations` and `relocations_per_container`.
 
-For a selected solver, UW-SAA obtains destination sequences at horizons 0, 2, 5, 10, and 20. It merges identical sequences and scores the remaining candidates on eight synthetic completion scenarios: two scenarios for each window width 2, 5, 10, and 20, with equal aggregate weight per width. Each completion uses a fixed Minmax continuation, and the score is the weighted mean relocation count. Candidates share the same scenarios. The policy receives a detached public decision frame rather than the episode or evaluator-only retrieval sequence.
+The public results package is [UWSAA benchmark evaluation](results/uwsaa-benchmark-evaluation/README.md). It includes condition-level outcomes, accepted comparisons, figures in PNG and PDF, and the scripts used to regenerate result tables and figures. The canonical trajectory endpoints and source mapping are described in [the endpoint data guide](reproducibility/data/README.md) and [the data inventory](reproducibility/data_inventory.json). The [public bundle manifest](reproducibility/public_bundle_manifest.json) records SHA-256 hashes and byte sizes for every published file.
 
-## Repository contents
+The registered matrix, pairing, timeout, and confidence-interval rules are described in [the public protocol](reproducibility/PROTOCOL.md).
 
-```text
-uwsaa/        UW-SAA selector, candidate generation, and policy entrypoint
-baseline/     EM, GP, ERI, EG, Chain, Minmax, and Native20 adapters
-environment/  OnlineCRP environment and public observation/frame contracts
-data/         Caserta Table 2 input data
-configs/      UW-SAA settings and the GP rule used by the entrypoint
-checks/       small correctness and interface checks
-```
+## Method and solver labels
 
-## Install and run
+For the selected solver, UWSAA obtains destination sequences at horizons 0, 2, 5, 10, and 20. It merges identical sequences and evaluates the remaining candidates against eight synthetic completion scenarios: two scenarios at each window width 2, 5, 10, and 20. Each width has equal total weight. The same scenarios score every candidate, using the fixed Minmax continuation. Policies receive a detached public decision frame; the future retrieval sequence stays with the environment and forecast provider.
 
-The checks were exercised with Python 3.12 and NumPy 2.4.4. The required Python package is listed in `requirements.txt`.
+The registered solver labels are EM, GP, ERI, EG, Chain, and Minmax. `relocations` is the total relocation count, and `relocations_per_container` is that count divided by the initial number of containers. These names map to historical source fields `R_raw` and `R_over_N`. The solver label `ERI` is an algorithm name; it is unrelated to the historical letter used in metric field names.
 
-Create and activate a virtual environment, then install the requirements:
+## Install and check
+
+The package uses Python 3.12 and the pinned dependency in `requirements.txt`.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-```
-
-On Windows PowerShell, activate the environment with:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-Run these commands from the repository root:
-
-```bash
 python -B checks/public_smoke.py
 python -B checks/environment_smoke.py
+python -B checks/trajectory_runner_smoke.py
+python -B checks/aggregate_validation_smoke.py
+python -B checks/verify_bundle.py
 ```
 
-The public smoke constructs a synthetic detached frame and makes one decision for each solver under `UWSAA` and `NATIVE20`. The environment smoke checks one scalar environment step and package-local imports. They exercise small interface and correctness cases; they do not run trajectories or measure performance.
+The smoke checks exercise interfaces, policy behavior on small fixtures, and strict endpoint validation. They do not run a performance benchmark. The detached-frame source differential receipt and statistics implementation check are optional compatibility checks; the first needs an externally supplied frozen implementation:
 
-## Public API
-
-Build a detached frame from an `environment.noise_aware_forecast.PublicObservation`, an `environment.online_crp.OnlineCRPPublicState`, and legal destinations. Create one policy and history tracker per episode or actor, then reuse them across decisions:
-
-```python
-from environment.public_frame import make_public_frame
-from environment.public_history import PublicHistoryTracker, attach_history_summary
-from uwsaa.entrypoint import load_gp_rule, load_runtime, make_policy
-
-history = PublicHistoryTracker()
-policy = make_policy("EG", "UWSAA", load_runtime(), load_gp_rule())
-
-# For each decision, using values from the public environment/forecast interface:
-frame = make_public_frame(
-    observation, public_state, legal_destinations, max_tiers=max_tiers
-)
-frame_for_policy = attach_history_summary(frame, history.summary(frame))
-destination, trace = policy.select(frame_for_policy)
-
-# After the environment produces the next detached public frame:
-history.update(frame, destination, next_frame)
+```bash
+python -B checks/source_differential_smoke.py --source-root /path/to/frozen-source
+python -B checks/statistics_source_parity.py --source-root /path/to/frozen-source
 ```
 
-The method name can be set to `NATIVE20` to use the selected solver at fixed horizon 20. The complete runnable frame fixture is in [checks/public_smoke.py](checks/public_smoke.py). Keep the episode and future retrieval sequence on the environment/evaluator side; pass the policy only a detached frame.
+## Run registered trajectories
 
-## Baseline solvers
+Use `--list` to inspect the conditions and arms before running a suite:
 
-| Solver | Public comparison implementation |
-| --- | --- |
-| EM | [baseline/em.py](baseline/em.py) |
-| GP | [baseline/gp.py](baseline/gp.py) and [baseline/gp_expression.py](baseline/gp_expression.py) |
-| ERI | [baseline/eri_eg_public.py](baseline/eri_eg_public.py) |
-| EG | [baseline/eri_eg_plan059.py](baseline/eri_eg_plan059.py) and [baseline/sequence_commit.py](baseline/sequence_commit.py) |
-| Chain | [baseline/chain.py](baseline/chain.py) and [baseline/chain_core.py](baseline/chain_core.py) |
-| Minmax | [baseline/minmax.py](baseline/minmax.py) and [baseline/minmax_core.py](baseline/minmax_core.py) |
+```bash
+python -B -m reproducibility.runner --suite main --list
+python -B -m reproducibility.runner --suite ablation --list
+python -B -m reproducibility.runner --suite p0 --list
+python -B -m reproducibility.runner --suite multik --list
+```
 
-`NATIVE20` policies are exposed through [baseline/native.py](baseline/native.py).
+For a complete single-episode smoke trajectory, select a registered condition and save to a new output path:
 
-## Data and evaluation scope
+```bash
+python -B -m reproducibility.runner --suite main --smoke --condition CLEAN --output reproducibility/results/smoke.jsonl
+```
 
-The included [Caserta Table 2 file](data/caserta_table2_840.json) contains 840 instances in 21 parameter groups of 40 instances each. Records include retrieval sequences used by the environment/evaluator. A policy call should receive only the corresponding public decision frame.
+For a full registered matrix, use `--run` and a new output path. The main suite has 41 conditions × 840 layouts × six solvers × two arms (413,280 endpoint rows). The ablation suite has seven conditions × 840 layouts × six solvers × eight logical arms (282,240 rows); its two common reference arms are shared with MAIN in the canonical result data. P0 uses its deterministic single-completion control, while the multi-K suite has UWSAA plus the six registered rollout/LB1 variants. Each trajectory has a 120-second wall-clock elapsed cap, including policy calls; failures produce endpoint rows and make the command exit nonzero. Output paths are opened exclusively so an existing run is not overwritten.
 
-This repository provides the UW-SAA method, baseline decision interfaces, configuration and data files, and small correctness checks. It does not include a full trajectory benchmark runner or a complete evaluation protocol. The included smoke checks are not benchmark results and do not establish comparative performance or generalization.
+```bash
+python -B -m reproducibility.runner --suite main --run --output reproducibility/results/main.jsonl
+```
 
-## Accepted benchmark results
+The runner emits one terminal endpoint per episode-condition-solver-arm cell and a manifest that binds the selected matrix, layout metadata, dataset hash, and endpoint count. It does not emit per-decision action traces, timing summaries, or performance claims. The public archive also preserves partial endpoint prefixes with their historical status labels. Full action traces and original recovery logs are outside the public distribution.
 
-A separate package contains accepted condition-level and solver-level benchmark summaries, with data tables, confidence intervals, figures, and a figure-generation script: [accepted benchmark evaluation](results/accepted-benchmark-evaluation/README.md). It does not include full trajectory-level data or a complete benchmark runner. The repository smoke checks remain interface and correctness checks, not benchmark results.
+Validate and describe an endpoint run before using it:
+
+```bash
+python -B -m reproducibility.aggregate \
+  --endpoints reproducibility/results/main.jsonl \
+  --manifest reproducibility/results/main.jsonl.manifest.json \
+  --output reproducibility/results/main_descriptive.csv
+```
+
+The aggregate script rejects partial or failed runs, duplicate or missing pair keys, row/manifest label mismatches, incomplete retrieval accounting, and forecast hashes that differ across paired arms.
+
+## Recompute registered statistics
+
+The provenance-indexed endpoint records are distributed as ordered gzip parts. The standard-library [reassembly helper](reproducibility/data/reassemble_endpoints.py) verifies every part and writes a reconstructed gzip into the operating-system temporary directory. The statistics runner uses this helper automatically when the assembled file is absent; an explicitly supplied missing `--endpoints` path is an error. It checks complete registered matrices and paired first-forecast-row hashes before writing any table. Historical records with overlapping episodes remain separately labeled in the archive. Accepted matrices use deduplicated endpoint references, with shared baseline records stored once and identified by membership and source mappings:
+
+```bash
+python -B -m reproducibility.statistics --suite main --output-dir analysis/main
+python -B -m reproducibility.statistics --suite ablation --output-dir analysis/ablation
+python -B -m reproducibility.statistics --suite deterministic --output-dir analysis/deterministic
+python -B -m reproducibility.statistics --suite scenario-ablation --output-dir analysis/scenario-ablation
+```
+
+Each output directory must be new. The paired bootstrap uses 10,000 draws, NumPy PCG64, seed `202610195903`, sorted geometry and layout-fingerprint order, and matched within-geometry layout resampling. It averages registered repeats within each layout, layouts within geometry, and the 21 geometries equally. The noisy primary first forms one relative reduction per family, then averages the three families equally, then averages the six solver effects equally. CLEAN is reported separately. Registered multiplicity adjustments are kept with the comparison that specified them.
+
+To compare the registered primary estimates and intervals against the accepted result tables without running trajectories or per-condition analyses, run:
+
+```bash
+python -B -m checks.verify_accepted_statistics
+```
+
+This verifies all 56 MAIN, Caserta ablation, and deterministic solver rows plus the 49 multi-K primary and absolute-interaction rows. Its receipt at `checks/accepted_statistics_verification.json` records input hashes and the maximum numeric difference.
+
+For the multi-K follow-up, the primary table has seven rows per solver: four K=1/2/4/16 rollout comparisons against K=8, the K=8 rollout/LB1 comparison, the K=1 rollout/LB1 comparison, and the absolute rollout/LB1 interaction. The interaction is reported in relocations as `(P4 − K1) − (P3 − K8)`; positive values mean the LB1 relocation penalty is larger at K=1 than K=8. The relative interaction is secondary and dimensionless. CLEAN remains a separate secondary comparison.
+
+## Evidence status and scope
+
+The result inventory distinguishes accepted benchmark outcomes, development or follow-up runs, partial records, failed registered gates, and correctness smoke checks. A stopped earlier expansion remains recorded as not run; later K-based results are reported as their own executed study. The packaging work adds a runnable endpoint runner and rechecks small trajectories, source-to-public policy parity, and existing endpoint statistics. It does not rerun the full performance matrices.
+
+Trajectory endpoint data are sufficient to reproduce the registered terminal-outcome tables and paired statistics. They do not reconstruct every action or hidden forecast observation. Published selection-time summaries are descriptive; they do not reproduce hardware load or establish a causal speedup. The report is evidence on the public Caserta layouts; it is not sealed or out-of-distribution evidence.
+
+## Repository map
+
+```text
+uwsaa/                 Public UWSAA policy and registered comparison arms
+baseline/              EM, GP, ERI, EG, Chain, Minmax, and Native20 adapters
+environment/           Online environment and detached public-frame contracts
+data/                  Caserta input layouts and retrieval sequences
+configs/               Frozen runtime and solver settings
+reproducibility/        Runner, forecast registry, strict aggregation, and statistics
+checks/                 Bounded policy, runner, and package-integrity checks
+results/                Endpoint-level accepted tables, figures, and provenance guide
+```

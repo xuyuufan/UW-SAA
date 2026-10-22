@@ -1,0 +1,188 @@
+{
+  "schema": "uwsaa_accepted_statistics_verification_v1",
+  "status": "PASS",
+  "recomputation_scope": "registered suite-level primary effects and the rollout/LB1 absolute interaction only; no trajectories were run and per-condition summaries were not recomputed",
+  "inputs": {
+    "endpoint_payload": {
+      "repository_path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz (reassembled from listed parts when needed)",
+      "sha256": "82f53e12cb4a7be109a504485267373a0032c45a5c0964a6153f07ec61616af4",
+      "compressed_bytes": 174138724,
+      "accepted_and_gate_rows_parsed": 1047036
+    },
+    "endpoint_parts_index_sha256": "401f05465fd034a7ad0732eb89cb0c481311e016825c727cded9b6c0b7e29275",
+    "accepted_primary_table": {
+      "repository_path": "results/uwsaa-benchmark-evaluation/data/accepted_primary_contrasts_all_solvers.csv",
+      "sha256": "8518dda3e9b2a4c166644b1793f2b1d1534fd896a48476d0197f7f809a0a4000",
+      "rows_compared": 56
+    },
+    "accepted_scenario_table": {
+      "comparison_source_id": "registered_scenario_primary_contrasts",
+      "sha256": "ad63f60b28886ab3da8feb06296a25f55dc3f9ffd61ad3cd30ab073494d76634",
+      "rows_compared": 49,
+      "published_repository_path": "results/uwsaa-benchmark-evaluation/data/scenario_ablation_primary_contrasts_all_solvers.csv",
+      "published_sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c",
+      "published_bytes": 19815,
+      "published_numeric_cell_text_verification": {
+        "status": "PASS",
+        "rows": 49,
+        "numeric_cells": 343,
+        "unit_cells": 49,
+        "mismatches": 0
+      }
+    }
+  },
+  "protocol": {
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 202610195903,
+    "interval_tolerance": 2e-12,
+    "aggregation_order": "conditions within layout; layouts within geometry; geometries equally; relative family effects equally; solver effects equally",
+    "bootstrap_unit": "paired layout fingerprint sampled within geometry"
+  },
+  "matrices": {
+    "main": {
+      "layout_count": 840,
+      "condition_count": 41,
+      "geometry_count": 21,
+      "layouts_per_geometry": 40,
+      "rows_per_condition": 10080,
+      "selected_endpoint_rows": 413280
+    },
+    "ablation": {
+      "layout_count": 840,
+      "condition_count": 7,
+      "geometry_count": 21,
+      "layouts_per_geometry": 40,
+      "rows_per_condition": 40320,
+      "selected_endpoint_rows": 282240
+    },
+    "deterministic": {
+      "layout_count": 840,
+      "condition_count": 7,
+      "geometry_count": 21,
+      "layouts_per_geometry": 40,
+      "rows_per_condition": 10080,
+      "selected_endpoint_rows": 70560
+    },
+    "scenario-ablation": {
+      "layout_count": 840,
+      "condition_count": 7,
+      "geometry_count": 21,
+      "layouts_per_geometry": 40,
+      "rows_per_condition": 35280,
+      "selected_endpoint_rows": 246960
+    }
+  },
+  "comparisons": {
+    "main_ablation_p0_solver_rows": 56,
+    "scenario_ablation_solver_rows_including_interaction": 49,
+    "total_solver_rows": 105,
+    "numeric_fields_compared": 497,
+    "maximum_absolute_difference": 1.3877787807814457e-17,
+    "maximum_by_field": {
+      "adjusted_ci_high": 1.3877787807814457e-17,
+      "adjusted_ci_low": 6.938893903907228e-18,
+      "estimate": 6.938893903907228e-18,
+      "ordinary_ci_high": 1.3877787807814457e-17,
+      "ordinary_ci_low": 6.938893903907228e-18
+    }
+  },
+  "clean_noninferiority": {
+    "status": "RECOMPUTED_FROM_COMPLETE_MAIN_ENDPOINTS",
+    "baseline": "NATIVE20",
+    "candidate": "UWSAA",
+    "estimand": "relative reduction in macro mean relocations: (baseline - candidate) / baseline",
+    "unit": "proportion",
+    "positive_direction": "positive favors UWSAA",
+    "relative_loss_margin": 0.01,
+    "noninferiority_rule": "lower bound must be strictly greater than -0.01",
+    "ordinary_two_sided_95": {
+      "mean6_estimate": -0.0027877560282154323,
+      "mean6_interval": [
+        -0.006567134748265244,
+        0.0012362584602241807
+      ],
+      "solver_estimates": {
+        "EM": -0.011432009626955512,
+        "GP": -0.02158302568055473,
+        "ERI": 0.046283052774415676,
+        "EG": -0.002517038413878336,
+        "Chain": -0.0153178851940137,
+        "Minmax": -0.012159630028305994
+      },
+      "solver_intervals": {
+        "EM": [
+          -0.017122473985091112,
+          -0.005768638630181924
+        ],
+        "GP": [
+          -0.027400617522628266,
+          -0.01584092967958061
+        ],
+        "ERI": [
+          0.03833246040083261,
+          0.05434084197416946
+        ],
+        "EG": [
+          -0.009162899715784847,
+          0.004164036415499976
+        ],
+        "Chain": [
+          -0.022289020559425436,
+          -0.008393824492012345
+        ],
+        "Minmax": [
+          -0.0186969232602396,
+          -0.005461187060700327
+        ]
+      }
+    },
+    "mean6_one_sided_95_lower": {
+      "quantile": 0.05,
+      "lower_bound": -0.005999148819396414,
+      "pass": true
+    },
+    "all_six_bonferroni_one_sided_lower": {
+      "per_solver_quantile": 0.008333333333333333,
+      "solver_lower_bounds": {
+        "EM": -0.0184340592887676,
+        "GP": -0.028727569492174025,
+        "ERI": 0.03695457396421077,
+        "EG": -0.010749542211202794,
+        "Chain": -0.02383025121643716,
+        "Minmax": -0.020157744173711946
+      },
+      "pass": false
+    },
+    "bootstrap_draws": 10000,
+    "bootstrap_defined_draw_fraction_mean6": 1.0,
+    "layout_count_by_geometry": {
+      "10-10": 40,
+      "10-6": 40,
+      "3-3": 40,
+      "3-4": 40,
+      "3-5": 40,
+      "3-6": 40,
+      "3-7": 40,
+      "3-8": 40,
+      "4-4": 40,
+      "4-5": 40,
+      "4-6": 40,
+      "4-7": 40,
+      "5-10": 40,
+      "5-4": 40,
+      "5-5": 40,
+      "5-6": 40,
+      "5-7": 40,
+      "5-8": 40,
+      "5-9": 40,
+      "6-10": 40,
+      "6-6": 40
+    }
+  },
+  "limitations": [
+    "first_forecast_row_sha256 is a hash of the source first forecast row, not the entire forecast table",
+    "full action traces and original recovery logs remain in the local archive; this check uses endpoint records",
+    "historical partial and correctness-smoke records are excluded from accepted matrices",
+    "this check does not rerun performance experiments or recompute condition-level result tables"
+  ]
+}
