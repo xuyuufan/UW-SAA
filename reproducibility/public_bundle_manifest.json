@@ -14,7 +14,7 @@
     "registered_trajectory_and_statistics_protocol": "reproducibility/PROTOCOL.md"
   },
   "file_count": 106,
-  "total_bytes": 453791033,
+  "total_bytes": 453791909,
   "max_file": {
     "path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz.part-001-of-004",
     "bytes": 45000000,
@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9522,
-      "sha256": "4ee442d3f3dd35b7ff6d108c7442dc7d784e4ca77e57109dfa38964c4740d6b6"
+      "bytes": 9623,
+      "sha256": "e15403b9fa751dd458f2f65e8aa7a19691dd291fdfb1baba37bbbc55d77cd7c3"
     },
     {
       "path": "baseline/__init__.py",
@@ -198,8 +198,8 @@
     },
     {
       "path": "configs/uwsaa.json",
-      "bytes": 1257,
-      "sha256": "3d27585bad65f40d1680344b948091812020b6a4c382c41c72cb164dfbdf7cf5"
+      "bytes": 1269,
+      "sha256": "e37fe81936efb49ecd2617a08326596abdf0c8212b5f768545be3c7b06d7348d"
     },
     {
       "path": "data/caserta_table2_840.json",
@@ -239,12 +239,12 @@
     {
       "path": "manifest.json",
       "bytes": 21489,
-      "sha256": "39d6e0257f5a60978c6fdcbb7bd6f3cdb869bdcddbb491d2463796e9ef8cf671"
+      "sha256": "1faa1dade3e5f3ccd5e292777076162884efd10a5495c9be2daeb69fd48f05fd"
     },
     {
       "path": "reproducibility/PROTOCOL.md",
-      "bytes": 10810,
-      "sha256": "affa778afc17929e7c8f2d20593fa40bd39ee03cdbb2733432e01ecfd483a60e"
+      "bytes": 10962,
+      "sha256": "64677c19ded45b4d57f381bb8b88167d48eb80a92a74269b1929fe6cf0210f26"
     },
     {
       "path": "reproducibility/aggregate.py",
@@ -283,13 +283,13 @@
     },
     {
       "path": "reproducibility/artifacts/scenario-ablation/uwsaa_paired_analysis.json",
-      "bytes": 2033585,
-      "sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614"
+      "bytes": 2033601,
+      "sha256": "9c39ee8313a3058376c38ca6dda64bb249b2ef32c8990988b6fe0b528231b92b"
     },
     {
       "path": "reproducibility/artifacts/scenario-ablation/uwsaa_scenario_ablation_manifest.json",
-      "bytes": 11130,
-      "sha256": "0313078b2069885a94a59f328c026893fafa3d913de07371ccd131eae31884fd"
+      "bytes": 11324,
+      "sha256": "730232ca0cdfbf7689ff4f45df803e6c84eb39d590545f85d62576fedf4f7456"
     },
     {
       "path": "reproducibility/data/README.md",
@@ -358,8 +358,8 @@
     },
     {
       "path": "results/uwsaa-benchmark-evaluation/README.md",
-      "bytes": 8028,
-      "sha256": "b171ca55091d981d3f5701aaf308e62b198274d4bb83806b0b45deaabc99f0b5"
+      "bytes": 8236,
+      "sha256": "8be9ed15b244b79484e7cd41edc8b1c3af980d697baea6b43aebc75cffbfd0ad"
     },
     {
       "path": "results/uwsaa-benchmark-evaluation/data/accepted_primary_contrasts_all_solvers.csv",
@@ -523,8 +523,8 @@
     },
     {
       "path": "results/uwsaa-benchmark-evaluation/source_hash_manifest.json",
-      "bytes": 18007,
-      "sha256": "a606c7b36dda21444adeadd7dc336ecda368c0829527a3ff0fac16d3db2ad6bc"
+      "bytes": 18200,
+      "sha256": "b81a7d9d59119c9a7da40295e153d0124069bbbb5d4ae57dfe240804bc4c4fe4"
     },
     {
       "path": "uwsaa/__init__.py",

@@ -32,7 +32,7 @@
   "dataset_rows": 840,
   "original_geometry_groups": 21,
   "rows_per_geometry_group": 40,
-  "evaluation_role": "public benchmark previously used in this project; not sealed or OOD",
+  "evaluation_role": "sealed evaluation benchmark for UW-SAA; held out from UW-SAA method development",
   "entrypoint": "uwsaa.entrypoint",
   "policy_factory": "make_policy(solver, method, runtime, gp_rule)",
   "formal_pipeline": "not included; see README.md for the frozen-release boundary",

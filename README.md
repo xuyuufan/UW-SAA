@@ -97,7 +97,7 @@ For the multi-K follow-up, the primary table has seven rows per solver: four K=1
 
 The result inventory distinguishes accepted benchmark outcomes, development or follow-up runs, partial records, failed registered gates, and correctness smoke checks. A stopped earlier expansion remains recorded as not run; later K-based results are reported as their own executed study. The packaging work adds a runnable endpoint runner and rechecks small trajectories, source-to-public policy parity, and existing endpoint statistics. It does not rerun the full performance matrices.
 
-Trajectory endpoint data are sufficient to reproduce the registered terminal-outcome tables and paired statistics. They do not reconstruct every action or hidden forecast observation. Published selection-time summaries are descriptive; they do not reproduce hardware load or establish a causal speedup. The report is evidence on the public Caserta layouts; it is not sealed or out-of-distribution evidence.
+Trajectory endpoint data are sufficient to reproduce the registered terminal-outcome tables and paired statistics. They do not reconstruct every action or hidden forecast observation. Published selection-time summaries are descriptive; they do not reproduce hardware load or establish a causal speedup. Caserta is the sealed evaluation benchmark for UW-SAA, held out from UW-SAA method development. Its public availability and use in other project methods do not change that method-specific evaluation role.
 
 ## Repository map
 
