@@ -121,9 +121,10 @@
       "logical_name": "paired_analysis_evidence",
       "source_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
       "published_file": "reproducibility/artifacts/scenario-ablation/uwsaa_paired_analysis.json",
-      "published_sha256": "a610d97305af8ca09de81d4878b2c5f3ef049c790e6e2f1f79e52d3b1499a614",
-      "published_bytes": 2033585,
-      "source_byte_preserved": true
+      "published_sha256": "9c39ee8313a3058376c38ca6dda64bb249b2ef32c8990988b6fe0b528231b92b",
+      "published_bytes": 2033601,
+      "source_byte_preserved": false,
+      "public_metadata_change": "Corrected Caserta evaluation role to method-specific sealed UW-SAA evaluation; numerical results are unchanged. Original source hash retained for provenance."
     },
     {
       "logical_name": "bootstrap_indices_evidence",

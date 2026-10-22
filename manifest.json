@@ -341,7 +341,7 @@
           ]
         }
       ],
-      "final_sha256": "3d27585bad65f40d1680344b948091812020b6a4c382c41c72cb164dfbdf7cf5"
+      "final_sha256": "e37fe81936efb49ecd2617a08326596abdf0c8212b5f768545be3c7b06d7348d"
     },
     {
       "destination_path": "data/caserta_table2_840.json",
@@ -480,7 +480,7 @@
       "destination_path": "README.md",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "4ee442d3f3dd35b7ff6d108c7442dc7d784e4ca77e57109dfa38964c4740d6b6"
+      "final_sha256": "e15403b9fa751dd458f2f65e8aa7a19691dd291fdfb1baba37bbbc55d77cd7c3"
     },
     {
       "destination_path": "requirements.txt",

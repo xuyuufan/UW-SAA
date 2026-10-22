@@ -47617,7 +47617,7 @@
   "elapsed_seconds": 66.78099999998813,
   "eval_receipt_sha256": "C299AE5059C96663C5B17F4A98FA090BA0121DD5F3F60BC525E3E38BD1153518",
   "geometry_outcomes_csv": "PLAN063_GEOMETRY_OUTCOMES.csv",
-  "interpretation_limit": "Public Caserta paired evidence only. No sealed/OOD or generalization claim. Historical P5 timing is a separate descriptive cost result.",
+  "interpretation_limit": "Paired evaluation on Caserta, the sealed benchmark held out from UW-SAA method development. Historical P5 timing is a separate descriptive cost result.",
   "layout_geometry_matrix": {
     "geometries": 21,
     "layouts": 840,

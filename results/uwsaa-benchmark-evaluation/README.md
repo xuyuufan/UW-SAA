@@ -4,6 +4,8 @@ This directory publishes reader-facing summary tables and plots for the register
 
 The MAIN evaluation contains 840 layouts in 21 geometry groups (40 layouts per geometry), 41 registered conditions, six solvers, and the UWSAA and NATIVE20 arms. The accepted Caserta ablation has six additional UWSAA arms over seven registered conditions; its UWSAA and NATIVE20 reference rows are reused from MAIN and are identified through the endpoint table's `study_membership` field. The deterministic-single evaluation has its own arm, `UWSAA_DETERMINISTIC_SINGLE`; it is not the K=1 rollout. The separately completed scenario ablation includes six newly executed arms and the reused K=8 rollout reference. Their exact matrix counts and provenance are recorded in the data inventory.
 
+Caserta is the sealed evaluation benchmark for UW-SAA, held out from UW-SAA method development. Public availability and prior use by other project methods do not change this method-specific evaluation role.
+
 ## Metrics and uncertainty
 
 The primary endpoint is **relocations**: lower counts are better. In source tables this was named `R_raw`; the public tables use `relocations`. The companion `R_over_N` metric is published as `relocations_per_container`. A condition suffix `repeat=0/1` identifies the repeat replicate; it is separate from relocation counts. Geometry and layout fingerprints are preserved exactly for reproducible bootstrap ordering.
