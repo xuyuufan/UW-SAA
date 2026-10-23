@@ -1,0 +1,30 @@
+{
+  "event": "case_terminal",
+  "case_key": "4-4-8-0",
+  "attempt_id": "26f4164c-0b83-4ff2-8976-e1cf1d9e667a",
+  "status": "complete",
+  "input_sha256": "db394471bdaae29482e3d00ca63976251dc3708b3e5748ae4fb9eb3baaf37293",
+  "source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "source_hashes_at_end": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "container_count_N": 8,
+  "relocations_R": 3,
+  "total_movements_R_plus_N": 11,
+  "RR": 0.375,
+  "complete_retrievals": 8,
+  "decision_count": 3,
+  "tree_reuse_calls": 2,
+  "cross_retrieval_reuse_calls": 1,
+  "episode_wall_seconds": 0.3505256000062218,
+  "episode_process_cpu_seconds": 0.34375,
+  "resume_status": "run_new",
+  "resume_action": "executed_new_attempt",
+  "time_utc": "2026-10-23T06:04:23Z"
+}

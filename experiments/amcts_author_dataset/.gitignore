@@ -1,0 +1,10 @@
+# This package's canonical inputs and outputs live under reproducibility/20261023_amcts_author_dataset.
+# Ignore duplicate staging copies at this directory level.
+/data/
+/receipts/
+/results/
+/results_v2/
+/source_snapshots/
+__pycache__/
+*.py[cod]
+.venv/

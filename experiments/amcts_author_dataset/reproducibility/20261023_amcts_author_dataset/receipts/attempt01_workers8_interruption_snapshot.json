@@ -1,0 +1,172 @@
+{
+  "status": "PRE_STOP_SNAPSHOT",
+  "time_utc": "2026-10-23T06:06:52Z",
+  "reason": "RESOURCE_PRESSURE_HIGH_PAGING",
+  "cpu_load_percent": 68.0,
+  "free_memory_gb": 0.082,
+  "total_memory_gb": 15.19,
+  "manifest_summary": {
+    "active_count": 7,
+    "status": "RUNNING",
+    "completed_count": 31,
+    "completed_cases": [
+      "4-3-6-0",
+      "4-3-8-0",
+      "4-4-11-0",
+      "4-4-8-0",
+      "4-5-10-0",
+      "4-5-13-0",
+      "4-6-12-0",
+      "4-6-16-0",
+      "5-3-10-0",
+      "5-3-8-0",
+      "5-4-10-0",
+      "5-4-13-0",
+      "5-5-13-0",
+      "5-5-17-0",
+      "5-6-15-0",
+      "5-6-20-0",
+      "6-3-12-0",
+      "6-3-9-0",
+      "6-4-12-0",
+      "6-4-16-0",
+      "6-5-15-0",
+      "6-5-20-0",
+      "6-6-18-0",
+      "7-3-11-0",
+      "7-3-14-0",
+      "7-4-14-0",
+      "7-4-19-0",
+      "7-5-18-0",
+      "8-3-12-0",
+      "8-3-16-0",
+      "8-4-16-0"
+    ],
+    "active_cases": [
+      "6-6-24-0",
+      "7-5-23-0",
+      "7-6-21-0",
+      "7-6-28-0",
+      "8-4-21-0",
+      "8-5-20-0",
+      "8-5-27-0"
+    ],
+    "partial_count": 0
+  },
+  "coordinator_pid": 259248,
+  "launcher_pids": [
+    258756
+  ],
+  "worker_processes": [
+    {
+      "ProcessId": 260228,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 6-6-24-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\6-6-24-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 259468,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-5-23-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-5-23-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 259272,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-6-21-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-6-21-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258824,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-6-28-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-6-28-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258116,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-4-21-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-4-21-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 255380,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-5-20-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-5-20-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258236,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-5-27-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-5-27-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 260808,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-6-24-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-6-24-0.jsonl --playout-multiplier 2500"
+    }
+  ],
+  "process_snapshot": [
+    {
+      "ProcessId": 258756,
+      "ParentProcessId": 259696,
+      "Name": "py.exe",
+      "CommandLine": "\"C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe\" -3 \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\coordinate_author_batch.py\" --execute --release-file \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\ROOT_RELEASE.json\""
+    },
+    {
+      "ProcessId": 259248,
+      "ParentProcessId": 258756,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\coordinate_author_batch.py\" --execute --release-file \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\ROOT_RELEASE.json\""
+    },
+    {
+      "ProcessId": 260228,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 6-6-24-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\6-6-24-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 259468,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-5-23-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-5-23-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 259272,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-6-21-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-6-21-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258824,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-6-28-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-6-28-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258116,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-4-21-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-4-21-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 255380,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-5-20-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-5-20-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 258236,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-5-27-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-5-27-0.jsonl --playout-multiplier 2500"
+    },
+    {
+      "ProcessId": 260808,
+      "ParentProcessId": 259248,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-6-24-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-6-24-0.jsonl --playout-multiplier 2500"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "STOPPED_OWN_W8_QUEUE",
+  "snapshot_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\receipts\\attempt01_workers8_interruption_snapshot.json",
+  "coordinator_pid": 259248,
+  "launcher_pids": [
+    258756
+  ],
+  "worker_pids": [
+    260228,
+    259468,
+    259272,
+    258824,
+    258116,
+    255380,
+    258236,
+    260808
+  ],
+  "interrupted_case_keys": [
+    "6-6-24-0",
+    "7-5-23-0",
+    "7-6-21-0",
+    "7-6-28-0",
+    "8-4-21-0",
+    "8-5-20-0",
+    "8-5-27-0",
+    "8-6-24-0"
+  ],
+  "interrupted_count": 8,
+  "remaining_task_processes": [],
+  "post_stop_utc": "2026-10-23T06:07:03Z"
+}

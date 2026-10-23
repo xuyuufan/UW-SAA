@@ -5,3 +5,4 @@
 *.pdf -text
 *.npz -text
 *.zip -text
+experiments/amcts_author_dataset/** -text

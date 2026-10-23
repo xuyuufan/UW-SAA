@@ -1,0 +1,30 @@
+{
+  "schema": "author_six_container_full_budget_gate_v1",
+  "status": "PASS_COMPLETE_TRAJECTORY_AND_REPLAY_AUDIT",
+  "case_key": "4-3-6-0",
+  "input_sha256": "9ca7a43bab8f4039927dfc667723f4fa12575647f90ec00d06eec1a0b148d988",
+  "source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "N": 6,
+  "R": 3,
+  "RR": 0.5,
+  "decision_count": 3,
+  "budget_per_decision": 10000,
+  "retrieval_sequence_exactly_replayed": true,
+  "legal_actions_and_conservation_verified": true,
+  "outer_policy_input_contains_only_current_target": true,
+  "cross_retrieval_exact_branch_reuse": [
+    {
+      "from_retrieval_index": 0,
+      "to_retrieval_index": 1,
+      "target_id": 4,
+      "status": "reused_exact_descendant"
+    }
+  ],
+  "episode_wall_seconds": 0.3644843999936711,
+  "episode_process_cpu_seconds": 0.34375,
+  "full_1680_case_queue_started": false
+}

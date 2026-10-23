@@ -1,0 +1,12 @@
+{
+  "status": "LAUNCHED",
+  "attempt": "02",
+  "started_utc": "2026-10-23T06:13:01Z",
+  "launcher_pid": 196864,
+  "worker_limit": 1,
+  "command": "py -3 coordinate_author_batch.py --execute --release-file ROOT_RELEASE_attempt02_workers1.json",
+  "stdout_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\launcher_attempt02.stdout.txt",
+  "stderr_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\launcher_attempt02.stderr.txt",
+  "release_sha256": "f3e7cd9aa0e85743de95171dabef06421425001a6c94bfccf58ab40ace034aea",
+  "coordinator_source_sha256": "ef4085b4f476a9af86dac5631353d4bc47da2e7e94e8909298d12c357f8f6935"
+}

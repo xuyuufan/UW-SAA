@@ -1,0 +1,58 @@
+{
+  "schema": "attempt02_concurrency_switch_snapshot_v1",
+  "captured_utc": "2026-10-23T06:19:01Z",
+  "reason": "Root-reviewed switch from one to two workers after active full case completed",
+  "attempt02_release_sha256": "f3e7cd9aa0e85743de95171dabef06421425001a6c94bfccf58ab40ace034aea",
+  "processes": [
+    {
+      "pid": 196864,
+      "ppid": 246208,
+      "command_line": "\"C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe\" -3 \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\coordinate_author_batch.py\" --execute --release-file \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\ROOT_RELEASE_attempt02_workers1.json\""
+    },
+    {
+      "pid": 223696,
+      "ppid": 196864,
+      "command_line": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\coordinate_author_batch.py\" --execute --release-file \"D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\ROOT_RELEASE_attempt02_workers1.json\""
+    },
+    {
+      "pid": 244556,
+      "ppid": 223696,
+      "command_line": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-5-23-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-5-23-0.jsonl --playout-multiplier 2500"
+    }
+  ],
+  "last_complete": {
+    "event": "worker_complete",
+    "case_key": "6-6-24-0",
+    "pid": 59160,
+    "episode_wall_seconds": 263.95636679999734,
+    "episode_process_cpu_seconds": 260.75,
+    "RR": 0.875,
+    "relocations_R": 21
+  },
+  "new_active_worker_start": {
+    "event": "worker_start",
+    "case_key": "7-5-23-0",
+    "task_index": 29,
+    "pid": 244556,
+    "input_sha256": "7e6b60688bc0e79f217749829641d2e0f562f7bc8de5590de3820c4bf33d4fd0",
+    "source_hashes": {
+      "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+      "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+      "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+    },
+    "worker_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "partial_case_log_lines": 5,
+  "partial_case_event_types": [
+    "case_start",
+    "decision",
+    "coordinator_interruption",
+    "case_start",
+    "decision"
+  ],
+  "partial_case_log_sha256": "b6b7c0bb3cc4bc055be378d0149bf7576ac81c1d5ec81e05c3dee9433c0e7c9a"
+}

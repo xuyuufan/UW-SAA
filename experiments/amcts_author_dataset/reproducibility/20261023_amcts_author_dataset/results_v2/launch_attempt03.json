@@ -1,0 +1,14 @@
+{
+  "schema": "amcts_author_dataset_launch_receipt_v1",
+  "attempt": "attempt03_workers2",
+  "started_utc": "2026-10-23T06:21:41Z",
+  "launcher_pid": 36668,
+  "release_path": "ROOT_RELEASE_attempt03_workers2.json",
+  "release_sha256": "1c1cda2bb499ac1804378ab063c4d5cad4dc2233570ab2ccd5ac80e7f3863bb7",
+  "coordinator_source_sha256": "ef4085b4f476a9af86dac5631353d4bc47da2e7e94e8909298d12c357f8f6935",
+  "worker_limit": 2,
+  "max_wall_seconds": 86400,
+  "max_process_cpu_seconds_estimate": 172800,
+  "stdout": "results_v2/launcher_attempt03.stdout.txt",
+  "stderr": "results_v2/launcher_attempt03.stderr.txt"
+}

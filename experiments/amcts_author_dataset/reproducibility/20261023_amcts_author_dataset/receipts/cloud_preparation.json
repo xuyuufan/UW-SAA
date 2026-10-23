@@ -1,0 +1,32 @@
+{
+  "schema": "amcts_author_dataset_cloud_preparation_v1",
+  "status": "PASS_PREPARED_NOT_STARTED",
+  "dataset": "Mendeley 3j52cjrm52 v3, 1680 scored JSON inputs, 56 configurations x 30 seeds",
+  "task_list_sha256": "998afed4e3b44b5ce80ece349689ba0a6e8b579695ed429af68b9ccae73d49bc",
+  "archive_sha256": "7208263dcbb20c825ab637dad18aed61fd62a5d9daeb90416811a4974ca9e885",
+  "metadata_index_sha256": "037382b1285624db0f8deededc2c7317703d2b79001aa60df98d9301704f4dc7",
+  "case_source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "cloud_coordinator_sha256": "cdc6b5afbb4598db1a90cf2dc8823ed65dd1bf07f57d6a302782a3bc903b124c",
+  "counts": {
+    "expected": 1680,
+    "complete": 37,
+    "partial": 2,
+    "not_run": 1641
+  },
+  "partial_case_keys": [
+    "8-5-27-0",
+    "8-6-24-0"
+  ],
+  "resource_snapshot": {
+    "logical_cpu_count": 32,
+    "available_memory_mib": null
+  },
+  "per_case_timeout_seconds": null,
+  "playouts_per_decision": "2500 x W",
+  "generated_utc": "2026-10-23T07:02:11Z",
+  "execution_started": false
+}

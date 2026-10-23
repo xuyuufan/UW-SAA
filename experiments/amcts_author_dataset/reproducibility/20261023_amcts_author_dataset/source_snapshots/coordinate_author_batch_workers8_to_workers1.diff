@@ -1,0 +1,98 @@
+--- coordinate_author_batch_workers8_d3c3d45e2e7cf388.py
++++ coordinate_author_batch.py
+@@ -29,7 +29,7 @@
+ RESULTS_DIR = TASK_DIR / "results_v2"
+ CASE_LOG_DIR = RESULTS_DIR / "cases"
+ STDOUT_DIR = RESULTS_DIR / "stdout"
+-PREP_RECEIPT = TASK_DIR / "receipts" / "batch_preparation_v2.json"
++PREP_RECEIPT = TASK_DIR / "receipts" / "batch_preparation_attempt02.json"
+ MANIFEST_PATH = RESULTS_DIR / "batch_manifest.json"
+ COORDINATOR_EVENTS = RESULTS_DIR / "coordinator_events.jsonl"
+ RUNNER_PATH = TASK_DIR / "run_author_case.py"
+@@ -37,10 +37,10 @@
+ GATE_AUDIT = TASK_DIR / "receipts" / "six_container_gate_audit_v2.json"
+ 
+ EXPECTED_CASES = 1680
+-MAX_WORKERS = 8
++MAX_WORKERS = 2  # root-approved upper bound for the resource-pressure resume
+ WORKER_THREAD_ENV = {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}
+ MAX_BATCH_WALL_SECONDS = 24 * 60 * 60
+-MAX_BATCH_PROCESS_CPU_SECONDS = 192 * 60 * 60
++MAX_BATCH_PROCESS_CPU_SECONDS = 48 * 60 * 60  # estimated trigger for <=2 workers; strict bound remains 24h wall
+ 
+ 
+ def _sha256_bytes(data: bytes) -> str:
+@@ -192,7 +192,7 @@
+         TASK_LIST_PATH.write_bytes(lines)
+     audit = json.loads(AUDIT_PATH.read_text(encoding="utf-8"))
+     prep = {
+-        "schema": "amcts_author_batch_preparation_v2",
++        "schema": "amcts_author_batch_preparation_attempt02",
+         "status": "PREPARED_NOT_RELEASED",
+         "dataset_version": 3,
+         "archive_sha256": audit["archive_sha256"],
+@@ -205,7 +205,8 @@
+         "deterministic_interleave": "seed-major 0..29, numeric configuration order (W,H,N)",
+         "case_log_layout": "one JSONL per case under results_v2/cases/",
+         "pre_release_gate_reused": gate_origin,
+-        "planned_workers_maximum": MAX_WORKERS,
++        "planned_worker_limit_maximum": MAX_WORKERS,
++        "planned_worker_limit_selected": 1,
+         "proposed_batch_wall_ceiling_seconds": MAX_BATCH_WALL_SECONDS,
+         "proposed_batch_process_cpu_budget_estimate_seconds": MAX_BATCH_PROCESS_CPU_SECONDS,
+         "process_cpu_budget_is_estimate": True,
+@@ -236,14 +237,16 @@
+         raise ValueError("release case-source hashes do not match current code")
+     if release.get("coordinator_source_hashes") != _batch_source_hashes():
+         raise ValueError("release coordinator-source hashes do not match current code")
+-    if int(release.get("max_workers", 0)) != MAX_WORKERS:
+-        raise ValueError(f"release must specify exactly {MAX_WORKERS} workers")
++    worker_limit = int(release.get("worker_limit", 0))
++    if not 1 <= worker_limit <= MAX_WORKERS:
++        raise ValueError(f"worker_limit must be between 1 and {MAX_WORKERS}")
+     wall = int(release.get("max_wall_seconds", 0))
+     cpu = int(release.get("max_process_cpu_seconds", 0))
+     if not 0 < wall <= MAX_BATCH_WALL_SECONDS or not 0 < cpu <= MAX_BATCH_PROCESS_CPU_SECONDS:
+         raise ValueError("release wall ceiling and CPU estimate trigger must be positive and within the reviewed limits")
+     if release.get("per_case_timeout_seconds") not in (None, 0):
+         raise ValueError("per-case timeouts are not permitted by this registered protocol")
++    release["worker_limit"] = worker_limit
+     return release
+ 
+ 
+@@ -317,6 +320,7 @@
+ def execute(release_path: Path) -> dict[str, Any]:
+     prep = prepare()
+     release = _validate_release(release_path, prep)
++    worker_limit = int(release["worker_limit"])
+     if _batch_source_hashes() != prep["coordinator_source_hashes"]:
+         raise ValueError("coordinator source changed after preparation")
+     if _case_source_hashes() != prep["case_source_hashes"]:
+@@ -377,7 +381,8 @@
+             "status": status,
+             "start_utc": start_utc,
+             "elapsed_wall_seconds": time.monotonic() - start_wall,
+-            "max_workers": MAX_WORKERS,
++            "worker_limit": worker_limit,
++            "max_workers": worker_limit,
+             "released_max_wall_seconds": int(release["max_wall_seconds"]),
+             "released_process_cpu_budget_estimate_seconds": int(release["max_process_cpu_seconds"]),
+             "process_cpu_budget_is_estimate": True,
+@@ -416,7 +421,7 @@
+         "event": "batch_start", "start_utc": start_utc,
+         "precompleted_case_count": len(complete_by_key),
+         "scheduled_case_count": len(tasks_pending),
+-        "workers": MAX_WORKERS, "per_case_timeout_seconds": None,
++        "workers": worker_limit, "worker_limit": worker_limit, "per_case_timeout_seconds": None,
+         "worker_thread_environment": WORKER_THREAD_ENV,
+         "release_file_sha256": _hash_file(release_path),
+     })
+@@ -518,7 +523,7 @@
+                 terminate_active(stop_reason)
+                 break
+ 
+-            while pending_index < len(tasks_pending) and len(active) < MAX_WORKERS and fatal is None:
++            while pending_index < len(tasks_pending) and len(active) < worker_limit and fatal is None:
+                 task = tasks_pending[pending_index]
+                 pending_index += 1
+                 key = str(task["case_key"])

@@ -1,0 +1,16 @@
+{
+  "schema": "author_run_resume_integrity_v1",
+  "status": "PASS_CORRECTNESS_ONLY",
+  "source_hashes_used": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "a223f504786de2f1a99bae76b9a8107c9674239be3064e5b2157143c6910f225"
+  },
+  "partial_attempt_restarts_from_initial": true,
+  "completed_attempt_skipped_exactly_once": true,
+  "input_mismatch_refused": true,
+  "source_mismatch_refused": true,
+  "duplicate_terminal_key_refused": true,
+  "partial_attempt_not_counted_as_complete": true,
+  "author_dataset_run_started": false
+}

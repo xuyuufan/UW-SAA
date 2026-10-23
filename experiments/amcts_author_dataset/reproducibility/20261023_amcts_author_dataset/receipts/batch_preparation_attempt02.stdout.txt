@@ -1,0 +1,54 @@
+{
+  "schema": "amcts_author_batch_preparation_attempt02",
+  "status": "PREPARED_NOT_RELEASED",
+  "dataset_version": 3,
+  "archive_sha256": "7208263dcbb20c825ab637dad18aed61fd62a5d9daeb90416811a4974ca9e885",
+  "metadata_index_sha256": "037382b1285624db0f8deededc2c7317703d2b79001aa60df98d9301704f4dc7",
+  "task_list_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\task_list_1680_v2.jsonl",
+  "task_list_sha256": "998afed4e3b44b5ce80ece349689ba0a6e8b579695ed429af68b9ccae73d49bc",
+  "full_case_count": 1680,
+  "configuration_count": 56,
+  "cases_per_configuration": 30,
+  "deterministic_interleave": "seed-major 0..29, numeric configuration order (W,H,N)",
+  "case_log_layout": "one JSONL per case under results_v2/cases/",
+  "pre_release_gate_reused": {
+    "case_key": "4-3-6-0",
+    "origin": "pre_release_gate",
+    "source_log": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\receipts\\six_container_full_budget_v2.jsonl",
+    "case_log": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\4-3-6-0.jsonl",
+    "copied_log_sha256": "aa84ca5597d21114a54223382683587066ab6449108eab0c5a90793e9bf6259a",
+    "input_sha256": "9ca7a43bab8f4039927dfc667723f4fa12575647f90ec00d06eec1a0b148d988",
+    "source_hashes": {
+      "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+      "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+      "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+    },
+    "new_scored_run": false
+  },
+  "planned_worker_limit_maximum": 2,
+  "planned_worker_limit_selected": 1,
+  "proposed_batch_wall_ceiling_seconds": 86400,
+  "proposed_batch_process_cpu_budget_estimate_seconds": 172800,
+  "process_cpu_budget_is_estimate": true,
+  "process_cpu_metric_note": "Completed rows use episode CPU and exclude process startup/import; active rows use process CPU. This is a budget estimate, not an exact process-CPU ceiling.",
+  "strict_wall_time_ceiling_seconds": 86400,
+  "worker_thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "per_case_timeout_seconds": null,
+  "execution_started": false,
+  "root_release_required": true,
+  "case_source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "coordinator_source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36",
+    "coordinate_author_batch.py": "ef4085b4f476a9af86dac5631353d4bc47da2e7e94e8909298d12c357f8f6935"
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "schema": "amcts_author_dataset_local_cloud_transfer_snapshot_v1",
+  "captured_utc": "2026-10-23T06:30:54Z",
+  "stop_reason": "User requested transfer of current author-dataset AMCTS run to Codex cloud; local coordinator stopped to prevent dispatching further cases.",
+  "attempt": "attempt03_workers2",
+  "release_sha256": "1c1cda2bb499ac1804378ab063c4d5cad4dc2233570ab2ccd5ac80e7f3863bb7",
+  "task_list_sha256": "998afed4e3b44b5ce80ece349689ba0a6e8b579695ed429af68b9ccae73d49bc",
+  "archive_sha256": "7208263dcbb20c825ab637dad18aed61fd62a5d9daeb90416811a4974ca9e885",
+  "metadata_index_sha256": "037382b1285624db0f8deededc2c7317703d2b79001aa60df98d9301704f4dc7",
+  "case_source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36"
+  },
+  "coordinator_source_hashes": {
+    "paper_zhang.py": "c084626d0b2f5c90d85f72cb7b2fac7bb7bce30d942e700466f6edc670f8ac1f",
+    "zhang_author_data.py": "0121bcb4466ed0d49e3c52a2845c391546bada6a18c5ade62739e90b48460639",
+    "run_author_case.py": "969df0793384f43ea45342f668bce985fbb5a38061e302837ff6741830b6fb36",
+    "coordinate_author_batch.py": "ef4085b4f476a9af86dac5631353d4bc47da2e7e94e8909298d12c357f8f6935"
+  },
+  "manifest_snapshot_status": "RUNNING",
+  "manifest_snapshot_complete_count": 35,
+  "unique_complete_terminal_count": 35,
+  "partial_case_log_count": 4,
+  "active_workers": [
+    {
+      "pid": 59944,
+      "ppid": 195740,
+      "case_key": "7-6-28-0",
+      "command_line": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 7-6-28-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\7-6-28-0.jsonl --playout-multiplier 2500",
+      "decision_count": 9,
+      "log_sha256": "43de099857c0a9ac7b9dddba0f56f5e46d3f3e6f29005500bfe6f0524cf74152"
+    },
+    {
+      "pid": 9644,
+      "ppid": 195740,
+      "case_key": "8-5-20-0",
+      "command_line": "C:\\Users\\xyfdr\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\run_author_case.py --case-key 8-5-20-0 --case-dir D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\data\\verified_instances --log D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\cases\\8-5-20-0.jsonl --playout-multiplier 2500",
+      "decision_count": 9,
+      "log_sha256": "265fb8cdf2acec9b4c72d93754f7b02f669b44a420d736d24d75fd10a4cf77b3"
+    }
+  ],
+  "case_inventory": [
+    {
+      "case_key": "4-3-6-0",
+      "log_sha256": "aa84ca5597d21114a54223382683587066ab6449108eab0c5a90793e9bf6259a",
+      "status": "complete",
+      "terminal_attempt_id": "f23406b4-1a62-4beb-b38b-7e7d2c01db07",
+      "attempt_ids": [
+        "f23406b4-1a62-4beb-b38b-7e7d2c01db07"
+      ],
+      "decision_event_count": 3
+    },
+    {
+      "case_key": "4-3-8-0",
+      "log_sha256": "c9ef75fbab77e49a9416143c3befdba8464dadf45c983aacf1ae9b56e2eb78b7",
+      "status": "complete",
+      "terminal_attempt_id": "a92f62a7-0b9a-4143-892c-8f4a3e5d4ea1",
+      "attempt_ids": [
+        "a92f62a7-0b9a-4143-892c-8f4a3e5d4ea1"
+      ],
+      "decision_event_count": 2
+    },
+    {
+      "case_key": "4-4-11-0",
+      "log_sha256": "b8a04492ef3ba685e7db4cd77d9df1b209a1a4695d27ce9f1646bcc1b4e3047f",
+      "status": "complete",
+      "terminal_attempt_id": "87b95cea-34d7-48ce-a2a4-dab670711423",
+      "attempt_ids": [
+        "87b95cea-34d7-48ce-a2a4-dab670711423"
+      ],
+      "decision_event_count": 8
+    },
+    {
+      "case_key": "4-4-8-0",
+      "log_sha256": "91dd330866543cb24d662b2313812d19a14def01c2bb087c7c6b3fcd33100914",
+      "status": "complete",
+      "terminal_attempt_id": "26f4164c-0b83-4ff2-8976-e1cf1d9e667a",
+      "attempt_ids": [
+        "26f4164c-0b83-4ff2-8976-e1cf1d9e667a"
+      ],
+      "decision_event_count": 3
+    },
+    {
+      "case_key": "4-5-10-0",
+      "log_sha256": "cd4533bac428de864255d650ccb228c885c3c3592c23797741d7f188bdc38ea9",
+      "status": "complete",
+      "terminal_attempt_id": "949477d0-470f-416d-892d-ab0a992d6aab",
+      "attempt_ids": [
+        "949477d0-470f-416d-892d-ab0a992d6aab"
+      ],
+      "decision_event_count": 5
+    },
+    {
+      "case_key": "4-5-13-0",
+      "log_sha256": "3d3258cda280a66352bda2d11d87957211bdebe6172e7a00a108ec43d8772816",
+      "status": "complete",
+      "terminal_attempt_id": "21d3a308-791c-4ed8-a9c3-4004b66c4e95",
+      "attempt_ids": [
+        "21d3a308-791c-4ed8-a9c3-4004b66c4e95"
+      ],
+      "decision_event_count": 10
+    },
+    {
+      "case_key": "4-6-12-0",
+      "log_sha256": "166c24d62a1d0bcde69561b78345b8da4e9120c6ac415d30d7e9f5d579fe518f",
+      "status": "complete",
+      "terminal_attempt_id": "50241ad4-6798-4903-8274-dc18d1fa7066",
+      "attempt_ids": [
+        "50241ad4-6798-4903-8274-dc18d1fa7066"
+      ],
+      "decision_event_count": 7
+    },
+    {
+      "case_key": "4-6-16-0",
+      "log_sha256": "b1bc8fce06555500c3a659dc76ba061273f522ae9ff1bd22c594cca399a5074d",
+      "status": "complete",
+      "terminal_attempt_id": "69e58018-cb0f-4917-a6a1-202ee759660e",
+      "attempt_ids": [
+        "69e58018-cb0f-4917-a6a1-202ee759660e"
+      ],
+      "decision_event_count": 9
+    },
+    {
+      "case_key": "5-3-10-0",
+      "log_sha256": "512d1bc6d2d21bde9ad93b83b3c893a0b744276be20ed5c261e310127e4ed917",
+      "status": "complete",
+      "terminal_attempt_id": "9e144ac6-c19d-48ac-88a2-280309945efa",
+      "attempt_ids": [
+        "9e144ac6-c19d-48ac-88a2-280309945efa"
+      ],
+      "decision_event_count": 4
+    },
+    {
+      "case_key": "5-3-8-0",
+      "log_sha256": "2e66566a4808e0f01ad558c7498863afbdf093e471e38b2a6977ac5dae54582c",
+      "status": "complete",
+      "terminal_attempt_id": "467e7c3f-bd46-4d7f-b8eb-11e456fac189",
+      "attempt_ids": [
+        "467e7c3f-bd46-4d7f-b8eb-11e456fac189"
+      ],
+      "decision_event_count": 3
+    },
+    {
+      "case_key": "5-4-10-0",
+      "log_sha256": "d1d55b3fcc29992e3f4cab40b06a2aae48613da278fdcac0388236385e760f46",
+      "status": "complete",
+      "terminal_attempt_id": "d6cde1ee-6740-41d3-b235-83cd68b5972b",
+      "attempt_ids": [
+        "d6cde1ee-6740-41d3-b235-83cd68b5972b"
+      ],
+      "decision_event_count": 4
+    },
+    {
+      "case_key": "5-4-13-0",
+      "log_sha256": "fc41ccef0e0b4a0db9c216eb6f4f47705d2591a3e47100970386b29ea6ab8c0b",
+      "status": "complete",
+      "terminal_attempt_id": "769ed3b8-e747-414c-9a19-4a24a93430a5",
+      "attempt_ids": [
+        "769ed3b8-e747-414c-9a19-4a24a93430a5"
+      ],
+      "decision_event_count": 7
+    },
+    {
+      "case_key": "5-5-13-0",
+      "log_sha256": "30da3fe39f2d838499bb6c6711c6202360a925cbd59bcc9560ec3f8e925a79c8",
+      "status": "complete",
+      "terminal_attempt_id": "9157cea7-6eb1-4856-af69-cf77b116ab3d",
+      "attempt_ids": [
+        "9157cea7-6eb1-4856-af69-cf77b116ab3d"
+      ],
+      "decision_event_count": 7
+    },
+    {
+      "case_key": "5-5-17-0",
+      "log_sha256": "f14f6d1a18bf00b80f1e264beefd0ed50f3dd164e35114566595e66dba1bbfab",
+      "status": "complete",
+      "terminal_attempt_id": "bac0a3a5-b20d-4148-ac19-bb00c6459299",
+      "attempt_ids": [
+        "bac0a3a5-b20d-4148-ac19-bb00c6459299"
+      ],
+      "decision_event_count": 13
+    },
+    {
+      "case_key": "5-6-15-0",
+      "log_sha256": "6e3e88c4fa14b19ed1ad32f38c4848818c546a3494579a336615593611b2bf51",
+      "status": "complete",
+      "terminal_attempt_id": "45c6962b-79d0-4775-8e89-d3f16a8e1967",
+      "attempt_ids": [
+        "45c6962b-79d0-4775-8e89-d3f16a8e1967"
+      ],
+      "decision_event_count": 9
+    },
+    {
+      "case_key": "5-6-20-0",
+      "log_sha256": "3a82ca711b1b3d9c8cb997b657d7309eedd034c0893aa72f139f25b1f7c7c41b",
+      "status": "complete",
+      "terminal_attempt_id": "178f29da-9f7e-45f3-98fd-03ef1ea4f175",
+      "attempt_ids": [
+        "178f29da-9f7e-45f3-98fd-03ef1ea4f175"
+      ],
+      "decision_event_count": 16
+    },
+    {
+      "case_key": "6-3-12-0",
+      "log_sha256": "a293becff01875381fcb8e5396310f56ea95f02517e6e4317aca6ec183afe2dd",
+      "status": "complete",
+      "terminal_attempt_id": "3e96dd2b-1926-4167-b51e-ed8125189af0",
+      "attempt_ids": [
+        "3e96dd2b-1926-4167-b51e-ed8125189af0"
+      ],
+      "decision_event_count": 6
+    },
+    {
+      "case_key": "6-3-9-0",
+      "log_sha256": "cab164403d4e4806d701925ed0dd1f06abc4e281e9c28b7655b1512d0bb88be0",
+      "status": "complete",
+      "terminal_attempt_id": "d379a1b8-1d66-46ed-b867-c87ae296fddb",
+      "attempt_ids": [
+        "d379a1b8-1d66-46ed-b867-c87ae296fddb"
+      ],
+      "decision_event_count": 2
+    },
+    {
+      "case_key": "6-4-12-0",
+      "log_sha256": "4fbc2c792bb98f9def52172af82f62683bf68e5255a07d14d2070c4066004aa6",
+      "status": "complete",
+      "terminal_attempt_id": "a0f7cf5d-795c-4049-90f4-a0c869de6307",
+      "attempt_ids": [
+        "a0f7cf5d-795c-4049-90f4-a0c869de6307"
+      ],
+      "decision_event_count": 4
+    },
+    {
+      "case_key": "6-4-16-0",
+      "log_sha256": "046631a65b1b0fde0d2346f1f19629e9843fd9c6551b1b2639258a95e9788bc6",
+      "status": "complete",
+      "terminal_attempt_id": "986f1264-737b-4ea1-b96e-79f563ec67bf",
+      "attempt_ids": [
+        "986f1264-737b-4ea1-b96e-79f563ec67bf"
+      ],
+      "decision_event_count": 5
+    },
+    {
+      "case_key": "6-5-15-0",
+      "log_sha256": "1a2f06cf7cce770211803c05aa0a245788083554caee275a353d9fc6625f76a6",
+      "status": "complete",
+      "terminal_attempt_id": "0a9162f4-904e-489c-a21d-eee023e914a8",
+      "attempt_ids": [
+        "0a9162f4-904e-489c-a21d-eee023e914a8"
+      ],
+      "decision_event_count": 8
+    },
+    {
+      "case_key": "6-5-20-0",
+      "log_sha256": "28bcaf8651d3b9d09d1a33384499235f6471bc016de90275812123911ad44119",
+      "status": "complete",
+      "terminal_attempt_id": "efdc35b2-02c5-41d6-8d6a-c7ad81d99512",
+      "attempt_ids": [
+        "efdc35b2-02c5-41d6-8d6a-c7ad81d99512"
+      ],
+      "decision_event_count": 10
+    },
+    {
+      "case_key": "6-6-18-0",
+      "log_sha256": "4a3fe5e8d9c8b556da063ad64a2f7e9f2528a44a9ecca6fa86d7918bd695b2b7",
+      "status": "complete",
+      "terminal_attempt_id": "bf49e230-34a4-487f-a37f-1418bc531593",
+      "attempt_ids": [
+        "bf49e230-34a4-487f-a37f-1418bc531593"
+      ],
+      "decision_event_count": 9
+    },
+    {
+      "case_key": "6-6-24-0",
+      "log_sha256": "4295d0b49c9eba463042c2d7fc249b22e51479067999b75b2c8bc618a10a6361",
+      "status": "complete",
+      "terminal_attempt_id": "36aef25c-7526-47ec-9d11-ef100d8decd0",
+      "attempt_ids": [
+        "5beef37b-dcb1-4c46-b1cd-15b492d3e939",
+        "36aef25c-7526-47ec-9d11-ef100d8decd0"
+      ],
+      "decision_event_count": 27
+    },
+    {
+      "case_key": "7-3-11-0",
+      "log_sha256": "b39e141451863a77770d13d912cc3f75240fa18214b0443a0129ca596dbff27b",
+      "status": "complete",
+      "terminal_attempt_id": "3a812281-73f2-4d68-9fb4-1bb52c0aa8ea",
+      "attempt_ids": [
+        "3a812281-73f2-4d68-9fb4-1bb52c0aa8ea"
+      ],
+      "decision_event_count": 3
+    },
+    {
+      "case_key": "7-3-14-0",
+      "log_sha256": "11cec17240728cceda3bdb81d1264f2ab6c224c915c140774ddd079320c58f3b",
+      "status": "complete",
+      "terminal_attempt_id": "52a43dc9-e951-4bdf-b7b8-667b1fc0b9d2",
+      "attempt_ids": [
+        "52a43dc9-e951-4bdf-b7b8-667b1fc0b9d2"
+      ],
+      "decision_event_count": 6
+    },
+    {
+      "case_key": "7-4-14-0",
+      "log_sha256": "efd2224ad08d63fffdb71bd46c5ed4040dba193a69c3d04b65441ed579833d52",
+      "status": "complete",
+      "terminal_attempt_id": "54eb3378-b1c2-425d-b298-57d41f32f869",
+      "attempt_ids": [
+        "54eb3378-b1c2-425d-b298-57d41f32f869"
+      ],
+      "decision_event_count": 5
+    },
+    {
+      "case_key": "7-4-19-0",
+      "log_sha256": "ec17eb9ceab173f3637fea5ca43f2a19f06d1fe46671f2e8a701cd54df5eaffc",
+      "status": "complete",
+      "terminal_attempt_id": "7b8fa38e-0e36-4fcb-a89a-219670292a22",
+      "attempt_ids": [
+        "7b8fa38e-0e36-4fcb-a89a-219670292a22"
+      ],
+      "decision_event_count": 8
+    },
+    {
+      "case_key": "7-5-18-0",
+      "log_sha256": "3e088eea523b1ef7759015a7155106931de93b3e1c721e391178c560d384fa5a",
+      "status": "complete",
+      "terminal_attempt_id": "5b929cc4-6243-4f75-b766-bda080e850d1",
+      "attempt_ids": [
+        "5b929cc4-6243-4f75-b766-bda080e850d1"
+      ],
+      "decision_event_count": 8
+    },
+    {
+      "case_key": "7-5-23-0",
+      "log_sha256": "406f44ad471285ab9820f9582ab9af508c0c9c69bb913bae4c3fab3f3ec13fb1",
+      "status": "complete",
+      "terminal_attempt_id": "c63223b9-4669-4283-879b-2ccc5d4767a4",
+      "attempt_ids": [
+        "7dc669bc-f97e-44e0-8331-682329d44fe9",
+        "c075cd8d-ce73-42d8-8a33-255c817b5329",
+        "c63223b9-4669-4283-879b-2ccc5d4767a4"
+      ],
+      "decision_event_count": 15
+    },
+    {
+      "case_key": "7-6-21-0",
+      "log_sha256": "2f48044bc1fbc25f5c3987bfbe4c8f871da9dcc09c9fd1afcf8a291fa63ee957",
+      "status": "complete",
+      "terminal_attempt_id": "6e86a0f4-ecec-4e2f-a681-ba732c3d8334",
+      "attempt_ids": [
+        "11a9ce6d-c6b4-40f9-8a88-d8972afa3db6",
+        "6e86a0f4-ecec-4e2f-a681-ba732c3d8334"
+      ],
+      "decision_event_count": 13
+    },
+    {
+      "case_key": "7-6-28-0",
+      "log_sha256": "43de099857c0a9ac7b9dddba0f56f5e46d3f3e6f29005500bfe6f0524cf74152",
+      "status": "partial",
+      "terminal_attempt_id": null,
+      "attempt_ids": [
+        "377a28ef-38dc-4431-aa16-536b09d142a3",
+        "9a489771-41d9-4079-b2a4-9472554abe21"
+      ],
+      "decision_event_count": 9
+    },
+    {
+      "case_key": "8-3-12-0",
+      "log_sha256": "1152861cc410bf511a0daa6ae74d69d188372cd86cd281f68e1152e364d2f792",
+      "status": "complete",
+      "terminal_attempt_id": "657e9d84-e991-4cd0-b1d8-c0fc9f44d0be",
+      "attempt_ids": [
+        "657e9d84-e991-4cd0-b1d8-c0fc9f44d0be"
+      ],
+      "decision_event_count": 4
+    },
+    {
+      "case_key": "8-3-16-0",
+      "log_sha256": "02669ad239ac6f6cc778305f025e371cf51bde12b8b7650d130e19b7114616b9",
+      "status": "complete",
+      "terminal_attempt_id": "bb5042a0-72cd-4d27-af3c-d7a8d66f3a29",
+      "attempt_ids": [
+        "bb5042a0-72cd-4d27-af3c-d7a8d66f3a29"
+      ],
+      "decision_event_count": 3
+    },
+    {
+      "case_key": "8-4-16-0",
+      "log_sha256": "f54a752ccacb378cf9a4f265222ec1c827f0e19adbcc76a82bafcad208f5d1d5",
+      "status": "complete",
+      "terminal_attempt_id": "b425ea04-52f0-4ac1-8b11-6982b6a1805c",
+      "attempt_ids": [
+        "b425ea04-52f0-4ac1-8b11-6982b6a1805c"
+      ],
+      "decision_event_count": 4
+    },
+    {
+      "case_key": "8-4-21-0",
+      "log_sha256": "9ef52cdf7a4e4007213bc037fbec6da161caf1fd7b0ad5e7eb012a1a86a37c5e",
+      "status": "complete",
+      "terminal_attempt_id": "c4de509c-c6c4-4de7-9c50-1e77562e9fef",
+      "attempt_ids": [
+        "0b094201-fea7-44b3-a994-771d5c39cff9",
+        "c4de509c-c6c4-4de7-9c50-1e77562e9fef"
+      ],
+      "decision_event_count": 12
+    },
+    {
+      "case_key": "8-5-20-0",
+      "log_sha256": "265fb8cdf2acec9b4c72d93754f7b02f669b44a420d736d24d75fd10a4cf77b3",
+      "status": "partial",
+      "terminal_attempt_id": null,
+      "attempt_ids": [
+        "2aa58857-ef4a-4435-9ddc-7a5beebf58d6",
+        "6d975a05-c4d6-4bfe-9315-bc1c9023eb12"
+      ],
+      "decision_event_count": 9
+    },
+    {
+      "case_key": "8-5-27-0",
+      "log_sha256": "7b6638ffe5913218068225a4902e65cb4ffd519432dad5ffc359ba4e5ada04c9",
+      "status": "partial",
+      "terminal_attempt_id": null,
+      "attempt_ids": [
+        "7f9fee97-233e-4836-a9e6-9a4066487430"
+      ],
+      "decision_event_count": 0
+    },
+    {
+      "case_key": "8-6-24-0",
+      "log_sha256": "37d180288655b65e5903a192122abbbbbda0b864f237ed262ea4c9a42b13d39f",
+      "status": "partial",
+      "terminal_attempt_id": null,
+      "attempt_ids": [
+        "9a6ddbb5-c44a-4947-91c8-953bc19857ec"
+      ],
+      "decision_event_count": 0
+    }
+  ],
+  "coordinator_events_sha256_before": "5011ea2692bbcaa39e1e4cfeea7639423924627cba41c804b6da85e74f7a588f"
+}

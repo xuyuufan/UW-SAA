@@ -1,0 +1,11 @@
+{
+  "status": "LAUNCHED",
+  "started_utc": "2026-10-23T06:04:21Z",
+  "launcher_pid": 258756,
+  "command": "py -3 coordinate_author_batch.py --execute --release-file ROOT_RELEASE.json",
+  "stdout_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\launcher_attempt01.stdout.txt",
+  "stderr_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\results_v2\\launcher_attempt01.stderr.txt",
+  "release_path": "D:\\DSAI\\UWSAA\\reproducibility\\20261023_amcts_author_dataset\\ROOT_RELEASE.json",
+  "release_sha256": "35da5ae2469f7178fe35bb11161e1712530cf592c258f1a369840e64e905b540",
+  "coordinator_source_sha256": "d3c3d45e2e7cf3887c326c9090fd42849da1eb06b956354bf820a930336c199f"
+}
