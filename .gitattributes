@@ -5,3 +5,7 @@
 *.pdf -text
 *.npz -text
 *.zip -text
+third_party/crp_online/** -text
+experiments/gp_h20/data/train_bank.json -text
+artifacts/gp_h20/20261024_formal_30seed/acceleration_differential_verification.json -text
+artifacts/gp_h20/20261024_formal_30seed/pretraining_migration_verification.json -text

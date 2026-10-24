@@ -1,0 +1,84 @@
+{
+  "schema": "crp_online_source_snapshot_v1",
+  "source_description": "Third-party Python reproduction by Narek Sergeyan (2026), MIT; not the original authors code. Source tree has no Git metadata, so identity is this directory snapshot.",
+  "source_version": "CrpOnlinellm-main directory snapshot; no source commit available",
+  "vendored_scope": "stdlib dependency closure for GP engine, formula compiler, terminals, and yard value semantics; cpp_reference excluded",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 1456,
+      "sha256": "2e2582dd86f12e80f2ea7b2c5480d4533581602370a53d7248f6e0e6941450e3"
+    },
+    {
+      "path": "README.md",
+      "size": 10639,
+      "sha256": "9668ebf0a06757c6bb47dfe178e9f187152cb3237965393640d91a933764c56a"
+    },
+    {
+      "path": "docs/paper_vs_code.md",
+      "size": 2832,
+      "sha256": "b7f0abf69bc16da7fa3107f2a423260d219a8a1307aa494b0ef40d5070ba30b6"
+    },
+    {
+      "path": "src/crp/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/crp/paths.py",
+      "size": 466,
+      "sha256": "92034f25b029a34c5a0a608d303bc53c516d192f4163f4f181a0a325d44cdb06"
+    },
+    {
+      "path": "src/crp/instance.py",
+      "size": 2932,
+      "sha256": "1d6625d95db13091dbcf17f54a13723b995869293dead93d4053e0a71106cc9c"
+    },
+    {
+      "path": "src/crp/yard.py",
+      "size": 3051,
+      "sha256": "7e833e5128b8c679363f041aa8e3c4aff6fcfce6ebf7cc33d5181297fd153f4d"
+    },
+    {
+      "path": "src/crp/terminals.py",
+      "size": 929,
+      "sha256": "a1ac4358466634395dd6668c5a0815f2896923af469a342cd0cff05f23fb29c6"
+    },
+    {
+      "path": "src/crp/schemes.py",
+      "size": 5160,
+      "sha256": "76ccd4300a1e5cea9028555781ff6497ef7a492bda95012e560b2cec0bf5e37d"
+    },
+    {
+      "path": "src/crp/gp/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/crp/gp/tree.py",
+      "size": 3895,
+      "sha256": "9a3f8de12b1f3dfbf4028a9c465c5a2d28e10c9d589dd86c718a6d59f17e3d23"
+    },
+    {
+      "path": "src/crp/gp/crossover.py",
+      "size": 6148,
+      "sha256": "ab99d489213506e8c0a74c15a368e2521f328830ebffd349ffa07a2a0ed5536f"
+    },
+    {
+      "path": "src/crp/gp/mutation.py",
+      "size": 4378,
+      "sha256": "61ec55da9333da4e8e7929f903d6f1efadd25c6e78efe62003ef4ada513ef69f"
+    },
+    {
+      "path": "src/crp/gp/expression.py",
+      "size": 3240,
+      "sha256": "4a497c1f27b8cea70408a65d15dd00bfe8b4ac18657e3812c0fefe95520d0956"
+    },
+    {
+      "path": "src/crp/gp/algorithm.py",
+      "size": 3506,
+      "sha256": "9cb3d6b3167b8783cd5742413a80f627878b8fcc77e72830cc1a201370f97853"
+    }
+  ],
+  "manifest_sha256": "bdcab4b2c56c73332cd47545608416ea8de1f21168ceb0099a686e652d10bd8d"
+}

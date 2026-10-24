@@ -1,0 +1,326 @@
+{
+  "action_trace_differentials": {
+    "compared": "complete destination-index action sequence and total relocations per episode",
+    "counts_by_horizon": {
+      "0": 630,
+      "10": 630,
+      "2": 630,
+      "20": 630,
+      "5": 630
+    },
+    "total_episode_horizon_formula_pairs": 3150
+  },
+  "formula_cases": {
+    "composite_01": {
+      "formula": "+ SH EMP",
+      "sha256": "f97da49bb191eda164cf83ce5d90213039c2fd848812ad316ce69c7af4b20f56"
+    },
+    "composite_02": {
+      "formula": "- RI / AVG + EMP DIFF",
+      "sha256": "c0edaad6c002cf2e88fe38d5049ff1253fa84213aae87cbe37aeb74eb17e5233"
+    },
+    "composite_03": {
+      "formula": "+ * SH CUR / DIFF RI",
+      "sha256": "b745cc91ff963b76f7fd0c9bcd681f8a8a7c5c1d7ebfcb6db9a98610980b2fe7"
+    },
+    "composite_04": {
+      "formula": "/ + SH EMP - AVG CUR",
+      "sha256": "edf4d8ec2d9f83f791641ed62e23967fff95a41640f78ef35e34218b7e3bf006"
+    },
+    "seeded_source_random_tree_17": {
+      "formula": "* EMP SH",
+      "sha256": "c7e6c9e7e606b609b5dd07e8488ded2b93abd48147517a03749023f90c8e6089"
+    },
+    "seeded_source_random_tree_20261024": {
+      "formula": "+ * + - + DIFF DIFF + AVG RI * / RI EMP - CUR CUR / * * AVG AVG * SH SH / + EMP AVG - EMP AVG + * - + RI AVG * CUR SH + / EMP SH / CUR DIFF + + / EMP AVG - SH SH + / SH AVG - EMP SH",
+      "sha256": "c795a05a64462df80aace555b52d333e6083902de92e405e6c92478dc3f7d804"
+    },
+    "seeded_source_random_tree_2026102401": {
+      "formula": "+ / - - / AVG DIFF * DIFF AVG - - EMP SH / CUR DIFF * - + EMP SH + CUR RI + - RI AVG / CUR EMP * + - * SH SH * CUR RI / - RI CUR + EMP SH * / / AVG CUR - DIFF SH * / EMP CUR * AVG DIFF",
+      "sha256": "2a462052692bcddf5fc1a9be4460678c18b5ef490db8067138fbbd9677efaf07"
+    },
+    "seeded_source_random_tree_6102403": {
+      "formula": "/ / / / - CUR AVG * RI AVG / / RI SH * RI EMP / + - AVG CUR * AVG SH / + AVG SH * AVG SH - * * * CUR EMP + DIFF RI - - RI RI * CUR AVG + + - RI EMP + AVG AVG - / SH AVG - AVG SH",
+      "sha256": "6bf68ccaeb66f3866df679acf9c0019cb4437105f64ef596f1bf95347144c77a"
+    },
+    "seeded_source_random_tree_850033": {
+      "formula": "* * + * + EMP RI / AVG RI + * RI RI * AVG CUR - - / EMP AVG / DIFF RI - - AVG RI * CUR CUR / - * * SH RI * EMP AVG - - CUR AVG * SH CUR - + / EMP EMP * AVG AVG - / RI AVG + SH RI",
+      "sha256": "175d8601d9c4a2552a45061e496ab9de12c12e2551b6045cd065fd2ceebd8afc"
+    },
+    "terminal_avg": {
+      "formula": "AVG",
+      "sha256": "249a90b07ed10bd0cd2bcc9819827267428261fb08e181f43e90807c63c65e80"
+    },
+    "terminal_cur": {
+      "formula": "CUR",
+      "sha256": "66d2af90645aa5197e4541bb208343e3ddcce962b02697e59014e3d93ea721f8"
+    },
+    "terminal_diff": {
+      "formula": "DIFF",
+      "sha256": "b6aeb797022b02364ac0df9510bbd283c65a25b70b61f421334654f77ad2d325"
+    },
+    "terminal_emp": {
+      "formula": "EMP",
+      "sha256": "5cb8a39167b6ef3fc7d472fc93b77c855c7cd0bf3a31c5a0eec6936f755f9d03"
+    },
+    "terminal_ri": {
+      "formula": "RI",
+      "sha256": "91d19006c4397461ab9912a25f8d7b52ad39d438d884005edd54006f576d7869"
+    },
+    "terminal_sh": {
+      "formula": "SH",
+      "sha256": "68d0766ae14980daddb49ef3d11191e6bc9bf22c5193df8fd5349177b37ed62f"
+    }
+  },
+  "full_bank_formula_totals": [
+    {
+      "accelerated_total": 38316,
+      "case": "seeded_source_random_tree_17",
+      "equal": true,
+      "formula_sha256": "c7e6c9e7e606b609b5dd07e8488ded2b93abd48147517a03749023f90c8e6089",
+      "formula_tokens": 3,
+      "source_yard_total": 38316
+    },
+    {
+      "accelerated_total": 37303,
+      "case": "seeded_source_random_tree_20261024",
+      "equal": true,
+      "formula_sha256": "c795a05a64462df80aace555b52d333e6083902de92e405e6c92478dc3f7d804",
+      "formula_tokens": 63,
+      "source_yard_total": 37303
+    },
+    {
+      "accelerated_total": 30094,
+      "case": "seeded_source_random_tree_850033",
+      "equal": true,
+      "formula_sha256": "175d8601d9c4a2552a45061e496ab9de12c12e2551b6045cd065fd2ceebd8afc",
+      "formula_tokens": 63,
+      "source_yard_total": 30094
+    }
+  ],
+  "nonfinite_behavior": {
+    "accelerated_episode_behavior": "ValueError",
+    "direct_accelerated_behavior": "ValueError",
+    "direct_source_priority": Infinity,
+    "episode_formula_sha256": "bc5e5377982f41c387075f393fc4cb5989185690787f4a269b49fbffae8f61cc",
+    "masked_nonfinite_intermediate_checked": true,
+    "nonfinite_episode_priority_rejected": true,
+    "source_episode_behavior": "ValueError"
+  },
+  "protected_division_boundary": {
+    "all_equal": true,
+    "comparisons": [
+      {
+        "accelerated_priority": -6999999300.00007,
+        "denominator": -1.0000001e-09,
+        "equal": true,
+        "source_priority": -6999999300.00007
+      },
+      {
+        "accelerated_priority": -7000000000.0,
+        "denominator": -1e-09,
+        "equal": true,
+        "source_priority": -7000000000.0
+      },
+      {
+        "accelerated_priority": 1.0,
+        "denominator": -9.999999e-10,
+        "equal": true,
+        "source_priority": 1.0
+      },
+      {
+        "accelerated_priority": 1.0,
+        "denominator": 0.0,
+        "equal": true,
+        "source_priority": 1.0
+      },
+      {
+        "accelerated_priority": 1.0,
+        "denominator": 9.999999e-10,
+        "equal": true,
+        "source_priority": 1.0
+      },
+      {
+        "accelerated_priority": 7000000000.0,
+        "denominator": 1e-09,
+        "equal": true,
+        "source_priority": 7000000000.0
+      },
+      {
+        "accelerated_priority": 6999999300.00007,
+        "denominator": 1.0000001e-09,
+        "equal": true,
+        "source_priority": 6999999300.00007
+      }
+    ],
+    "formula": "/ SH CUR",
+    "masked_nonfinite_numerator": {
+      "accelerated_priority": 1.0,
+      "formula": "/ * DIFF DIFF AVG",
+      "postfix_evaluates_but_ignores_nonfinite_intermediate": true,
+      "source_priority": 1.0,
+      "source_skips_numerator_after_protected_denominator": true
+    }
+  },
+  "public_terminal_edge_cases": {
+    "edge_episode_traces_match": true,
+    "empty_destination": {
+      "DIFF": 2147483645,
+      "expected_INT_MAX_minus_CUR": 2147483645,
+      "source_terminal_names": [
+        "SH",
+        "EMP",
+        "AVG",
+        "CUR",
+        "RI",
+        "DIFF"
+      ]
+    },
+    "integer_avg": {
+      "raw_mean": 2.5,
+      "source_terminal": 2
+    },
+    "leftmost_tie": {
+      "accelerated_first_action": 1,
+      "legal_destinations": [
+        1,
+        2
+      ],
+      "source_action": 1
+    },
+    "near_end_maximum": {
+      "remaining_H_plus_1": {
+        "all_remaining_ranks_public": true,
+        "unknown_sentinel_present": false
+      },
+      "remaining_H_plus_2": {
+        "horizon": 2,
+        "maximum": 4,
+        "unknown_value": 4
+      }
+    }
+  },
+  "runtime": {
+    "budget_seconds": 120.0,
+    "elapsed_seconds": 30.10900000000038,
+    "engine_identity": {
+      "backend": "numba_float64_v1",
+      "llvmlite_version": "0.42.0",
+      "numba_version": "0.59.1",
+      "numpy_version": "1.26.4"
+    },
+    "llvmlite": "0.42.0",
+    "numba": "0.59.1",
+    "numba_threads": 32,
+    "numpy": "1.26.4",
+    "python": "3.12.4"
+  },
+  "schema": "uwsaa_gp_acceleration_differential_v1",
+  "scope": "correctness differential only; not a GP search or timing benchmark",
+  "status": "pass",
+  "tested_inputs": {
+    "files_sha256": {
+      "baseline/gp.py": "e811c5042a05d90720993d736da33b6811f6a46c7bc92587c6a8493f9515a722",
+      "experiments/gp_h20/data/train_bank.json": "9dfaf66cce987d70cad2673089c27aea75af1a82e060d043f351218b665384c6",
+      "experiments/gp_h20/fitness.py": "edd1f9aa36e6a619fbdd7d0189b07fc63ffdbcd47a50787dff996eeff99eafc9",
+      "experiments/gp_h20/protocol.json": "059f340980a1da0eb1af2c40a1ef17f02696f3701383a516a8593f81858f38db",
+      "third_party/crp_online/SOURCE_MANIFEST.json": "fa6e629ca3f1b6b9ab12cd63dd488576f3298b55cecbd6d76226d5051a28db76"
+    },
+    "protocol_sha256": "059f340980a1da0eb1af2c40a1ef17f02696f3701383a516a8593f81858f38db",
+    "source_manifest_sha256": "bdcab4b2c56c73332cd47545608416ea8de1f21168ceb0099a686e652d10bd8d",
+    "train_bank_sha256": "9dfaf66cce987d70cad2673089c27aea75af1a82e060d043f351218b665384c6"
+  },
+  "training_bank": {
+    "geometry_groups": 21,
+    "rows": 840,
+    "sample_geometry_layout_sha256": {
+      "10-10": [
+        "cab0b41a7866eeddf635686b754db15a7abac85a48a2c270dc4bef8a1813fd91",
+        "20749bf6b31694db022a9b2b814137bddc5dc91fffab88a39934c64fa78119a7"
+      ],
+      "10-6": [
+        "db5f9bf6fa82dd08f326b46ed35faf889c6f5c42f8a1df517f171e083a03c5ec",
+        "dd42644dc6faa072b209e45df664581ffe8b827b82600f67748fe3a51b32789d"
+      ],
+      "3-3": [
+        "dc7b3a2916580a39a877249268292487c6959664d5f0a42305a814251b90dad6",
+        "870b07f3f410599a405185a096ebcfe4bba57f7a6b9a65454e796434dfb3ff72"
+      ],
+      "3-4": [
+        "26eff939a62a761656883f4b1c8d9353ca989eae9b7967f9561efe5738b42bfa",
+        "a9099a28b7802576d7f51cf518d9eaf1ff2eab5486b4caabacd53ba0d34b4dce"
+      ],
+      "3-5": [
+        "9d24d0689c0ed48d1cb653429e677a0f7bade050acdad1f62448c038020cb144",
+        "07e2f50f7ecb968582d9c1c4b289b65264ca21ffd77e0642acdeff6e93dd0ff5"
+      ],
+      "3-6": [
+        "9f2d897e0d256a09a7d0116f2f4e20976462678051844adb49c629c5243235c9",
+        "59240180b57a46b9b25f29c1534a922f845757abadc61062b2caeef268e4646c"
+      ],
+      "3-7": [
+        "553fe153e7ef1789496596fb179997c742aa1e2074f2a475d85be71aebd1b852",
+        "d0c4b9d87a69c3c4e86884c3b34b43110fd013f4eb1e6de05a6e872ee97535cd"
+      ],
+      "3-8": [
+        "9eb76f3ab7b779970c2e5dc2bdeebf17dd124a141aec5140499feacd44f0ae5a",
+        "ac8ce34dc11af57f74a9a06076940fdddaa866d440f132183ed7cc84c742b0e9"
+      ],
+      "4-4": [
+        "45d8e8406e0b57d661db96e2c7797b041f1231b0c5ee4b912549f4a12a69dc8e",
+        "9ed92bb61cf61ebd53ce0eda1ecdf48e04a9cab1eb9dd85fcd3a756af0980da2"
+      ],
+      "4-5": [
+        "01147dffeb8b58f5a80e5e85c35615b2030799b8bf99ab93768875bbf0c99237",
+        "a540d5c873bb911b0cfae5dd62c4c3a4734b46e491b39157f3e855aab6ee5da3"
+      ],
+      "4-6": [
+        "fccdd648cf0496eef75438e77924ce028193a04f91b643b94e7c70efc2fa5df4",
+        "ff58d924b94b34459eb7a6c5afa3056277ca20f9b794c09ceafce754d8516291"
+      ],
+      "4-7": [
+        "03c3e5f9a2c80a3c1f2bb4be5b5b4d99b9791766db1aa11f75d1f1dad390e49e",
+        "6781f5f9ed3aa8e3f3a286202c940bce8f0fb59824e82fa380e1b7aedbdec1a5"
+      ],
+      "5-10": [
+        "d7eb07913afa06e406233e6e246332f05e6cdc8408f5128fce69953942ec3c6e",
+        "ba13d2df0db1d3301970e44916d07771c8031a5ebca617f4c5896c14bea9fa26"
+      ],
+      "5-4": [
+        "ef3441fe9a2e62632dcc2e46b46135c5bd9e846b58ca2d20fadb2fa33633cff3",
+        "da6d92deceaca025175a558b92016872b013f3f8270ae57954711b6d283bd3ee"
+      ],
+      "5-5": [
+        "0d51c506eeb93c06dfaab8b82c7e61806dd3c16513e3a59739f9ad67d9d87b30",
+        "890f7fbd804c23452681d0d7275a70f890a1c1c0b9a8d67794d3cbaf294908e1"
+      ],
+      "5-6": [
+        "c7396c86643b94332f9957f35cf9d33ee33031f2c48ec3f6c3da966a2629a710",
+        "528c439def49c3bc596163e2adc32c0d7e01c0590402c04d6efde4559a469393"
+      ],
+      "5-7": [
+        "84a7b0665b4ad024fde3fbfd70d26dcc2c3f2b86b2cfb5dc832778dd8b19c318",
+        "f364fdb6fc84d3c3a91afa6550b4b2ff1443e7b3cc958bf598fa3c75d662e2c9"
+      ],
+      "5-8": [
+        "d29ee66ecf34ea6c09febe036773aad1b89d63e106569424beb81299eda968f1",
+        "ecacd7b6114422e963678064115c30efa38fe4c0d41f1e23a8cc20794fd67e1d"
+      ],
+      "5-9": [
+        "5e7396a8d76d57c1f535213e299e3687181ec49ce9f4f680cafea87e2ea689f9",
+        "0fa6f5a4ab8d0d72b0efb0199a18e71339b97a220dc129241a6bfdbc005ef9a0"
+      ],
+      "6-10": [
+        "dace81fd759cbcddd4141c5725d68b2c1c40294952b4f50c14873eec67a2b3b5",
+        "0ec13cdf2464e68e2611409b8ce81b58077e98033f6b7ca77e43404238501d32"
+      ],
+      "6-6": [
+        "aa5e197d1fb7100e5c9e4dc284b7c89519513b3919c3717410108ee1da89598a",
+        "a61aa0520cee7cad46be41632016a694cafb806a8cb8ffc5ef6732cbe1a6c561"
+      ]
+    },
+    "sample_layouts_per_geometry": 2,
+    "sample_rows": 42,
+    "sha256": "9dfaf66cce987d70cad2673089c27aea75af1a82e060d043f351218b665384c6"
+  }
+}

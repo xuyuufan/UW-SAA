@@ -43,6 +43,20 @@ def _validate(rows: list[dict], manifest: dict) -> None:
     arms = manifest.get("arms", [])
     if not episodes or not conditions or not solvers or not arms:
         raise ValueError("run manifest has an empty registered dimension")
+    manifest_gp = manifest.get("gp_model")
+    if "GP" in solvers:
+        if not isinstance(manifest_gp, dict) or manifest_gp.get("status") != "trained":
+            raise ValueError("GP run manifest lacks a trained, hash-bound model identity")
+        required_gp_hashes = ("formula_sha256", "source_manifest_sha256", "protocol_sha256",
+                              "train_bank_sha256", "implementation_sha256", "seed_receipt_sha256")
+        if any(not isinstance(manifest_gp.get(key), str) or len(manifest_gp[key]) != 64
+               for key in required_gp_hashes):
+            raise ValueError("GP run manifest has incomplete model/source/protocol SHA bindings")
+        identity = manifest_gp.get("model_identity")
+        if not isinstance(identity, dict) or not identity:
+            raise ValueError("GP run manifest lacks model identity details")
+    elif manifest_gp is not None:
+        raise ValueError("non-GP run manifest unexpectedly carries a GP model identity")
     if len({item["episode_id"] for item in episodes}) != len(episodes):
         raise ValueError("run manifest contains duplicate episode IDs")
     episode_by_id = {item["episode_id"]: item for item in episodes}
@@ -74,6 +88,12 @@ def _validate(rows: list[dict], manifest: dict) -> None:
             raise ValueError(f"unexpected condition at row {index}")
         condition = condition_by_id[condition_id]
         solver, arm = str(row.get("solver", "")), str(row.get("arm", ""))
+        row_gp = row.get("gp_model")
+        if solver == "GP":
+            if not isinstance(row_gp, dict) or row_gp != manifest_gp:
+                raise ValueError(f"GP endpoint model identity differs from its run manifest at row {index}")
+        elif row_gp is not None:
+            raise ValueError(f"non-GP endpoint unexpectedly carries a GP model identity at row {index}")
         if row.get("layout_fingerprint") != episode.get("layout_fingerprint"):
             raise ValueError(f"layout fingerprint differs from episode manifest at row {index}")
         if row.get("parameter_group") != episode.get("parameter_group"):
@@ -167,6 +187,7 @@ def main() -> None:
         "input_rows": len(rows),
         "aggregate_rows": len(grouped),
         "smoke_only": bool(manifest.get("smoke_only")),
+        "gp_model": manifest.get("gp_model"),
         "statistics": "descriptive geometry-by-condition means; no confidence interval",
         "metrics": {"relocations": "integer relocation count", "relocations_per_container": "relocations divided by initial container count"},
     }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
