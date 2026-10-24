@@ -11,11 +11,12 @@ if str(ROOT) not in sys.path:
 
 from environment.online_crp import load_episode_manifest
 from reproducibility.protocol import CONDITION_SETS, SUITE_ARMS, forecast_table
-from reproducibility.runner import DEFAULT_DATA, load_gp_rule, load_runtime, run_episode
+from reproducibility.runner import ROOT as REPO_ROOT, load_runtime, run_episode
 
 
 def main() -> None:
-    episode = load_episode_manifest(DEFAULT_DATA)[0]
+    training_bank = REPO_ROOT / "experiments" / "gp_h20" / "data" / "train_bank.json"
+    episode = load_episode_manifest(training_bank)[0]
     forecast_count = 0
     for condition in CONDITION_SETS["main"]:
         table, digest = forecast_table(episode, condition)
@@ -23,13 +24,13 @@ def main() -> None:
             raise AssertionError(f"invalid registered forecast table: {condition['condition_id']}")
         forecast_count += 1
 
-    runtime, gp_rule = load_runtime(), load_gp_rule()
+    runtime = load_runtime()
     policy_count = 0
     for suite, arms in SUITE_ARMS.items():
         condition = CONDITION_SETS[suite][-1]
         for solver in ("EM", "EG"):
             for arm in arms:
-                result = run_episode(episode, condition, solver, arm, runtime, gp_rule)
+                result = run_episode(episode, condition, solver, arm, runtime, None)
                 if not result["complete"]:
                     raise AssertionError(
                         f"{suite}/{solver}/{arm}: {result.get('failure_type')}: "
@@ -41,7 +42,10 @@ def main() -> None:
                     raise AssertionError("forecast provider reveal count is incomplete")
                 policy_count += 1
     print(json.dumps({
-        "status": "PASS",
+        "status": "PASS_NON_GP_PENDING_GP",
+        "tested_solvers": ["EM", "EG"],
+        "gp_model_status": "pending; excluded from this smoke",
+        "dataset": "840-row GP training bank; correctness-only sample",
         "forecast_tables_checked": forecast_count,
         "policy_trajectories_checked": policy_count,
         "scope": "one small complete episode per registered suite arm for EM and EG; no performance measurement",

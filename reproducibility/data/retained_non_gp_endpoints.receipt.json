@@ -1,0 +1,108 @@
+{
+  "schema": "uwsaa_non_gp_endpoint_recovery_v1",
+  "source_commit": "a39d0ac0e454f48d591d573868afa21531db34e7",
+  "source_index_path": "reproducibility/data/uwsaa_trajectory_endpoints.parts.json",
+  "source_index_sha256": "401f05465fd034a7ad0732eb89cb0c481311e016825c727cded9b6c0b7e29275",
+  "source_payload_path": "uwsaa_trajectory_endpoints.csv.gz",
+  "source_payload_bytes": 174138724,
+  "source_payload_sha256": "82f53e12cb4a7be109a504485267373a0032c45a5c0964a6153f07ec61616af4",
+  "source_rows": 1722662,
+  "source_parts": [
+    {
+      "path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz.part-001-of-004",
+      "bytes": 45000000,
+      "sha256": "465d874fe7786beab39f3cdaaf940a256949a171773943da0daf2f9df2dc0cf1"
+    },
+    {
+      "path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz.part-002-of-004",
+      "bytes": 45000000,
+      "sha256": "47b64d382a0e1329de628bf0df7f33f76079252ae14cf1ac07edee5cd6ea46c2"
+    },
+    {
+      "path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz.part-003-of-004",
+      "bytes": 45000000,
+      "sha256": "4774681772d2a01aa0a66026e4c51d26aa1c1544a1c4d824e5ca16dcf9c1aeec"
+    },
+    {
+      "path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz.part-004-of-004",
+      "bytes": 39138724,
+      "sha256": "9ffe26956772571f9d27ebaa493905bd71f0e682f1b38638091b43b4a55d5d57"
+    }
+  ],
+  "source_evidence_status_counts": {
+    "accepted": 1038720,
+    "correctness_smoke": 636,
+    "failed_clean_gate": 7560,
+    "failed_performance_gate": 756,
+    "historical_partial": 674990
+  },
+  "filter": "drop rows where solver.upper() is GP or MEAN6",
+  "removed_row_count": 287113,
+  "removed_solver_counts": {
+    "GP": 287113
+  },
+  "retained_row_count": 1435549,
+  "retained_solver_counts": {
+    "Chain": 287106,
+    "EG": 287113,
+    "EM": 287113,
+    "ERI": 287113,
+    "Minmax": 287104
+  },
+  "retained_evidence_status_counts": {
+    "accepted": 865600,
+    "correctness_smoke": 530,
+    "failed_clean_gate": 6300,
+    "failed_performance_gate": 630,
+    "historical_partial": 562489
+  },
+  "study_coverage_fields": [
+    "study_group",
+    "study_membership",
+    "evidence_status"
+  ],
+  "retained_study_coverage_counts": {
+    "caserta_ablation|caserta_ablation|accepted": 176400,
+    "caserta_main|caserta_main;caserta_ablation_reference;deterministic_single_reference|accepted": 29400,
+    "caserta_main|caserta_main;caserta_ablation_reference|accepted": 29400,
+    "caserta_main|caserta_main|accepted": 285600,
+    "correctness_smoke|correctness_smoke|correctness_smoke": 530,
+    "deterministic_single|deterministic_single|accepted": 29400,
+    "dev100|dev100|failed_clean_gate": 6300,
+    "followup_a|followup_a|accepted": 24000,
+    "followup_bdev|followup_bdev|accepted": 20000,
+    "followup_btest|followup_btest|accepted": 32800,
+    "followup_c|followup_c|accepted": 32800,
+    "historical_partial|historical_partial|historical_partial": 562489,
+    "scenario_ablation|scenario_ablation|accepted": 205800,
+    "speedup_validation|speedup_validation|failed_performance_gate": 630
+  },
+  "numeric_text_and_provenance": "CSV values remain strings; numeric text, provenance, and evidence_status fields are preserved.",
+  "filtered_payload_bytes": 147364265,
+  "filtered_payload_sha256": "100b385d7a6f2b8424a245e3b37a3f4ecace12a2536344b983094ad1fa398a4a",
+  "parts_index": "retained_non_gp_endpoints.parts.json",
+  "parts_index_sha256": "3d7a135e39698316ce451f223d1b19c97be708682bd8944d5e29614ef1924cb5",
+  "part_bytes_max": 40000000,
+  "parts": [
+    {
+      "filename": "retained_non_gp_endpoints.csv.gz.part-001-of-004",
+      "bytes": 40000000,
+      "sha256": "bdf4e126e8ef956ab781d6ef46ec12f509ceed12e168fcc794d974368895ac92"
+    },
+    {
+      "filename": "retained_non_gp_endpoints.csv.gz.part-002-of-004",
+      "bytes": 40000000,
+      "sha256": "256030457b5437898f29d46c41b674c5de7a079f4e3ec52438789853e29bb4e1"
+    },
+    {
+      "filename": "retained_non_gp_endpoints.csv.gz.part-003-of-004",
+      "bytes": 40000000,
+      "sha256": "d925d2bec732dc2b6394fb58d48891ee2be45e91dd6f5ca3b15e090f186ec726"
+    },
+    {
+      "filename": "retained_non_gp_endpoints.csv.gz.part-004-of-004",
+      "bytes": 27364265,
+      "sha256": "5619daa9949f9026e18e8977b809becc6c2cb278c4da4bf437479bfff0a16acb"
+    }
+  ]
+}

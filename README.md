@@ -1,113 +1,60 @@
-# UW-SAA trajectory benchmark
+# UW-SAA reproduction
 
-This repository contains the public UW-SAA decision method, its six solver baselines, the Caserta input set, a complete trajectory endpoint runner, the registered evaluation protocol, and endpoint-level results. The public method identifier is `UWSAA`; all result metrics use the names `relocations` and `relocations_per_container`.
+This repository contains a CPU-capable Python reproduction of Uniform-Width Sample-Average Approximation (UW-SAA), selected solver adapters, a registered trajectory runner, and the GP migration workflow. The GP component uses a third-party Python reproduction attributed to Narek Sergeyan under the MIT license; it is not the original authors' implementation.
 
-The public results package is [UWSAA benchmark evaluation](results/uwsaa-benchmark-evaluation/README.md). It includes condition-level outcomes, accepted comparisons, figures in PNG and PDF, and the scripts used to regenerate result tables and figures. The canonical trajectory endpoints and source mapping are described in [the endpoint data guide](reproducibility/data/README.md) and [the data inventory](reproducibility/data_inventory.json). The [public bundle manifest](reproducibility/public_bundle_manifest.json) records SHA-256 hashes and byte sizes for every published file.
+## Current evidence status
 
-The registered matrix, pairing, timeout, and confidence-interval rules are described in [the public protocol](reproducibility/PROTOCOL.md).
+The earlier all-six-solver endpoint bundle and figures used a retired GP rule. Those files and the mixed raw endpoint payload have been removed from the active tree and preserved in a hash-verified archive. The replacement GP rule is trained and active. Its GP-only Caserta MAIN comparison against NATIVE20 has started. The local shard is running on registered conditions 1–14 (six SS and eight TW conditions; 23,520 endpoints). The non-overlapping cloud shard is assigned to conditions 15–41 (six DP, two overlay, 18 regime-mixture, and CLEAN; 45,360 endpoints) and starts after its cross-host probe passes. Together the shards cover 68,880 endpoints. This comparison does not rerun the other five solvers. Six-solver tables, figures, MEAN6, and the GP ablation/P0/multi-K matrices remain pending.
 
-## Method and solver labels
+The previous non-GP endpoints can be reconstructed from the pinned pre-migration Git tree with [the recovery script](reproducibility/data/recover_non_gp_endpoints.py). It verifies the source index, all source parts, and the combined payload before filtering GP and MEAN6 rows. Its filtered output is written outside the checkout; the receipt in reproducibility/data/retained_non_gp_endpoints.receipt.json records the exact hashes and row counts. The five-solver payload is not a six-solver result and cannot be used to compute MEAN6.
 
-For the selected solver, UWSAA obtains destination sequences at horizons 0, 2, 5, 10, and 20. It merges identical sequences and evaluates the remaining candidates against eight synthetic completion scenarios: two scenarios at each window width 2, 5, 10, and 20. Each width has equal total weight. The same scenarios score every candidate, using the fixed Minmax continuation. Policies receive a detached public decision frame; the future retrieval sequence stays with the environment and forecast provider.
+## GP training contract
 
-The registered solver labels are EM, GP, ERI, EG, Chain, and Minmax. `relocations` is the total relocation count, and `relocations_per_container` is that count divided by the initial number of containers. These names map to historical source fields `R_raw` and `R_over_N`. The solver label `ERI` is an algorithm name; it is unrelated to the historical letter used in metric field names.
+The replacement model was selected only on the separate 840-episode training bank in `experiments/gp_h20/data/train_bank.json`. The 840 Caserta layouts remain the sealed evaluation benchmark for UW-SAA and were not used for GP training, formula selection, fixed-horizon selection, or tuning.
 
-## Install and check
+The registered source engine ran seeds 1 through 30, with 51,000 fitness evaluations per seed (1,000 initial individuals plus 50 generations of 1,000). The 2026 paper reports 30 independent executions per scenario (p. 9, section 5.1) and means across 30 (p. 16), but does not publish seed IDs. The registered IDs are reproducible seeds, not recovered paper seeds. The source count of 51,000 differs from Table 3's reported 50,000 evaluations. Formula selection minimizes training-bank relocations, with lower seed breaking ties. Fixed-horizon selection compares H=0,2,5,10,20 on the same training bank, with lower horizon breaking ties.
 
-The package uses Python 3.12 and the pinned dependency in `requirements.txt`.
+Seed 5 was selected at 24,421 relocations; H=20 was the selected fixed horizon. The active rule is hash-bound to the vendored source, protocol, training bank, implementation, and selected seed receipt. This is training-bank selection, not independent validation. All 30 seeds used the pinned training environment (Python 3.12.4, NumPy 1.26.4, Numba 0.59.1, llvmlite 0.42.0). Seed compute totaled 3,570.23 seconds; elapsed wall time including monitoring pauses was 7,847.67 seconds. The full receipts and correctness checks are in [the formal training artifact bundle](artifacts/gp_h20/20261024_formal_30seed/README.md).
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -B checks/public_smoke.py
-python -B checks/environment_smoke.py
-python -B checks/trajectory_runner_smoke.py
-python -B checks/aggregate_validation_smoke.py
-python -B checks/verify_bundle.py
-```
+A bounded eight-worker diagnostic on a smaller population had matching serial/parallel formulas, histories, and scores (55.84 seconds serial, 12.50 seconds parallel). It is not a full-search performance result or runtime bound. No GP performance conclusion has been produced. The active model is not evidence of benchmark performance. The cloud shard must first reproduce the 252-endpoint cross-host probe and match each keyed result's relocations, N, decision/retrieval/reveal counts, forecast hash, and model identity. Probe rows are diagnostic and are not counted again in the formal cloud shard.
 
-The smoke checks exercise interfaces, policy behavior on small fixtures, and strict endpoint validation. They do not run a performance benchmark. The detached-frame source differential receipt and statistics implementation check are optional compatibility checks; the first needs an externally supplied frozen implementation:
+## Install and bounded checks
 
-```bash
-python -B checks/source_differential_smoke.py --source-root /path/to/frozen-source
-python -B checks/statistics_source_parity.py --source-root /path/to/frozen-source
-```
+The public runtime uses requirements.txt with NumPy 2.4.4. GP training uses a separate Python 3.12.4 environment and [the training extras](experiments/gp_h20/requirements-training.txt), pinned to NumPy 1.26.4, Numba 0.59.1, and llvmlite 0.42.0. Keep these environments separate; the training pins do not alter the public runtime dependency set.
 
-## Run registered trajectories
+Use Python 3.12 and install the pinned public-runtime dependency:
 
-Use `--list` to inspect the conditions and arms before running a suite:
+    python -m venv .venv
+    source .venv/bin/activate
+    python -m pip install -r requirements.txt
+    python -B checks/public_smoke.py
+    python -B checks/environment_smoke.py
+    python -B checks/trajectory_runner_smoke.py
+    python -B checks/aggregate_validation_smoke.py
+    python -B checks/gp_migration_smoke.py
+    python -B checks/gp_acceleration_differential.py
 
-```bash
-python -B -m reproducibility.runner --suite main --list
-python -B -m reproducibility.runner --suite ablation --list
-python -B -m reproducibility.runner --suite p0 --list
-python -B -m reproducibility.runner --suite multik --list
-```
+These checks cover interfaces and bounded correctness. They do not run the registered performance matrices.
 
-For a complete single-episode smoke trajectory, select a registered condition and save to a new output path:
+## Registered trajectory runner
 
-```bash
-python -B -m reproducibility.runner --suite main --smoke --condition CLEAN --output reproducibility/results/smoke.jsonl
-```
+List a suite before running it:
 
-For a full registered matrix, use `--run` and a new output path. The main suite has 41 conditions × 840 layouts × six solvers × two arms (413,280 endpoint rows). The ablation suite has seven conditions × 840 layouts × six solvers × eight logical arms (282,240 rows); its two common reference arms are shared with MAIN in the canonical result data. P0 uses its deterministic single-completion control, while the multi-K suite has UWSAA plus the six registered rollout/LB1 variants. Each trajectory has a 120-second wall-clock elapsed cap, including policy calls; failures produce endpoint rows and make the command exit nonzero. Output paths are opened exclusively so an existing run is not overwritten.
+    python -B -m reproducibility.runner --suite main --list
+    python -B -m reproducibility.runner --suite ablation --list
+    python -B -m reproducibility.runner --suite p0 --list
+    python -B -m reproducibility.runner --suite multik --list
 
-```bash
-python -B -m reproducibility.runner --suite main --run --output reproducibility/results/main.jsonl
-```
+A non-GP smoke trajectory does not load the GP rule:
 
-The runner emits one terminal endpoint per episode-condition-solver-arm cell and a manifest that binds the selected matrix, layout metadata, dataset hash, and endpoint count. It does not emit per-decision action traces, timing summaries, or performance claims. The public archive also preserves partial endpoint prefixes with their historical status labels. Full action traces and original recovery logs are outside the public distribution.
+    python -B -m reproducibility.runner --suite main --smoke --solver EM --condition CLEAN --output reproducibility/results/em-smoke.jsonl
 
-Validate and describe an endpoint run before using it:
+Selecting GP requires a complete trained configs/gp_rule.json; the runner checks this before creating endpoint or manifest files. It records the rule, formula, source, protocol, training-bank, implementation, and seed-receipt identities in every GP endpoint and the run manifest.
 
-```bash
-python -B -m reproducibility.aggregate \
-  --endpoints reproducibility/results/main.jsonl \
-  --manifest reproducibility/results/main.jsonl.manifest.json \
-  --output reproducibility/results/main_descriptive.csv
-```
+The registered evaluation sets contain 41 MAIN conditions and seven conditions each for ablation, P0, and multi-K. The current GP-only MAIN comparison uses 840 layouts and two GP arms, UWSAA and NATIVE20. Ablation reuses matching MAIN UWSAA and NATIVE20 rows; P0 and multi-K reuse matching MAIN UWSAA rows. In multi-K analyses, the standard UWSAA rows are the K=8 rollout reference. The detailed pairing and merge boundary are in [the protocol](reproducibility/PROTOCOL.md).
 
-The aggregate script rejects partial or failed runs, duplicate or missing pair keys, row/manifest label mismatches, incomplete retrieval accounting, and forecast hashes that differ across paired arms.
+## Statistics and results
 
-## Recompute registered statistics
+The statistics command reads only the new canonical six-solver endpoint path under reproducibility/results/gp_migration/. It requires complete GP model bindings and rejects mixed GP identities or incomplete solver matrices before creating an output directory. The five-solver recovery payload is not a valid input to registered statistics.
 
-The provenance-indexed endpoint records are distributed as ordered gzip parts. The standard-library [reassembly helper](reproducibility/data/reassemble_endpoints.py) verifies every part and writes a reconstructed gzip into the operating-system temporary directory. The statistics runner uses this helper automatically when the assembled file is absent; an explicitly supplied missing `--endpoints` path is an error. It checks complete registered matrices and paired first-forecast-row hashes before writing any table. Historical records with overlapping episodes remain separately labeled in the archive. Accepted matrices use deduplicated endpoint references, with shared baseline records stored once and identified by membership and source mappings:
-
-```bash
-python -B -m reproducibility.statistics --suite main --output-dir analysis/main
-python -B -m reproducibility.statistics --suite ablation --output-dir analysis/ablation
-python -B -m reproducibility.statistics --suite deterministic --output-dir analysis/deterministic
-python -B -m reproducibility.statistics --suite scenario-ablation --output-dir analysis/scenario-ablation
-```
-
-Each output directory must be new. The paired bootstrap uses 10,000 draws, NumPy PCG64, seed `202610195903`, sorted geometry and layout-fingerprint order, and matched within-geometry layout resampling. It averages registered repeats within each layout, layouts within geometry, and the 21 geometries equally. The noisy primary first forms one relative reduction per family, then averages the three families equally, then averages the six solver effects equally. CLEAN is reported separately. Registered multiplicity adjustments are kept with the comparison that specified them.
-
-To compare the registered primary estimates and intervals against the accepted result tables without running trajectories or per-condition analyses, run:
-
-```bash
-python -B -m checks.verify_accepted_statistics
-```
-
-This verifies all 56 MAIN, Caserta ablation, and deterministic solver rows plus the 49 multi-K primary and absolute-interaction rows. Its receipt at `checks/accepted_statistics_verification.json` records input hashes and the maximum numeric difference.
-
-For the multi-K follow-up, the primary table has seven rows per solver: four K=1/2/4/16 rollout comparisons against K=8, the K=8 rollout/LB1 comparison, the K=1 rollout/LB1 comparison, and the absolute rollout/LB1 interaction. The interaction is reported in relocations as `(P4 − K1) − (P3 − K8)`; positive values mean the LB1 relocation penalty is larger at K=1 than K=8. The relative interaction is secondary and dimensionless. CLEAN remains a separate secondary comparison.
-
-## Evidence status and scope
-
-The result inventory distinguishes accepted benchmark outcomes, development or follow-up runs, partial records, failed registered gates, and correctness smoke checks. A stopped earlier expansion remains recorded as not run; later K-based results are reported as their own executed study. The packaging work adds a runnable endpoint runner and rechecks small trajectories, source-to-public policy parity, and existing endpoint statistics. It does not rerun the full performance matrices.
-
-Trajectory endpoint data are sufficient to reproduce the registered terminal-outcome tables and paired statistics. They do not reconstruct every action or hidden forecast observation. Published selection-time summaries are descriptive; they do not reproduce hardware load or establish a causal speedup. Caserta is the sealed evaluation benchmark for UW-SAA, held out from UW-SAA method development. Its public availability and use in other project methods do not change that method-specific evaluation role.
-
-## Repository map
-
-```text
-uwsaa/                 Public UWSAA policy and registered comparison arms
-baseline/              EM, GP, ERI, EG, Chain, Minmax, and Native20 adapters
-environment/           Online environment and detached public-frame contracts
-data/                  Caserta input layouts and retrieval sequences
-configs/               Frozen runtime and solver settings
-reproducibility/        Runner, forecast registry, strict aggregation, and statistics
-checks/                 Bounded policy, runner, and package-integrity checks
-results/                Endpoint-level accepted tables, figures, and provenance guide
-```
+The active [results inventory](results/uwsaa-benchmark-evaluation/README.md) explains what remains pending. It contains no retired GP values or figures. Caserta is used only as the registered evaluation benchmark; it remains held out from UW-SAA method development and from GP training or selection.

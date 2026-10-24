@@ -4,15 +4,20 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from environment.noise_aware_forecast import HORIZONS
-from environment.public_frame import truncate_public_frame, public_frame_to_legacy_state
+from environment.public_frame import truncate_public_frame
 from baseline.em import select_em_destination
 from baseline.eri_eg_public import select_eri20_destination
 from baseline import eri_eg
-from baseline.gp import select_destination as gp_select_destination
 from baseline import chain, minmax
 
 SOLVERS = ("EM", "GP", "ERI", "EG", "Chain", "Minmax")
 
+
+def _require_gp_rule(gp_rule: Mapping[str, Any] | None) -> Mapping[str, Any]:
+    if gp_rule is not None:
+        return gp_rule
+    from uwsaa.entrypoint import load_gp_rule
+    return load_gp_rule()
 
 def _strict_horizon(value: int) -> int:
     if isinstance(value, bool) or int(value) != value:
@@ -43,18 +48,18 @@ class EMNativeActor:
 class GPNativeActor:
     """One GP public-prefix bridge/inference call with its registered legality check."""
 
-    def __init__(self, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any], horizon: int) -> None:
+    def __init__(self, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any] | None, horizon: int) -> None:
         self.runtime = runtime
-        self.gp_rule = gp_rule
+        self.gp_rule = _require_gp_rule(gp_rule)
         self.horizon = _strict_horizon(horizon)
         self.invocation_count = 0
 
     def __call__(self, frame: object) -> int:
         prefix = self.runtime["truncate_public_frame"](frame, self.horizon)
-        legacy = self.runtime["public_frame_to_legacy_state"](prefix)
-        action = int(self.gp_rule["selector"](
-            legacy, prefix.legal_destinations, max_tiers=prefix.max_tiers
-        ))
+        selector = self.gp_rule.get("selector")
+        if selector is None:
+            raise RuntimeError("GP rule is not loaded")
+        action = int(selector(prefix, horizon=self.horizon))
         if action not in prefix.legal_destinations:
             raise ValueError(f"GP returned illegal action {action}")
         self.invocation_count += 1
@@ -100,7 +105,7 @@ class EGNativeActor:
 def make_native_actor(
     algorithm: str,
     runtime: Mapping[str, Any],
-    gp_rule: Mapping[str, Any],
+    gp_rule: Mapping[str, Any] | None,
     horizon: int = 20,
 ) -> Any:
     if algorithm == "EM":
@@ -120,7 +125,7 @@ def build_native_proposals(
     frame: object,
     algorithm: str,
     runtime: Mapping[str, Any],
-    gp_rule: Mapping[str, Any],
+    gp_rule: Mapping[str, Any] | None,
 ) -> dict[int, tuple[int, ...]]:
     """Build the exact five registered native proposals used by UWSAA."""
     if algorithm not in SOLVERS[:4]:
@@ -141,15 +146,16 @@ def build_native_proposals(
 class FixedHorizonActor:
     """One exact fixed-horizon actor; EG keeps its committed group cache."""
 
-    def __init__(self, algorithm: str, horizon: int, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any]):
+    def __init__(self, algorithm: str, horizon: int, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any] | None):
         if algorithm not in SOLVERS[:4] or _strict_horizon(horizon) != horizon:
             raise ValueError("fixed actor algorithm/horizon is outside registration")
         self.algorithm = algorithm
         self.horizon = int(horizon)
         self.runtime = runtime
-        self.gp_rule = gp_rule
+        self.gp_rule = _require_gp_rule(gp_rule) if algorithm == "GP" else (gp_rule or {})
         self._eg_actor = make_native_actor("EG", runtime, gp_rule, 20) if algorithm == "EG" else None
-        self._native_actor = None if algorithm == "EG" else make_native_actor(algorithm, runtime, gp_rule, self.horizon)
+        actor_rule = self.gp_rule if algorithm == "GP" else gp_rule
+        self._native_actor = None if algorithm == "EG" else make_native_actor(algorithm, runtime, actor_rule, self.horizon)
 
     @property
     def is_group_start(self) -> bool:

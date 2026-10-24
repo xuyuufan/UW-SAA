@@ -35,7 +35,7 @@ DEFAULT_OUTPUT = ROOT / "reproducibility" / "results" / "trajectory_endpoints.js
 
 
 class FixedHorizonPolicy:
-    def __init__(self, solver: str, horizon: int, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any]):
+    def __init__(self, solver: str, horizon: int, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any] | None):
         self.solver, self.horizon = solver, int(horizon)
         self.actor = FixedHorizonActor(solver, horizon, runtime, gp_rule) if solver in SOLVERS[:4] else None
         self.proposer = chain.propose if solver == "Chain" else minmax.propose
@@ -48,14 +48,19 @@ class FixedHorizonPolicy:
         return int(action), {**dict(trace), "policy": "UWSAA_BEST_FIXED_H", "requested_h": self.horizon}
 
 
-def _make_policy(solver: str, arm: str, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any]):
+def _make_policy(solver: str, arm: str, runtime: Mapping[str, Any], gp_rule: Mapping[str, Any] | None):
     if arm == "UWSAA":
         return make_policy(solver, "UWSAA", runtime, gp_rule)
     if arm == "NATIVE20":
         return make_policy(solver, "NATIVE20", runtime, gp_rule)
     if arm == "UWSAA_BEST_FIXED_H":
         selection = json.loads((ROOT / "configs" / "best_fixed_h_by_solver.json").read_text(encoding="utf-8"))
-        horizon = int(selection["selected_h_by_solver"][solver])
+        if solver == "GP":
+            if gp_rule is None or gp_rule.get("best_fixed_h") is None:
+                raise RuntimeError("GP best-fixed horizon is pending; select it on the registered training bank")
+            horizon = int(gp_rule["best_fixed_h"])
+        else:
+            horizon = int(selection["selected_h_by_solver"][solver])
         return FixedHorizonPolicy(solver, horizon, runtime, gp_rule)
     return make_variant(solver, arm, runtime, gp_rule)
 
@@ -72,8 +77,11 @@ def _sync_forecast_provider(provider: ForecastProvider, episode: Any, table: tup
 
 
 def run_episode(episode: Any, condition: Mapping[str, Any], solver: str, arm: str,
-                runtime: Mapping[str, Any], gp_rule: Mapping[str, Any]) -> dict[str, Any]:
+                runtime: Mapping[str, Any], gp_rule: Mapping[str, Any] | None) -> dict[str, Any]:
     started = time.monotonic()
+    if solver == "GP" and gp_rule is None:
+        raise RuntimeError("GP runner requires a preloaded trained rule; refusing implicit rule loading")
+    gp_model = _gp_model_record(gp_rule) if solver == "GP" else None
     fingerprint = ""
     table_hash = ""
     env = None
@@ -155,6 +163,7 @@ def run_episode(episode: Any, condition: Mapping[str, Any], solver: str, arm: st
             "num_containers": int(episode.num_containers),
             "relocations_per_container": 0.0 if env is None else float(env.relocation_count / episode.num_containers),
             "forecast_table_sha256": table_hash,
+            "gp_model": gp_model,
             "failure_type": type(exc).__name__,
             "failure_message": str(exc),
         }
@@ -177,7 +186,32 @@ def run_episode(episode: Any, condition: Mapping[str, Any], solver: str, arm: st
         "num_containers": int(episode.num_containers),
         "relocations_per_container": float(env.relocation_count / episode.num_containers),
         "forecast_table_sha256": table_hash,
+        "gp_model": gp_model,
     }
+
+
+def _gp_model_record(gp_rule: Mapping[str, Any] | None) -> dict[str, Any]:
+    if gp_rule is None:
+        raise RuntimeError("GP rule is pending; no model identity is available")
+    identity = gp_rule.get("identity", gp_rule.get("model_identity"))
+    if not isinstance(identity, Mapping):
+        raise ValueError("loaded GP rule lacks model identity")
+    fields = (
+        "source_manifest_sha256", "protocol_sha256", "train_bank_sha256",
+        "implementation_sha256", "seed_receipt_sha256",
+    )
+    record = {field: gp_rule.get(field, identity.get(field)) for field in fields}
+    if any(not isinstance(value, str) or len(value) != 64 for value in record.values()):
+        raise ValueError("loaded GP rule has incomplete source/protocol/training SHA bindings")
+    record.update({
+        "status": "trained",
+        "formula_sha256": gp_rule.get("formula_sha256"),
+        "best_fixed_h": gp_rule.get("best_fixed_h"),
+        "model_identity": dict(identity),
+    })
+    if not isinstance(record["formula_sha256"], str) or len(record["formula_sha256"]) != 64:
+        raise ValueError("loaded GP rule has no verified formula SHA-256")
+    return record
 
 
 def _semantic_key(episode_id: str, fingerprint: str, condition: Mapping[str, Any], solver: str, arm: str) -> str:
@@ -268,7 +302,9 @@ def main() -> None:
     if not conditions:
         parser.error("no conditions selected")
 
-    runtime, gp_rule = load_runtime(), load_gp_rule()
+    runtime = load_runtime()
+    gp_rule = load_gp_rule() if "GP" in solvers else None
+    gp_model = _gp_model_record(gp_rule) if "GP" in solvers else None
     args.output.parent.mkdir(parents=True, exist_ok=True)
     manifest_path = args.output.with_suffix(args.output.suffix + ".manifest.json")
     if args.output.exists() or manifest_path.exists():
@@ -316,6 +352,7 @@ def main() -> None:
         "actual_rows": rows,
         "failed_rows": failures,
         "endpoint_file": args.output.name,
+        "gp_model": gp_model,
         "pairing_key": "episode_id + label_invariant_fingerprint + condition parameters + solver; policy arms share paired rows",
         "scope": "endpoint records; no action-level traces and no timing or performance report",
     }

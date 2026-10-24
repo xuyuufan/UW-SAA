@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import sys
+import tempfile
 from dataclasses import replace
 from pathlib import Path
 from typing import Any, Mapping
@@ -26,7 +27,7 @@ from environment.public_frame import PublicDecisionFrame, make_public_frame
 from environment.public_history import PublicHistoryTracker, attach_history_summary
 from reproducibility.protocol import CONDITION_SETS, forecast_table
 from reproducibility.runner import (
-    DEFAULT_DATA, _make_policy, _sync_forecast_provider, load_gp_rule, load_runtime,
+    DEFAULT_DATA, _make_policy, _sync_forecast_provider, load_runtime,
 )
 from uwsaa.variants import make_variant
 
@@ -188,7 +189,7 @@ def _source_parity(episode: Any, source_frame: object, public_frame: object, sou
 
     tested: dict[str, Any] = {}
     nontrivial_by_arm: dict[str, int] = {}
-    for solver in SOLVERS:
+    for solver in (name for name in SOLVERS if name != "GP"):
         source_policy = source["UWSAASelector"](solver, "UW-SAA", runtime, gp_rule)
         public_policy = _make_policy(solver, "UWSAA", runtime, gp_rule)
         tested[f"main/UWSAA/{solver}"] = _select_and_compare(
@@ -305,11 +306,11 @@ def main() -> None:
                         help="frozen source checkout containing uw_saa/scrp")
     parser.add_argument("--frozen-trace", type=Path,
                         help="optional 41-row archived private forecast trace for one layout")
-    parser.add_argument("--output", type=Path, default=ROOT / "checks" / "source_differential_smoke_result.json")
+    parser.add_argument("--output", type=Path, default=Path(tempfile.gettempdir()) / "uwsaa_source_differential_smoke.json")
     args = parser.parse_args()
 
     source = _load_source_api(args.source_root)
-    runtime, gp_rule = load_runtime(), load_gp_rule()
+    runtime, gp_rule = load_runtime(), None
     best_h = json.loads((ROOT / "configs" / "best_fixed_h_by_solver.json").read_text(encoding="utf-8"))
     episodes = load_episode_manifest(DEFAULT_DATA)
     condition = CONDITION_SETS["main"][-1]
@@ -347,8 +348,9 @@ def main() -> None:
     public_hashes = {name: _sha256(ROOT / name) for name in public_files}
     result = {
         "schema": "uwsaa_source_differential_smoke_v1",
-        "status": "PASS",
-        "scope": "one detached Caserta frame; source/public action and score parity; no performance run",
+        "status": "PASS_NON_GP_PENDING_GP",
+        "gp_model_status": "pending; GP excluded from parity comparison",
+        "scope": "one detached Caserta frame; non-GP source/public action and score parity; no performance run",
         "episode_id": episode.episode_id,
         "layout_fingerprint": __import__("reproducibility.protocol", fromlist=["label_invariant_fingerprint"]).label_invariant_fingerprint(episode),
         "source_files_sha256": source_hashes,
