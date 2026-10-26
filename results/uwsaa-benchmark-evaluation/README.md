@@ -1,9 +1,0 @@
-# UWSAA benchmark evaluation status
-
-The prior all-six-solver endpoints, aggregate tables, and figures used a retired GP rule. They are withdrawn from the active results tree and preserved in a verified archive. This directory contains no old numerical results.
-
-The replacement GP rule is trained and active. Seed 5 was selected at 24,421 training relocations; H=20 was selected on the registered 840-row training bank. This selection is not independent validation and is not a performance result. Caserta remains the sealed evaluation benchmark for UW-SAA and was not used for training or selection.
-
-A GP-only paired comparison on the registered Caserta MAIN conditions is in progress. The local partition is running on indices 1–14 (six SS and eight TW conditions; 23,520 endpoints). The cloud partition is assigned indices 15–41 (six DP, two overlay, 18 regime-mixture, and CLEAN; 45,360 endpoints) and starts after its cross-host probe passes. The partitions are disjoint and total 68,880 GP endpoints across UWSAA and NATIVE20. No comparison result is accepted yet. GP ablation, P0, and multi-K rows, the canonical six-solver merge, all-solver statistics, MEAN6, and figures remain pending. Five-solver historical endpoint rows may be restored only through the pinned recovery script and must be joined by layout fingerprint, condition, solver, and arm. The runner's full forecast-table hash is not interchangeable with the historical first-forecast-row hash.
-
-Training receipts and correctness checks are available in [the formal GP-H20 artifact bundle](../../artifacts/gp_h20/20261024_formal_30seed/README.md). See [the performance-evaluation handoff](../../reproducibility/CLOUD_GP_MIGRATION_PROMPT.md), [the evaluation protocol](../../reproducibility/PROTOCOL.md), and [the non-GP endpoint recovery guide](../../reproducibility/data/README.md).
