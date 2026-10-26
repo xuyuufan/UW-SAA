@@ -1,6 +1,6 @@
 {
-  "source": "development fixed-horizon selection evidence",
-  "selection_rule": "selected once from the registered development horizon grid; never selected on Caserta main or ablation outcomes",
+  "source": "development selections retained for non-GP solvers; GP selected on the registered training bank (not independent validation)",
+  "selection_rule": "Retain existing development selections for non-GP solvers; GP horizon minimizes total relocations over the 840-row training bank, ties resolved by lower horizon.",
   "selected_h_by_solver": {
     "EM": 20,
     "GP": 20,
@@ -8,5 +8,6 @@
     "EG": 20,
     "Chain": 20,
     "Minmax": 20
-  }
+  },
+  "pending_by_solver": {}
 }

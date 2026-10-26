@@ -21,8 +21,16 @@ import numpy as np
 from reproducibility.protocol import ABLATION_CONDITIONS, SOLVERS, main_conditions
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ENDPOINTS = ROOT / "reproducibility" / "data" / "uwsaa_trajectory_endpoints.csv.gz"
-DEFAULT_PARTS_INDEX = ROOT / "reproducibility" / "data" / "uwsaa_trajectory_endpoints.parts.json"
+# This path is populated only after a new trained GP run is merged with the
+# retained non-GP evidence. It deliberately does not point at the retired mixed
+# endpoint payload or its former parts index.
+DEFAULT_ENDPOINTS = ROOT / "reproducibility" / "results" / "gp_migration" / "canonical_six_solver_endpoints.csv.gz"
+GP_STATUS_COLUMN = "gp_status"
+GP_BINDING_COLUMNS = (
+    "gp_model_identity_sha256", "gp_formula_sha256", "gp_source_manifest_sha256",
+    "gp_protocol_sha256", "gp_train_bank_sha256", "gp_implementation_sha256",
+    "gp_seed_receipt_sha256",
+)
 DEFAULT_SEED = 202610195903
 DEFAULT_DRAWS = 10_000
 PURE_FAMILIES = ("subset_shuffle", "time_window_shuffle", "delayed_positions")
@@ -61,7 +69,7 @@ def _csv_rows(path: Path) -> Iterable[dict[str, str]]:
             "study_group", "evidence_status", "episode_id", "layout_fingerprint",
             "condition_id", "family", "repeat", "solver", "arm", "geometry",
             "parameter_group", "relocations", "relocations_per_container",
-            "first_forecast_row_sha256", "num_containers",
+            "first_forecast_row_sha256", "num_containers", GP_STATUS_COLUMN, *GP_BINDING_COLUMNS,
         }
         missing = required - set(reader.fieldnames or ())
         if missing:
@@ -94,7 +102,17 @@ def _canonical_rows(path: Path) -> list[dict[str, Any]]:
             raise ValueError(f"invalid first-forecast-row hash at CSV row {line_number}")
         if source["geometry"] != source["parameter_group"]:
             raise ValueError(f"geometry and parameter_group disagree at CSV row {line_number}")
+        gp_binding = {field: source[field].strip() for field in GP_BINDING_COLUMNS}
+        if source["solver"] == "GP":
+            if source[GP_STATUS_COLUMN] != "trained":
+                raise ValueError(f"GP endpoint is not marked trained at CSV row {line_number}")
+            if any(len(value) != 64 or any(c not in "0123456789abcdefABCDEF" for c in value)
+                   for value in gp_binding.values()):
+                raise ValueError(f"GP endpoint lacks complete model/source/protocol SHA bindings at CSV row {line_number}")
+        elif source[GP_STATUS_COLUMN].strip() or any(gp_binding.values()):
+            raise ValueError(f"non-GP endpoint unexpectedly carries GP model identity at CSV row {line_number}")
         rows.append({
+            "gp_binding": gp_binding if source["solver"] == "GP" else None,
             "study_group": source["study_group"], "evidence_status": source["evidence_status"],
             "episode_id": source["episode_id"], "layout_fingerprint": fingerprint,
             "condition_id": source["condition_id"], "family": source["family"], "repeat": repeat,
@@ -105,6 +123,15 @@ def _canonical_rows(path: Path) -> list[dict[str, Any]]:
             "source_row": source.get("source_row", ""),
         })
     return rows
+
+
+def _validate_gp_model_binding(rows: Sequence[Mapping[str, Any]]) -> dict[str, str]:
+    bindings = {tuple(sorted(dict(row["gp_binding"]).items())) for row in rows if row.get("solver") == "GP"}
+    if not bindings:
+        raise ValueError("no trained GP endpoints are present; five-solver data cannot produce six-solver statistics")
+    if len(bindings) != 1:
+        raise ValueError("canonical endpoints mix GP model/source/protocol identities; aggregate is refused")
+    return dict(next(iter(bindings)))
 
 
 def _merge_unique(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
@@ -612,22 +639,20 @@ def main() -> None:
     if args.seed != DEFAULT_SEED:
         parser.error(f"registered protocol requires seed {DEFAULT_SEED}")
     endpoint_path = args.endpoints
-    parts_index: Path | None = None
     if not endpoint_path.is_file():
-        if endpoint_path.resolve() == DEFAULT_ENDPOINTS.resolve() and DEFAULT_PARTS_INDEX.is_file():
-            from reproducibility.data.reassemble_endpoints import assemble_endpoint_gzip
-
-            endpoint_path = assemble_endpoint_gzip(DEFAULT_PARTS_INDEX)
-            parts_index = DEFAULT_PARTS_INDEX
-        else:
-            parser.error(f"canonical endpoint file does not exist: {endpoint_path}")
+        parser.error(
+            f"new six-solver canonical endpoint file is not available: {endpoint_path}; "
+            "restore/filter the retained non-GP endpoints, train and freeze GP, then rerun and merge registered suites"
+        )
+    canonical_rows = _canonical_rows(endpoint_path)
+    gp_model_binding = _validate_gp_model_binding(canonical_rows)
+    selected, definitions, primary, condition_contrasts, metadata = _suite_spec(args.suite, canonical_rows)
+    if set(row["solver"] for row in selected) != set(SOLVERS):
+        parser.error("registered statistics require complete six-solver data; five-solver MEAN6 is forbidden")
     try:
         args.output_dir.mkdir(parents=True, exist_ok=False)
     except FileExistsError:
         parser.error("output directory already exists; choose a new path")
-
-    canonical_rows = _canonical_rows(endpoint_path)
-    selected, definitions, primary, condition_contrasts, metadata = _suite_spec(args.suite, canonical_rows)
     indexes = _bootstrap_indices(selected, args.seed, args.draws)
     comparison_rows: list[dict[str, Any]] = []
     condition_rows: list[dict[str, Any]] = []
@@ -735,8 +760,7 @@ def main() -> None:
         "schema": "uwsaa_registered_statistics_v1", "status": "PASS_COMPLETE_REGISTERED_MATRIX",
         "suite": args.suite, "source_endpoint_file": endpoint_path.name,
         "source_endpoint_sha256": _sha256(endpoint_path),
-        "source_endpoint_parts_index": parts_index.name if parts_index else None,
-        "source_endpoint_parts_index_sha256": _sha256(parts_index) if parts_index else None,
+        "gp_model_binding": gp_model_binding,
         "endpoint_rows_read": len(canonical_rows),
         "selected_rows": len(selected), "source_groups": metadata["source_groups"],
         "logical_arms": metadata["logical_arms"], "evidence_statuses": sorted({row["evidence_status"] for row in selected}),

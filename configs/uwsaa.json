@@ -28,7 +28,7 @@
   "scenarios_per_window": 2,
   "scenario_seed_namespace_preserved": "plan056_tw_saa_public_scenarios_v1",
   "dataset": "data/caserta_table2_840.json",
-  "dataset_sha256": "c28c975c8026a59a1b7995f8afe8a41e9e48b469835b9d2227a9bbe7a5371a12",
+  "dataset_sha256": "bb471dc334ad186523bcbd436bbe103dd81e517554999d35132a5e0692c98448",
   "dataset_rows": 840,
   "original_geometry_groups": 21,
   "rows_per_geometry_group": 40,
@@ -38,5 +38,5 @@
   "formal_pipeline": "not included; see README.md for the frozen-release boundary",
   "source_config_sha256": "8ce3a3f1ebd3c003af10db82489e59fa774864440aa8c048780f0afc12da510a",
   "formal_name": "Uniform-Width Sample-Average Approximation (UW-SAA)",
-  "model_config": "configs/gp_accepted_rule.json"
+  "model_config": "configs/gp_rule.json"
 }

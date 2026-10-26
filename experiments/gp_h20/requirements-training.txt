@@ -1,0 +1,6 @@
+# Training-only numerical environment; keep separate from root requirements.txt.
+# Validated on CPython 3.12.4. Install these pins in a dedicated Python 3.12 venv.
+# The public inference/runtime bundle separately pins NumPy 2.4.4.
+numpy==1.26.4
+numba==0.59.1
+llvmlite==0.42.0

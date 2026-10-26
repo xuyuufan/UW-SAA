@@ -9,7 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from environment.online_crp import OnlineCRPEpisode, OnlineCRPEnvironment
-from uwsaa.entrypoint import load_gp_rule, load_runtime
+from uwsaa.entrypoint import load_runtime
 
 
 def main() -> None:
@@ -28,7 +28,6 @@ def main() -> None:
 
     # Import the actual policy runtime without adding source or legacy roots.
     load_runtime()
-    load_gp_rule()
     targets = [
         module
         for name, module in sys.modules.items()
@@ -60,11 +59,9 @@ def main() -> None:
         "target_module_count": len(targets),
         "outside_bundle_modules": outside_root,
         "legacy_or_source_modules_loaded": legacy_modules,
-        "scope": "one scalar environment step and import-path audit; no experiment or trajectory",
+        "gp_status": "pending; not loaded by this non-GP environment smoke",
+        "scope": "one scalar environment step and non-GP import-path audit; no experiment or trajectory",
     }
-    (ROOT / "checks" / "environment_smoke_result.json").write_text(
-        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
     print(json.dumps(payload, sort_keys=True))
 
 

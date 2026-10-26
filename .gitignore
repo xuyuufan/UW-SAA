@@ -7,3 +7,5 @@ reproducibility/results/
 /reproducibility/data/uwsaa_trajectory_endpoints.csv.gz
 analysis/
 /results/uwsaa-benchmark-evaluation/data/.*.tmp
+/experiments/gp_h20/runs/
+/experiments/gp_h20/smoke/
