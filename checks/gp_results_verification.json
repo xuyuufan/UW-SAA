@@ -1,0 +1,21 @@
+{
+  "schema": "uwsaa_gp_published_results_verification_v1",
+  "status": "PASS",
+  "scope": "artifact integrity and exact numerical reproduction; not independent scientific review",
+  "published_files_checked": 17,
+  "archive_members_checked": 118,
+  "formal_endpoint_rows": 68880,
+  "formal_condition_shards": 41,
+  "paired_cells": 34440,
+  "geometries": 21,
+  "layouts": 840,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 202610195903,
+  "recomputed_table_rows": 90,
+  "summary_rows_checked": 10,
+  "tables_and_analysis_manifest_match_exactly": true,
+  "archive_sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4",
+  "analysis_script_sha256": "d20ca7c751778c977c0734072045c820b14d9cb5b5192e7050c13840eff5ab40",
+  "gp_model_identity_sha256": "40c76a4c193fcf9f020e17ae7f5c6c5d67f34e63f2eb3fba6128a259821292ab",
+  "evidence_status": "pending_review"
+}

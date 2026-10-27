@@ -1,15 +1,7 @@
 {
-  "schema_version": 2,
-  "title": "UW-SAA endpoint migration inventory",
-  "status": "GP replacement pending; former mixed canonical payload withdrawn",
-  "canonical_payload": {
-    "status": "withdrawn_from_active_tree",
-    "former_path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz",
-    "former_payload_sha256": "82f53e12cb4a7be109a504485267373a0032c45a5c0964a6153f07ec61616af4",
-    "former_payload_bytes": 174138724,
-    "former_row_count": 1722662,
-    "reason": "contained endpoints produced with the retired GP rule; original bytes remain in the external verified legacy archive"
-  },
+  "schema_version": 3,
+  "title": "UW-SAA current endpoint and result inventory",
+  "status": "Replacement GP MAIN complete; independent numerical verification passed; canceled ablation follow-ups excluded",
   "retained_non_gp_recovery": {
     "script": "reproducibility/data/recover_non_gp_endpoints.py",
     "receipt": "reproducibility/data/retained_non_gp_endpoints.receipt.json",
@@ -40,13 +32,15 @@
     "study_coverage_receipt": "retained_non_gp_endpoints.receipt.json"
   },
   "replacement_gp": {
-    "status": "pending",
+    "status": "trained",
     "rule_config": "configs/gp_rule.json",
     "training_protocol": "experiments/gp_h20/protocol.json",
     "training_bank": "experiments/gp_h20/data/train_bank.json",
     "training_bank_sha256": "9dfaf66cce987d70cad2673089c27aea75af1a82e060d043f351218b665384c6",
     "selection": "30 source-engine seeds; minimize total relocations over the training bank with lower seed tie-break; choose fixed horizon from 0,2,5,10,20 on the same bank with lower-horizon tie-break",
-    "validation_boundary": "training selection only; not independent validation; Caserta remains held out"
+    "validation_boundary": "training selection only; not independent validation; Caserta remains held out",
+    "selected_seed": 5,
+    "best_fixed_h": 20
   },
   "statistics_gate": {
     "required_solver_count": 6,
@@ -61,5 +55,92 @@
       "gp_seed_receipt_sha256"
     ],
     "default_endpoint_path": "reproducibility/results/gp_migration/canonical_six_solver_endpoints.csv.gz"
+  },
+  "retired_payload": {
+    "status": "withdrawn_from_active_tree",
+    "former_path": "reproducibility/data/uwsaa_trajectory_endpoints.csv.gz",
+    "former_payload_sha256": "82f53e12cb4a7be109a504485267373a0032c45a5c0964a6153f07ec61616af4",
+    "former_payload_bytes": 174138724,
+    "former_row_count": 1722662,
+    "reason": "Retired GP endpoints removed from the active tree; original bytes remain recoverable from the pinned Git history."
+  },
+  "canonical_payload": {
+    "status": "complete_gp_only_main",
+    "path": "results/gp-caserta-main-20261024/gp_caserta_full_results.zip",
+    "sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4",
+    "endpoint_rows": 68880,
+    "paired_cells": 34440,
+    "conditions": 41,
+    "layouts": 840,
+    "geometries": 21,
+    "arms": [
+      "NATIVE20",
+      "UWSAA"
+    ],
+    "local_rows": 23520,
+    "cloud_rows": 45360,
+    "diagnostic_probe_rows_excluded": 252,
+    "format": "ZIP containing local/cloud JSONL condition shards with companion manifests and internal checksums",
+    "evidence_status": "pending_review",
+    "analysis_manifest": "results/gp-caserta-main-20261024/analysis_manifest.json",
+    "verification_command": "python -B -m checks.verify_gp_results",
+    "six_solver_canonical_available": false,
+    "numerical_review_status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
+    "evidence_status_origin": "original frozen analysis metadata; independent numerical review recorded separately"
+  },
+  "published_results": {
+    "directory": "results/gp-caserta-main-20261024",
+    "family_table_rows": 8,
+    "condition_table_rows": 82,
+    "summary_rows": 10,
+    "figure_pairs": [
+      "gp_caserta_summary",
+      "gp_caserta_all_conditions"
+    ],
+    "figure_script": "results/gp-caserta-main-20261024/scripts/generate_figures.py",
+    "raw_archive_byte_preserved": true,
+    "evidence_status": "pending_review",
+    "numerical_review_status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
+    "evidence_status_origin": "original frozen analysis metadata; independent numerical review recorded separately"
+  },
+  "pending_studies": [
+    "GP timing and cost",
+    "identity-checked MAIN six-solver merge and MEAN6"
+  ],
+  "canceled_studies": [
+    {
+      "study": "GP ablation",
+      "status": "canceled",
+      "decision_date": "2026-10-25",
+      "decision_by": "project_owner",
+      "reason": "No replacement-GP ablation reruns requested; removed from the pending schedule.",
+      "rerun_planned": false
+    },
+    {
+      "study": "GP deterministic single (P0)",
+      "status": "canceled",
+      "decision_date": "2026-10-25",
+      "decision_by": "project_owner",
+      "reason": "No replacement-GP ablation reruns requested; removed from the pending schedule.",
+      "rerun_planned": false
+    },
+    {
+      "study": "GP multi-K / LB1",
+      "status": "canceled",
+      "decision_date": "2026-10-25",
+      "decision_by": "project_owner",
+      "reason": "No replacement-GP ablation reruns requested; removed from the pending schedule.",
+      "rerun_planned": false
+    }
+  ],
+  "main_review_guide": "results/gp-caserta-main-20261024/REVIEW.md",
+  "numerical_review": {
+    "status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
+    "date": "2026-10-25",
+    "receipt": "checks/gp_main_independent_review.json",
+    "comparison": "checks/gp_main_independent_comparison.csv",
+    "implementation": "checks/independent_gp_main_review.py",
+    "scope": "separately written implementation in the same Codex session; no external human peer review claimed",
+    "original_csv_evidence_tags_preserved": true
   }
 }

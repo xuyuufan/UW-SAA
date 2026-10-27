@@ -1,5 +1,7 @@
 # GP-H20 completed local CPU training record
 
+Current status (2026-10-24): GP-only MAIN has completed across all 41 conditions and 68,880 endpoints. The 252-row cross-host probe passed. See [the published GP results](../../results/gp-caserta-main-20261024/README.md). The execution instructions below document the completed run; Replacement-GP ablation/P0/multi-K follow-ups were canceled on 2026-10-25; MAIN six-solver reporting remains unfinished.
+
 The registered 30-seed training and training-bank selection are complete. Do not resume or restart this run. The active model is in `configs/gp_rule.json`; full byte-preserved run evidence is in [artifacts/gp_h20/20261024_formal_30seed](../../artifacts/gp_h20/20261024_formal_30seed/README.md).
 
 All seeds 1–30 completed without failure, timeout, or interruption, with 51,000 fitness evaluations per seed. The environment was CPython 3.12.4, NumPy 1.26.4, Numba 0.59.1, llvmlite 0.42.0, using the `numba_float64_v1` scorer. Seed compute totaled 3,570.23 seconds (59m30s); elapsed time including monitoring pauses was 7,847.67 seconds (2h10m48s).
@@ -8,4 +10,4 @@ The selected formula has SHA-256 `e3cbbd12defb760be3e6afe57df7004980b1660be73b6f
 
 The 840-episode Caserta set remains sealed and was not read for training or model selection. An independent source-Yard re-score of the selected formula at H=20 reproduced 24,421 across all 840 training episodes. A one-row GP UWSAA runner smoke and strict identity-aware aggregation also passed using `experiments/gp_h20/data/train_bank.json`. These checks establish correctness and identity consistency only.
 
-All replacement GP performance matrices (MAIN, ablation, P0, multi-K), non-GP restoration/merge, six-solver statistics, MEAN6, and figures remain pending. Continue only with the separate [evaluation handoff](../../reproducibility/CLOUD_GP_MIGRATION_PROMPT.md). The prior accelerator and pre-training migration diagnostics are preserved byte-for-byte in the artifact bundle and retain their own recorded input identities; they are not rewritten as formal-run fingerprints.
+GP-only MAIN and its figures are complete. Replacement-GP ablation/P0/multi-K follow-ups are canceled. Timing measurements and the MAIN non-GP restoration/merge, six-solver statistics and MEAN6 remain unfinished. Continue only with the separate [evaluation handoff](../../reproducibility/CLOUD_GP_MIGRATION_PROMPT.md). The prior accelerator and pre-training migration diagnostics are preserved byte-for-byte in the artifact bundle and retain their own recorded input identities; they are not rewritten as formal-run fingerprints.
