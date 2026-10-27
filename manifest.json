@@ -1,20 +1,20 @@
 {
-  "bundle_id": "uwsaa_public_core_v2_gp_trained_pending_evaluation",
-  "included_file_count": 30,
+  "bundle_id": "uwsaa_public_core_v3_gp_main_complete",
+  "included_file_count": 27,
   "excluded_scope": [
     "Unrelated research methods and experiment runners",
     "Training and policy artifacts outside the UW-SAA package",
     "Historical research notes and unrelated outputs"
   ],
   "source_hash_verification": {
-    "status": "TRAINED_GP_IDENTITY_VERIFIED_PERFORMANCE_PENDING",
+    "status": "TRAINED_GP_IDENTITY_VERIFIED_MAIN_COMPLETE",
     "historical_non_gp_source_hashes_checked": 22,
     "new_gp_source_and_protocol_hashes_current": true,
     "new_gp_model_hashes_verified": true,
-    "note": "The retired GP and old six-solver PASS records are excluded. The hash-bound replacement GP rule is trained and active. GP performance replacement, six-solver aggregates, MEAN6, and figures remain pending."
+    "note": "The active trained GP is hash-bound and its 68,880-row MAIN evaluation is complete. Retired GP code, data and figures are removed. Numerical verification is separate from scientific review. Replacement-GP ablation/P0/multi-K reruns are canceled by the project owner (2026-10-25); timing and the MAIN six-solver merge remain unfinished."
   },
-  "semantic_check": "checks/gp_migration_verification.json",
-  "verification": "checks/gp_migration_verification.json",
+  "semantic_check": "artifacts/gp_h20/20261024_formal_30seed/pretraining_migration_verification.json",
+  "verification": "artifacts/gp_h20/20261024_formal_30seed/pretraining_migration_verification.json",
   "entries": [
     {
       "destination_path": "baseline/__init__.py",
@@ -227,24 +227,6 @@
       "final_sha256": "ef95406c98173fedb64826e60877ee56d9ead74aec750a56cbfd6cceef252934"
     },
     {
-      "destination_path": "checks/environment_smoke.py",
-      "operation": "generated_or_local_document",
-      "sources": [],
-      "final_sha256": "96c707cf905299ebdb5ec312759e3bcfb6e5f1dbe0a767986b1d40569908f3aa"
-    },
-    {
-      "destination_path": "checks/public_smoke.py",
-      "operation": "generated_or_local_document",
-      "sources": [],
-      "final_sha256": "56ec6c79d4a39667622ef59252e3d80b892be06e5f9e60aae0e897d2f2c3eae1"
-    },
-    {
-      "destination_path": "checks/verify_bundle.py",
-      "operation": "generated_or_local_document",
-      "sources": [],
-      "final_sha256": "424060cf52955f3e66bae8a3fe2324c67f0e923be2f3eb805e706427e6b832d2"
-    },
-    {
       "destination_path": "configs/uwsaa.json",
       "operation": "derived_configuration",
       "sources": [
@@ -396,7 +378,7 @@
       "destination_path": "README.md",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "11126576002aea1fd5417573d74eeacbdceeab762419679cf2863223585edc2e"
+      "final_sha256": "2565279a8da9482a7c03db2d442ec04814e201548597d01152b30e72d885d910"
     },
     {
       "destination_path": "requirements.txt",
@@ -495,7 +477,7 @@
   "provenance_note": "Retained source-path identifiers for non-GP methods preserve historical provenance. The replacement GP adapter points to a byte-preserved third-party Python reproduction snapshot; no original-author implementation or source commit is claimed.",
   "environment_scope": "The bundle includes the public scalar OnlineCRP environment and noise-aware forecast interface, plus the byte-preserved third-party Python reproduction, H20 adapter, trained rule, and training evidence.",
   "gp_migration": {
-    "status": "TRAINED_RULE_PENDING_PERFORMANCE_REPLACEMENT",
+    "status": "GP_MAIN_COMPLETE_NUMERICALLY_REVIEWED",
     "rule_config": "configs/gp_rule.json",
     "rule_status": "trained",
     "source_manifest_sha256": "bdcab4b2c56c73332cd47545608416ea8de1f21168ceb0099a686e652d10bd8d",
@@ -541,11 +523,11 @@
       "training_total_relocations": 24421,
       "validation_status": "training_selection_not_independent_validation"
     },
-    "performance_replacement": "not run",
-    "six_solver_aggregates_and_figures": "pending complete identity-checked replacement GP endpoints",
+    "performance_replacement": "GP-only MAIN complete: 41 conditions × 840 layouts × 2 arms = 68,880 endpoints",
+    "six_solver_aggregates_and_figures": "MAIN identity-checked six-solver merge pending; canceled ablation/P0/multi-K studies are excluded",
     "training_evidence": "30-seed selection on the separate training bank; not independent validation; Caserta held out from UWSAA method development",
     "formal_training_status": "COMPLETE_30_OF_30_2026-10-24",
-    "training_progress": "All 30 registered seeds and fixed-horizon scoring completed with matching identities. Seed 5 was selected at 24,421 relocations; H=20 is the best training-bank horizon. Performance matrices and all-solver reporting remain pending.",
+    "training_progress": "All 30 seeds and fixed-horizon selection completed; seed 5, 24,421 training relocations, H=20. GP-only MAIN is complete; ablation/P0/multi-K reruns are canceled. Timing and MAIN six-solver reporting remain unfinished.",
     "active_rule_sha256": "3ada1d8937ccf979532265c996c04ba56245753f079387edd82a39c2f952e5a8",
     "selected_seed": 5,
     "training_total_relocations": 24421,
@@ -564,9 +546,34 @@
     "selection_validation_status": "training_selection_not_independent_validation",
     "artifact_bundle": "artifacts/gp_h20/20261024_formal_30seed/",
     "training_artifact_bundle": "artifacts/gp_h20/20261024_formal_30seed/",
-    "source_yard_verification": "checks/gp_trained_source_yard_verification.json",
-    "runner_smoke_verification": "checks/gp_trained_runner_smoke_verification.json",
-    "pretraining_migration_verification": "checks/gp_migration_verification.json",
-    "accelerator_differential_verification": "checks/gp_acceleration_differential_result.json"
-  }
+    "source_yard_verification": "artifacts/gp_h20/20261024_formal_30seed/source_yard_verification.json",
+    "runner_smoke_verification": "artifacts/gp_h20/20261024_formal_30seed/trained_runner_smoke_verification.json",
+    "pretraining_migration_verification": "artifacts/gp_h20/20261024_formal_30seed/pretraining_migration_verification.json",
+    "accelerator_differential_verification": "artifacts/gp_h20/20261024_formal_30seed/acceleration_differential_verification.json",
+    "evaluation_results": "results/gp-caserta-main-20261024/README.md",
+    "evaluation_evidence_status": "pending_review",
+    "raw_archive_sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4",
+    "ablation_followups": {
+      "status": "canceled",
+      "suites": [
+        "ablation",
+        "p0",
+        "multik"
+      ],
+      "decision_date": "2026-10-25",
+      "decision_by": "project_owner",
+      "rerun_planned": false,
+      "historical_protocol_and_code_retained": true
+    },
+    "numerical_review": {
+      "status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
+      "date": "2026-10-25",
+      "receipt": "checks/gp_main_independent_review.json",
+      "comparison": "checks/gp_main_independent_comparison.csv",
+      "implementation": "checks/independent_gp_main_review.py",
+      "scope": "separately written implementation in the same Codex session; no external human peer review claimed",
+      "original_csv_evidence_tags_preserved": true
+    }
+  },
+  "publication_note": "Published on top of the latest main while preserving its explicit deletion of 14 legacy checks and the retired results directory. Only new MAIN verification tools and evidence are added."
 }

@@ -1,5 +1,7 @@
 # Cloud task: run the assigned GP-only Caserta MAIN partition
 
+Current status (2026-10-24): GP-only MAIN has completed across all 41 conditions and 68,880 endpoints. The 252-row cross-host probe passed. See [the published GP results](../results/gp-caserta-main-20261024/README.md). The execution instructions below document the completed run; Replacement-GP ablation/P0/multi-K follow-ups were canceled on 2026-10-25; MAIN six-solver reporting remains unfinished.
+
 ## Objective and scope
 
 Run only registered MAIN condition indices 15–41 for the paired comparison of the frozen GP policy in the UWSAA and NATIVE20 arms. Condition indices are 1-based in `reproducibility.protocol.main_conditions()`. The local partition owns indices 1–14 (six SS and eight TW conditions); the cloud partition owns indices 15–41 (six DP, two overlay, 18 regime-mixture, and CLEAN conditions). The partitions are disjoint. The cloud shard must contain exactly 27 × 840 × 2 = 45,360 complete GP endpoints. Together with the local shard, the design has 68,880 endpoints.

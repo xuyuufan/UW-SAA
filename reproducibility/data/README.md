@@ -1,6 +1,14 @@
-# Non-GP endpoint recovery
+# Endpoint data
 
-The former canonical mixed endpoint payload is not present in the active checkout. It is preserved with all original bytes in an external verified archive. This repository carries only a recovery script and a compact receipt so the other five solvers' source records can be restored when needed.
+The current GP-only MAIN archive is [`gp_caserta_full_results.zip`](../../results/gp-caserta-main-20261024/gp_caserta_full_results.zip). It contains 41 JSONL condition shards and companion manifests: local conditions 1–14 (23,520 rows) and cloud conditions 15–41 (45,360 rows). All 68,880 formal rows use the active trained GP and the same Caserta dataset. Diagnostic probe rows are stored separately under `integrity/probe_diagnostic_only/` and are excluded from the formal matrix.
+
+Run `python -B -m checks.verify_gp_results` from the repository root to verify every archive hash and recompute the registered tables. It extracts only formal shards to a temporary directory under ignored `work/`, validates model identity, layout and forecast pairing, and checks the recomputed tables and manifest exactly. It removes the temporary endpoints after verification and writes `work/gp_results_verification.json`. The original statistics retain their frozen `pending_review` tags. A separately written implementation has since passed independent numerical verification; see [the review record](../../results/gp-caserta-main-20261024/REVIEW.md). It does not claim external human peer review.
+
+See [the current results guide](../../results/gp-caserta-main-20261024/README.md) for tables, plots and download links. A complete replacement six-solver canonical CSV is not yet published. Replacement-GP ablation/P0/multi-K reruns were canceled on 2026-10-25; no replacement data for them are planned. Timing data remain separate unfinished work.
+
+## Historical non-GP endpoint recovery
+
+The former canonical mixed endpoint payload is not present in the active checkout. Its exact bytes remain available in the pinned Git history. This repository carries only a recovery script and a compact receipt so the other five solvers' source records can be restored when needed.
 
 The recovery script reads the source parts and index from pinned Git commit a39d0ac0e454f48d591d573868afa21531db34e7. It verifies the index SHA, each part's byte count and SHA, the combined source payload SHA, and row accounting. It streams the CSV while removing rows whose solver is GP or MEAN6; all retained CSV cell text, source/provenance columns, and evidence_status values are preserved. The output gzip is split into parts of at most 40,000,000 bytes, and the script writes a standard parts index and receipt.
 
