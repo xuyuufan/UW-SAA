@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="755.28pt" height="469.5228pt" viewBox="0 0 755.28 469.5228" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-28T01:52:53.960933</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 469.5228 
+L 755.28 469.5228 
+L 755.28 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 7.2 41.33421 
+L 748.08 41.33421 
+" clip-path="url(#p266c27015b)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 7.2 73.192806 
+L 748.08 73.192806 
+" clip-path="url(#p266c27015b)" style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 7.2 398.159072 
+L 748.08 398.159072 
+" clip-path="url(#p266c27015b)" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: start" x="7.2" y="20.975279" transform="rotate(-0 7.2 20.975279)">Trajectory wall time by size: best fixed H / UWSAA (ms).</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="60.662734" transform="rotate(-0 60.12 60.662734)">Size</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="60.658417" transform="rotate(-0 165.96 60.658417)">EM</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="60.658417" transform="rotate(-0 271.8 60.658417)">GP</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="60.658417" transform="rotate(-0 377.64 60.658417)">ERI</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="60.658417" transform="rotate(-0 483.48 60.658417)">EG</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="60.662734" transform="rotate(-0 589.32 60.662734)">Chain</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="60.662734" transform="rotate(-0 695.16 60.662734)">Minmax</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="85.891971" transform="rotate(-0 60.12 85.891971)">3×3</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="85.896288" transform="rotate(-0 165.96 85.896288)">1.90 / 4.74</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="85.896288" transform="rotate(-0 271.8 85.896288)">10.63 / 46.34</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="85.896288" transform="rotate(-0 377.64 85.896288)">2.14 / 4.89</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="85.896288" transform="rotate(-0 483.48 85.896288)">2.17 / 4.79</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="85.896288" transform="rotate(-0 589.32 85.896288)">2.15 / 5.60</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="85.896288" transform="rotate(-0 695.16 85.896288)">2.00 / 4.89</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="101.134291" transform="rotate(-0 60.12 101.134291)">3×4</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="101.138608" transform="rotate(-0 165.96 101.138608)">3.29 / 8.56</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="101.138608" transform="rotate(-0 271.8 101.138608)">17.22 / 75.55</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="101.138608" transform="rotate(-0 377.64 101.138608)">4.52 / 8.40</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="101.138608" transform="rotate(-0 483.48 101.138608)">4.60 / 9.55</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="101.138608" transform="rotate(-0 589.32 101.138608)">4.00 / 11.64</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="101.138608" transform="rotate(-0 695.16 101.138608)">3.44 / 9.86</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="116.376612" transform="rotate(-0 60.12 116.376612)">3×5</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="116.380928" transform="rotate(-0 165.96 116.380928)">3.39 / 9.35</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="116.380928" transform="rotate(-0 271.8 116.380928)">15.83 / 66.33</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="116.380928" transform="rotate(-0 377.64 116.380928)">3.80 / 8.65</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="116.380928" transform="rotate(-0 483.48 116.380928)">4.10 / 9.32</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="116.380928" transform="rotate(-0 589.32 116.380928)">3.89 / 11.16</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="116.380928" transform="rotate(-0 695.16 116.380928)">3.55 / 9.29</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="131.618932" transform="rotate(-0 60.12 131.618932)">3×6</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="131.623248" transform="rotate(-0 165.96 131.623248)">6.81 / 18.76</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="131.623248" transform="rotate(-0 271.8 131.623248)">32.75 / 136.77</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="131.623248" transform="rotate(-0 377.64 131.623248)">7.34 / 20.23</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="131.623248" transform="rotate(-0 483.48 131.623248)">7.99 / 16.77</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="131.623248" transform="rotate(-0 589.32 131.623248)">7.72 / 20.61</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="131.623248" transform="rotate(-0 695.16 131.623248)">7.19 / 17.91</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="146.861252" transform="rotate(-0 60.12 146.861252)">3×7</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="146.865568" transform="rotate(-0 165.96 146.865568)">6.50 / 15.53</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="146.865568" transform="rotate(-0 271.8 146.865568)">29.42 / 111.47</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="146.865568" transform="rotate(-0 377.64 146.865568)">6.99 / 18.59</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="146.865568" transform="rotate(-0 483.48 146.865568)">7.89 / 17.76</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="146.865568" transform="rotate(-0 589.32 146.865568)">7.46 / 19.09</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="146.865568" transform="rotate(-0 695.16 146.865568)">6.87 / 16.83</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="162.103572" transform="rotate(-0 60.12 162.103572)">3×8</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="162.107888" transform="rotate(-0 165.96 162.107888)">5.94 / 16.21</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="162.107888" transform="rotate(-0 271.8 162.107888)">25.92 / 98.52</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="162.107888" transform="rotate(-0 377.64 162.107888)">5.87 / 17.31</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="162.107888" transform="rotate(-0 483.48 162.107888)">7.14 / 18.80</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="162.107888" transform="rotate(-0 589.32 162.107888)">6.81 / 19.16</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="162.107888" transform="rotate(-0 695.16 162.107888)">6.17 / 16.59</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="177.345892" transform="rotate(-0 60.12 177.345892)">4×4</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="177.350209" transform="rotate(-0 165.96 177.350209)">3.91 / 10.34</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="177.350209" transform="rotate(-0 271.8 177.350209)">18.97 / 85.09</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="177.350209" transform="rotate(-0 377.64 177.350209)">5.01 / 10.98</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="177.350209" transform="rotate(-0 483.48 177.350209)">4.70 / 11.06</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="177.350209" transform="rotate(-0 589.32 177.350209)">4.44 / 14.38</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="177.350209" transform="rotate(-0 695.16 177.350209)">3.93 / 12.46</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="192.588212" transform="rotate(-0 60.12 192.588212)">4×5</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="192.592529" transform="rotate(-0 165.96 192.592529)">7.48 / 23.51</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="192.592529" transform="rotate(-0 271.8 192.592529)">37.73 / 167.31</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="192.592529" transform="rotate(-0 377.64 192.592529)">8.47 / 24.11</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="192.592529" transform="rotate(-0 483.48 192.592529)">8.66 / 22.11</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="192.592529" transform="rotate(-0 589.32 192.592529)">8.84 / 26.95</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="192.592529" transform="rotate(-0 695.16 192.592529)">7.93 / 23.52</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="207.830533" transform="rotate(-0 60.12 207.830533)">4×6</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="207.834849" transform="rotate(-0 165.96 207.834849)">5.97 / 15.41</text>
+   </g>
+   <g id="text_67">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="207.834849" transform="rotate(-0 271.8 207.834849)">28.11 / 116.61</text>
+   </g>
+   <g id="text_68">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="207.834849" transform="rotate(-0 377.64 207.834849)">6.08 / 17.32</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="207.834849" transform="rotate(-0 483.48 207.834849)">7.71 / 18.11</text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="207.834849" transform="rotate(-0 589.32 207.834849)">7.02 / 19.90</text>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="207.834849" transform="rotate(-0 695.16 207.834849)">6.25 / 17.26</text>
+   </g>
+   <g id="text_72">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="223.072853" transform="rotate(-0 60.12 223.072853)">4×7</text>
+   </g>
+   <g id="text_73">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="223.077169" transform="rotate(-0 165.96 223.077169)">7.16 / 21.20</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="223.077169" transform="rotate(-0 271.8 223.077169)">32.70 / 128.18</text>
+   </g>
+   <g id="text_75">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="223.077169" transform="rotate(-0 377.64 223.077169)">7.54 / 22.42</text>
+   </g>
+   <g id="text_76">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="223.077169" transform="rotate(-0 483.48 223.077169)">9.30 / 22.35</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="223.077169" transform="rotate(-0 589.32 223.077169)">8.25 / 25.99</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="223.077169" transform="rotate(-0 695.16 223.077169)">7.39 / 23.71</text>
+   </g>
+   <g id="text_79">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="238.315173" transform="rotate(-0 60.12 238.315173)">5×4</text>
+   </g>
+   <g id="text_80">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="238.319489" transform="rotate(-0 165.96 238.319489)">5.22 / 16.00</text>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="238.319489" transform="rotate(-0 271.8 238.319489)">26.13 / 119.43</text>
+   </g>
+   <g id="text_82">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="238.319489" transform="rotate(-0 377.64 238.319489)">5.59 / 15.97</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="238.319489" transform="rotate(-0 483.48 238.319489)">5.87 / 15.61</text>
+   </g>
+   <g id="text_84">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="238.319489" transform="rotate(-0 589.32 238.319489)">5.88 / 18.65</text>
+   </g>
+   <g id="text_85">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="238.319489" transform="rotate(-0 695.16 238.319489)">5.36 / 16.11</text>
+   </g>
+   <g id="text_86">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="253.557493" transform="rotate(-0 60.12 253.557493)">5×5</text>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="253.56181" transform="rotate(-0 165.96 253.56181)">10.22 / 34.70</text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="253.56181" transform="rotate(-0 271.8 253.56181)">60.06 / 233.88</text>
+   </g>
+   <g id="text_89">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="253.56181" transform="rotate(-0 377.64 253.56181)">12.38 / 39.64</text>
+   </g>
+   <g id="text_90">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="253.56181" transform="rotate(-0 483.48 253.56181)">12.29 / 30.03</text>
+   </g>
+   <g id="text_91">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="253.56181" transform="rotate(-0 589.32 253.56181)">12.21 / 46.20</text>
+   </g>
+   <g id="text_92">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="253.56181" transform="rotate(-0 695.16 253.56181)">10.84 / 39.87</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="268.799813" transform="rotate(-0 60.12 268.799813)">5×6</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="268.80413" transform="rotate(-0 165.96 268.80413)">12.50 / 43.11</text>
+   </g>
+   <g id="text_95">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="268.80413" transform="rotate(-0 271.8 268.80413)">64.98 / 267.57</text>
+   </g>
+   <g id="text_96">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="268.80413" transform="rotate(-0 377.64 268.80413)">13.92 / 46.41</text>
+   </g>
+   <g id="text_97">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="268.80413" transform="rotate(-0 483.48 268.80413)">15.13 / 36.70</text>
+   </g>
+   <g id="text_98">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="268.80413" transform="rotate(-0 589.32 268.80413)">14.80 / 55.84</text>
+   </g>
+   <g id="text_99">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="268.80413" transform="rotate(-0 695.16 268.80413)">13.03 / 50.78</text>
+   </g>
+   <g id="text_100">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="284.042134" transform="rotate(-0 60.12 284.042134)">5×7</text>
+   </g>
+   <g id="text_101">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="284.04645" transform="rotate(-0 165.96 284.04645)">11.76 / 42.00</text>
+   </g>
+   <g id="text_102">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="284.04645" transform="rotate(-0 271.8 284.04645)">57.26 / 248.88</text>
+   </g>
+   <g id="text_103">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="284.04645" transform="rotate(-0 377.64 284.04645)">13.76 / 47.70</text>
+   </g>
+   <g id="text_104">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="284.04645" transform="rotate(-0 483.48 284.04645)">14.62 / 41.59</text>
+   </g>
+   <g id="text_105">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="284.04645" transform="rotate(-0 589.32 284.04645)">14.62 / 46.87</text>
+   </g>
+   <g id="text_106">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="284.04645" transform="rotate(-0 695.16 284.04645)">12.40 / 41.91</text>
+   </g>
+   <g id="text_107">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="299.284454" transform="rotate(-0 60.12 299.284454)">5×8</text>
+   </g>
+   <g id="text_108">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="299.28877" transform="rotate(-0 165.96 299.28877)">15.60 / 54.68</text>
+   </g>
+   <g id="text_109">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="299.28877" transform="rotate(-0 271.8 299.28877)">66.37 / 273.52</text>
+   </g>
+   <g id="text_110">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="299.28877" transform="rotate(-0 377.64 299.28877)">16.80 / 60.75</text>
+   </g>
+   <g id="text_111">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="299.28877" transform="rotate(-0 483.48 299.28877)">18.92 / 46.01</text>
+   </g>
+   <g id="text_112">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="299.28877" transform="rotate(-0 589.32 299.28877)">18.54 / 72.48</text>
+   </g>
+   <g id="text_113">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="299.28877" transform="rotate(-0 695.16 299.28877)">16.15 / 64.08</text>
+   </g>
+   <g id="text_114">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="314.526774" transform="rotate(-0 60.12 314.526774)">5×9</text>
+   </g>
+   <g id="text_115">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="314.53109" transform="rotate(-0 165.96 314.53109)">19.34 / 69.65</text>
+   </g>
+   <g id="text_116">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="314.53109" transform="rotate(-0 271.8 314.53109)">78.48 / 328.30</text>
+   </g>
+   <g id="text_117">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="314.53109" transform="rotate(-0 377.64 314.53109)">22.47 / 76.79</text>
+   </g>
+   <g id="text_118">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="314.53109" transform="rotate(-0 483.48 314.53109)">23.56 / 62.97</text>
+   </g>
+   <g id="text_119">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="314.53109" transform="rotate(-0 589.32 314.53109)">23.89 / 96.08</text>
+   </g>
+   <g id="text_120">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="314.53109" transform="rotate(-0 695.16 314.53109)">20.84 / 83.57</text>
+   </g>
+   <g id="text_121">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="329.769094" transform="rotate(-0 60.12 329.769094)">5×10</text>
+   </g>
+   <g id="text_122">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="329.773411" transform="rotate(-0 165.96 329.773411)">23.32 / 80.53</text>
+   </g>
+   <g id="text_123">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="329.773411" transform="rotate(-0 271.8 329.773411)">96.01 / 360.85</text>
+   </g>
+   <g id="text_124">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="329.773411" transform="rotate(-0 377.64 329.773411)">26.10 / 87.70</text>
+   </g>
+   <g id="text_125">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="329.773411" transform="rotate(-0 483.48 329.773411)">25.92 / 70.98</text>
+   </g>
+   <g id="text_126">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="329.773411" transform="rotate(-0 589.32 329.773411)">24.05 / 103.13</text>
+   </g>
+   <g id="text_127">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="329.773411" transform="rotate(-0 695.16 329.773411)">24.48 / 94.64</text>
+   </g>
+   <g id="text_128">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="345.011414" transform="rotate(-0 60.12 345.011414)">6×6</text>
+   </g>
+   <g id="text_129">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="345.015731" transform="rotate(-0 165.96 345.015731)">15.14 / 52.49</text>
+   </g>
+   <g id="text_130">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="345.015731" transform="rotate(-0 271.8 345.015731)">66.77 / 287.51</text>
+   </g>
+   <g id="text_131">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="345.015731" transform="rotate(-0 377.64 345.015731)">15.08 / 54.32</text>
+   </g>
+   <g id="text_132">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="345.015731" transform="rotate(-0 483.48 345.015731)">17.82 / 44.67</text>
+   </g>
+   <g id="text_133">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="345.015731" transform="rotate(-0 589.32 345.015731)">18.55 / 75.88</text>
+   </g>
+   <g id="text_134">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="345.015731" transform="rotate(-0 695.16 345.015731)">15.99 / 66.77</text>
+   </g>
+   <g id="text_135">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="360.253735" transform="rotate(-0 60.12 360.253735)">6×10</text>
+   </g>
+   <g id="text_136">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="360.258051" transform="rotate(-0 165.96 360.258051)">34.66 / 142.67</text>
+   </g>
+   <g id="text_137">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="360.258051" transform="rotate(-0 271.8 360.258051)">136.31 / 582.79</text>
+   </g>
+   <g id="text_138">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="360.258051" transform="rotate(-0 377.64 360.258051)">39.69 / 137.91</text>
+   </g>
+   <g id="text_139">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="360.258051" transform="rotate(-0 483.48 360.258051)">41.71 / 109.82</text>
+   </g>
+   <g id="text_140">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="360.258051" transform="rotate(-0 589.32 360.258051)">40.38 / 199.95</text>
+   </g>
+   <g id="text_141">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="360.258051" transform="rotate(-0 695.16 360.258051)">36.05 / 176.98</text>
+   </g>
+   <g id="text_142">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="375.496055" transform="rotate(-0 60.12 375.496055)">10×6</text>
+   </g>
+   <g id="text_143">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="375.500371" transform="rotate(-0 165.96 375.500371)">49.40 / 273.23</text>
+   </g>
+   <g id="text_144">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="375.500371" transform="rotate(-0 271.8 375.500371)">223.19 / 1091.61</text>
+   </g>
+   <g id="text_145">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="375.500371" transform="rotate(-0 377.64 375.500371)">54.25 / 266.13</text>
+   </g>
+   <g id="text_146">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="375.500371" transform="rotate(-0 483.48 375.500371)">61.22 / 161.38</text>
+   </g>
+   <g id="text_147">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="375.500371" transform="rotate(-0 589.32 375.500371)">63.02 / 356.10</text>
+   </g>
+   <g id="text_148">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="375.500371" transform="rotate(-0 695.16 375.500371)">52.30 / 320.98</text>
+   </g>
+   <g id="text_149">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="60.12" y="390.738375" transform="rotate(-0 60.12 390.738375)">10×10</text>
+   </g>
+   <g id="text_150">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="165.96" y="390.742691" transform="rotate(-0 165.96 390.742691)">92.49 / 688.98</text>
+   </g>
+   <g id="text_151">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="271.8" y="390.742691" transform="rotate(-0 271.8 390.742691)">363.09 / 2041.15</text>
+   </g>
+   <g id="text_152">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="377.64" y="390.742691" transform="rotate(-0 377.64 390.742691)">109.68 / 610.49</text>
+   </g>
+   <g id="text_153">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="483.48" y="390.742691" transform="rotate(-0 483.48 390.742691)">117.78 / 376.99</text>
+   </g>
+   <g id="text_154">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="589.32" y="390.742691" transform="rotate(-0 589.32 390.742691)">108.12 / 981.38</text>
+   </g>
+   <g id="text_155">
+    <text style="font-size: 8.5px; font-family: 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle" x="695.16" y="390.742691" transform="rotate(-0 695.16 390.742691)">97.11 / 909.14</text>
+   </g>
+   <g id="text_156">
+    <text style="font-size: 7.4px; font-family: 'Times New Roman', 'DejaVu Serif', serif" transform="translate(7.2 416.01749)">Timing sample only: one fixed layout per size; seven conditions per arm. ERI H10; other baselines H20.</text>
+    <text style="font-size: 7.4px; font-family: 'Times New Roman', 'DejaVu Serif', serif" transform="translate(7.2 425.438326)">On-policy trajectories run serially in seeded interleaved order. No CI or hardware-load control.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p266c27015b">
+   <rect x="7.2" y="7.2" width="740.88" height="455.1228"/>
+  </clipPath>
+ </defs>
+</svg>

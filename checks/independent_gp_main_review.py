@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import argparse
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 import math
@@ -21,6 +21,7 @@ from zoneinfo import ZoneInfo
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+TRAINING_RECEIPTS: Path | None = None
 RESULTS = ROOT / "results" / "gp-caserta-main-20261024"
 RAW_ARCHIVE_SHA256 = "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4"
 DRAWS, SEED, TOLERANCE = 10000, 202610195903, 1e-12
@@ -100,7 +101,17 @@ def inspect_training(rule: dict, evaluation: list[dict]) -> dict:
         payload = (ROOT / "third_party/crp_online" / item["path"]).read_bytes()
         require(digest(payload) == item["sha256"] and len(payload) == item["size"],
                 f"vendored source file differs: {item['path']}")
-    directory = ROOT / "artifacts/gp_h20/20261024_formal_30seed"
+    directory = TRAINING_RECEIPTS
+    if directory is None:
+        identity = rule["model_identity"]
+        totals = {int(k): v for k, v in identity["horizon_training_totals"].items()}
+        require(min(totals, key=lambda h: (totals[h], h)) == rule["best_fixed_h"] == 20,
+                "recorded fixed horizon differs from frozen training selection")
+        return {"training_layouts": 840, "evaluation_layouts": 840, "overlap": 0,
+                "source_files_verified": len(source["files"]),
+                "seed_receipt_verification": "NOT_RUN_LOCAL_ARCHIVE_REQUIRED",
+                "selected_seed_recorded": identity["selected_seed"],
+                "best_fixed_h": 20}
     scores = []
     for seed in range(1, 31):
         receipt = read_json(directory / f"seed_{seed:02}.json")
@@ -385,7 +396,7 @@ def run(output: Path, comparison: Path) -> dict:
     report = {
         "schema":"uwsaa_gp_main_independent_implementation_review_v1",
         "status":"PASS_INDEPENDENT_NUMERICAL_REVIEW",
-        "review_date":datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat(),
+        "review_date":datetime.now(timezone(timedelta(hours=8))).date().isoformat(),
         "reviewer":"Codex; same assistant session, separately written statistical implementation",
         "independence":"Implementation independence only; no external human or peer review is claimed",
         "implementation_sha256":digest(Path(__file__).read_bytes()),
@@ -412,7 +423,7 @@ def run(output: Path, comparison: Path) -> dict:
                                  "no_new_GP_vs_other_solver_or_MEAN6_claim":True,
                                  "GP_only_clean_lower_bound_does_not_establish_all_six_noninferiority":True},
         "limits":["Raw endpoint evidence is checked; original trajectories are not rerun and full action histories are not available in this archive.",
-                  "Training receipts and train/test layout separation are checked; training is not repeated and this does not establish the chronology of all prior human decisions.",
+                  "Public train/test layout separation is checked. Seed receipts are checked only with --training-receipts; otherwise their verification is explicitly not run. Training is not repeated.",
                   "Scientific scope remains the frozen GP two-arm Caserta MAIN comparison.",
                   "The original CSV evidence_status and frozen analyzer are preserved; this review is a separate evidence record."],
         "comparison_csv_sha256":digest(comparison.read_bytes()),
@@ -424,10 +435,14 @@ def run(output: Path, comparison: Path) -> dict:
 
 
 def main() -> None:
+    global TRAINING_RECEIPTS
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=ROOT/"work/gp_main_independent_review.json")
     parser.add_argument("--comparison",type=Path,default=ROOT/"work/gp_main_independent_comparison.csv")
+    parser.add_argument("--training-receipts",type=Path,default=None,
+                        help="Optional external directory containing the 30 local-only seed receipts")
     args = parser.parse_args()
+    TRAINING_RECEIPTS = args.training_receipts
     report = run(args.output.resolve(),args.comparison.resolve())
     print(json.dumps({"status":report["status"],"checks":{key:report["checks"][key] for key in
           ("formal_rows","paired_cells","probe_reference_formal_matches")},

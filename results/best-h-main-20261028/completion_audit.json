@@ -1,0 +1,23 @@
+{
+  "status": "PASS_COMPLETE_BEST_H_MAIN",
+  "matrix_endpoints": 413280,
+  "eri_h10_endpoints": 34440,
+  "eri_h10_historical_reused": 5880,
+  "eri_h10_new": 28560,
+  "probe_matches": 147,
+  "frozen_h": {
+    "EM": 20,
+    "GP": 20,
+    "ERI": 10,
+    "EG": 20,
+    "Chain": 20,
+    "Minmax": 20
+  },
+  "unchanged_uwsaa": true,
+  "other_five_baselines_reused_native20": true,
+  "new_gp_baseline": "H20 Native20 is the same fixed-horizon actor; no new GP trajectories",
+  "historical_source_payload_sha256": "82f53e12cb4a7be109a504485267373a0032c45a5c0964a6153f07ec61616af4",
+  "new_raw_sha256": "af6f6131e649ba1b664dd35ee5723cf30156f51fa44dda7c43e87f786cf27346",
+  "elapsed_seconds": 94.21900000000096,
+  "timing_note": "New ERI H10 times use eight concurrent processes and are descriptive; not controlled speedup evidence."
+}

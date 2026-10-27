@@ -104,8 +104,7 @@
     "evidence_status_origin": "original frozen analysis metadata; independent numerical review recorded separately"
   },
   "pending_studies": [
-    "GP timing and cost",
-    "identity-checked MAIN six-solver merge and MEAN6"
+    "full-MAIN matched current-runtime timing (separate from the completed stratified timing sample)"
   ],
   "canceled_studies": [
     {
@@ -142,5 +141,25 @@
     "implementation": "checks/independent_gp_main_review.py",
     "scope": "separately written implementation in the same Codex session; no external human peer review claimed",
     "original_csv_evidence_tags_preserved": true
+  },
+  "six_solver_best_h_main": {
+    "status": "complete",
+    "directory": "results/best-h-main-20261028",
+    "endpoint_path": "results/best-h-main-20261028/data/six_solver_best_h_main_endpoints.csv.gz",
+    "endpoint_rows": 413280,
+    "conditions": 41,
+    "layouts": 840,
+    "solvers": 6,
+    "baseline": "preselected best fixed H",
+    "h_by_solver": {
+      "EM": 20,
+      "GP": 20,
+      "ERI": 10,
+      "EG": 20,
+      "Chain": 20,
+      "Minmax": 20
+    },
+    "timing": "separate 1764-trajectory current-runtime sample",
+    "historical_ablation": "results/historical-ablation-20261021; retired GP, not replacement GP"
   }
 }

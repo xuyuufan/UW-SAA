@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering\scriptsize
+\caption{Current six-solver timing sample: best fixed H versus UWSAA. Times in ms; ratio = UWSAA / best H. Per arm: 21 sizes $\times$ 1 layout $\times$ 7 conditions = 147 trajectories. One process, interleaved order, 12 warmups excluded. Descriptive on-policy timing, not full-MAIN timing or controlled speedup evidence.}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrrrr}
+\toprule
+Solver & H* & Dec. Best & Dec. UW & Actor Best & Actor UW & Wall Best & Wall UW & Wall ratio \\
+\midrule
+EM & 20 & 0.067 & 1.902 & 2.391 & 63.869 & 16.286 & 78.175 & 4.800 \\
+GP & 20 & 1.535 & 9.258 & 54.737 & 311.428 & 70.853 & 327.031 & 4.616 \\
+ERI & 10 & 0.105 & 1.804 & 3.930 & 61.575 & 18.451 & 76.033 & 4.121 \\
+EG & 20 & 0.142 & 1.180 & 5.281 & 40.906 & 19.957 & 54.637 & 2.738 \\
+Chain & 20 & 0.150 & 2.601 & 5.325 & 90.920 & 19.268 & 106.049 & 5.504 \\
+Minmax & 20 & 0.090 & 2.360 & 3.206 & 81.261 & 17.109 & 96.054 & 5.614 \\
+\bottomrule
+\end{tabular}
+\end{table*}

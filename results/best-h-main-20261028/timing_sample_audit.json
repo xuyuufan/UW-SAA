@@ -1,0 +1,10 @@
+{
+  "status": "PASS_COMPLETE_TIMING_SAMPLE",
+  "scored_trajectories": 1764,
+  "outcomes_exactly_matched_main": 1764,
+  "warmup_excluded": 12,
+  "wall_elapsed_seconds": 142.79699999999866,
+  "raw_sha256": "2a38de8b87eddb1ec440b85fb5fed04f37a789ba039bd72dc11a592b7717e33e",
+  "gp_formula_sha256": "e3cbbd12defb760be3e6afe57df7004980b1660be73b6f214bad1817473f9845",
+  "timing_scope": "Timing sample, not full MAIN timing. No method selection or performance tuning."
+}

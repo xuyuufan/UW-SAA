@@ -378,7 +378,7 @@
       "destination_path": "README.md",
       "operation": "generated_or_local_document",
       "sources": [],
-      "final_sha256": "2565279a8da9482a7c03db2d442ec04814e201548597d01152b30e72d885d910"
+      "final_sha256": "eec7e0df76d794780949c3043d19cab104fd8c16294925e705ea18ac2f0376ce"
     },
     {
       "destination_path": "requirements.txt",

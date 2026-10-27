@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "payload": "historical_ablation_endpoints.csv.gz",
+  "format": "Concatenate byte parts in sequence order before gzip decompression.",
+  "payload_bytes": 15320532,
+  "payload_sha256": "cec3ac57de457ec311711373cc11ee3677f419d270b49c1abda7e4b115a79cf7",
+  "parts": [
+    {
+      "sequence": 1,
+      "filename": "historical_ablation_endpoints.csv.gz.part-001-of-002",
+      "bytes": 8000000,
+      "sha256": "7e964141816fcb2236d59445d67a1473b01d94485c2d8bef689320a63a36ab6f"
+    },
+    {
+      "sequence": 2,
+      "filename": "historical_ablation_endpoints.csv.gz.part-002-of-002",
+      "bytes": 7320532,
+      "sha256": "8407f0d433a7b35b75e00c1c0597d74e7b817227c6cc15a96a3294b15fdee2f4"
+    }
+  ]
+}

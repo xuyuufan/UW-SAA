@@ -1,0 +1,34 @@
+\begin{table*}[t]
+\centering\scriptsize
+\caption{Mean relocations: best fixed H versus UWSAA; CLEAN forecasts. Size: initial height $\times$ stacks; 40 layouts per size. Best H: ERI=10, all others=20. Bold: smaller value within each algorithm pair (ties at two decimals both bold); lower is better.}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrrrrrrrrr}
+\toprule
+ &  & \multicolumn{2}{c}{EM (H=20)} & \multicolumn{2}{c}{GP (H=20)} & \multicolumn{2}{c}{ERI (H=10)} & \multicolumn{2}{c}{EG (H=20)} & \multicolumn{2}{c}{Chain (H=20)} & \multicolumn{2}{c}{Minmax (H=20)} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12} \cmidrule(lr){13-14}
+Size & N & Best H & UWSAA & Best H & UWSAA & Best H & UWSAA & Best H & UWSAA & Best H & UWSAA & Best H & UWSAA \\
+\midrule
+3$\times$3 & 9 & \textbf{5.08} & 5.45 & \textbf{5.25} & 5.53 & \textbf{5.72} & \textbf{5.72} & \textbf{5.25} & 5.40 & \textbf{5.12} & 5.42 & \textbf{5.08} & 5.42 \\
+3$\times$4 & 12 & \textbf{6.30} & 6.42 & \textbf{6.30} & 6.40 & 7.03 & \textbf{6.60} & \textbf{6.40} & 6.53 & \textbf{6.38} & 6.47 & \textbf{6.30} & 6.42 \\
+3$\times$5 & 15 & \textbf{7.05} & 7.30 & \textbf{7.08} & 7.35 & 7.53 & \textbf{7.33} & \textbf{7.05} & 7.30 & \textbf{7.10} & 7.25 & \textbf{7.05} & 7.25 \\
+3$\times$6 & 18 & \textbf{8.45} & 8.75 & \textbf{8.45} & 8.70 & 8.78 & \textbf{8.75} & \textbf{8.50} & 8.62 & \textbf{8.57} & 8.78 & \textbf{8.45} & 8.65 \\
+3$\times$7 & 21 & \textbf{9.32} & 9.53 & \textbf{9.32} & 9.53 & \textbf{9.53} & 9.65 & \textbf{9.32} & 9.47 & \textbf{9.43} & 9.62 & \textbf{9.32} & 9.55 \\
+3$\times$8 & 24 & \textbf{10.72} & \textbf{10.72} & \textbf{10.75} & \textbf{10.75} & \textbf{10.88} & \textbf{10.88} & \textbf{10.75} & 10.88 & \textbf{10.78} & 10.88 & \textbf{10.72} & 10.80 \\
+4$\times$4 & 16 & \textbf{10.97} & 11.07 & \textbf{10.95} & 11.32 & 11.88 & \textbf{11.38} & 10.93 & \textbf{10.80} & \textbf{11.00} & 11.12 & \textbf{10.97} & 11.10 \\
+4$\times$5 & 20 & \textbf{13.55} & 13.82 & \textbf{13.62} & 13.90 & 14.57 & \textbf{13.93} & \textbf{13.55} & 13.88 & \textbf{13.88} & 14.03 & \textbf{13.55} & 13.75 \\
+4$\times$6 & 24 & 14.68 & \textbf{14.65} & \textbf{14.65} & \textbf{14.65} & 15.50 & \textbf{15.03} & \textbf{14.75} & 14.90 & \textbf{14.85} & 14.88 & \textbf{14.68} & 14.82 \\
+4$\times$7 & 28 & \textbf{16.93} & 17.02 & \textbf{16.82} & 17.05 & 17.75 & \textbf{17.10} & \textbf{16.93} & 17.15 & \textbf{17.15} & 17.27 & \textbf{16.93} & 16.98 \\
+5$\times$4 & 20 & \textbf{16.75} & 16.93 & \textbf{16.98} & 17.12 & 19.80 & \textbf{17.57} & \textbf{16.77} & 16.98 & \textbf{16.98} & \textbf{16.98} & \textbf{16.75} & 16.82 \\
+5$\times$5 & 25 & 21.23 & \textbf{21.07} & \textbf{21.00} & 21.20 & 24.02 & \textbf{21.82} & 21.57 & \textbf{21.23} & \textbf{21.50} & 21.70 & \textbf{21.23} & 21.40 \\
+5$\times$6 & 30 & \textbf{24.25} & 24.45 & \textbf{24.30} & 24.50 & 26.07 & \textbf{25.05} & 24.60 & \textbf{24.57} & 25.02 & \textbf{24.52} & \textbf{24.25} & 24.30 \\
+5$\times$7 & 35 & \textbf{26.32} & 26.65 & \textbf{26.20} & 26.55 & 28.02 & \textbf{27.02} & \textbf{26.80} & 27.20 & \textbf{27.10} & 27.15 & 26.32 & \textbf{26.23} \\
+5$\times$8 & 40 & \textbf{29.77} & 29.80 & \textbf{29.52} & 29.93 & 32.67 & \textbf{30.80} & \textbf{30.15} & 30.75 & \textbf{30.57} & 30.65 & \textbf{29.80} & 30.05 \\
+5$\times$9 & 45 & \textbf{32.62} & 33.38 & \textbf{32.62} & 33.08 & 37.05 & \textbf{34.00} & \textbf{33.95} & 34.33 & \textbf{33.67} & 34.70 & \textbf{32.73} & 33.50 \\
+5$\times$10 & 50 & \textbf{36.08} & 36.27 & \textbf{35.98} & 36.25 & 40.40 & \textbf{37.23} & \textbf{38.08} & 38.77 & \textbf{37.38} & 38.05 & \textbf{36.27} & 36.77 \\
+6$\times$6 & 36 & 35.90 & \textbf{35.67} & \textbf{35.27} & 35.70 & 38.48 & \textbf{36.58} & 35.95 & \textbf{35.67} & 36.42 & \textbf{35.50} & 35.90 & \textbf{34.95} \\
+6$\times$10 & 60 & \textbf{51.05} & 52.52 & \textbf{51.15} & 52.02 & 59.65 & \textbf{53.62} & \textbf{54.75} & 55.23 & \textbf{53.45} & 54.83 & \textbf{51.73} & 53.40 \\
+10$\times$6 & 60 & 101.20 & \textbf{100.47} & \textbf{98.83} & 100.00 & 111.80 & \textbf{103.50} & 102.83 & \textbf{100.30} & 102.92 & \textbf{101.08} & 101.30 & \textbf{98.80} \\
+10$\times$10 & 100 & \textbf{145.03} & 148.40 & \textbf{143.78} & 148.07 & 175.45 & \textbf{156.57} & \textbf{156.72} & 157.28 & \textbf{150.50} & 158.70 & \textbf{147.75} & 153.72 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,18 +1,11 @@
-# Current UW-SAA results
+# Results inventory
 
-The active result package is [replacement-GP Caserta MAIN, 2026-10-24](gp-caserta-main-20261024/README.md). It contains all 68,880 formal GP endpoints in a verified ZIP, paired statistics, and newly regenerated PNG/PDF figures. Independent numerical review passed on 2026-10-25: all 100 published rows and 894 numeric fields agree within 1e-12 using a separately written implementation. The original `pending_review` CSV tags are preserved; this review does not claim external human peer review. See [the review record](gp-caserta-main-20261024/REVIEW.md).
-
-| Study | Current status | Published output |
+| Package | Scope | Status |
 | --- | --- | --- |
-| GP MAIN: UWSAA vs NATIVE20 | Complete: 41 conditions, 840 layouts, 68,880 endpoints | [Tables, figures, raw data](gp-caserta-main-20261024/README.md) |
-| GP ablation | Canceled by project owner, 2026-10-25; no replacement run planned | None |
-| GP deterministic single (P0) | Canceled with the ablation controls, 2026-10-25 | None |
-| GP multi-K / LB1 | Canceled with the ablation controls, 2026-10-25 | None |
-| GP selection-time / trajectory-cost studies | Replacement measurements pending | None |
-| MAIN six-solver merge and MEAN6 | Identity-checked MAIN merge pending; canceled studies are excluded | None |
+| [Six-solver MAIN](best-h-main-20261028/README.md) | Preselected best H versus UWSAA; 41 conditions, 840 layouts, six solvers | Complete, 413,280 endpoints; ERI H10, all other fixed baselines H20 |
+| [Current timing](best-h-main-20261028/tables/timing_current_six_solvers.pdf) | One layout per size, seven auxiliary conditions, same current runtime | Complete sample, 1,764 scored trajectories; not full-MAIN timing |
+| [Historical ablation](historical-ablation-20261021/README.md) | Previously accepted component, deterministic-single and scenario ablations | Historical; GP and MEAN6 use the retired GP version |
+| [Replacement-GP MAIN](gp-caserta-main-20261024/README.md) | GP H20 versus UWSAA; same GP outcomes reused in six-solver MAIN | Complete, 68,880 endpoints; numerical review passed |
+| Replacement-GP ablation/P0/multi-K | New runs using replacement GP | Canceled; not replaced with historical GP results |
 
-The retired GP code/configuration, mixed old endpoints, result tables, plots, plotting scripts, old verification receipts, and obsolete bootstrap artifacts are removed from the active tree. No old GP values are retained as current results. Other five-solver history can be reconstructed with [the pinned recovery workflow](../reproducibility/data/README.md); it must retain its original evidence status and cannot stand in for a new six-solver result.
-
-Regenerate the two current figure pairs with `python results/gp-caserta-main-20261024/scripts/generate_figures.py --output-dir work/gp-figures`. Recompute and verify the published statistics with `python -B -m checks.verify_gp_results`. The [repository guide](../README.md) documents dependencies and the [protocol](../reproducibility/PROTOCOL.md) preserves the statistical contract.
-
-The replacement-GP ablation cancellation applies to the ablation, P0 and multi-K/LB1 controls. The historical design and code are retained for reference; canceled runs are not prerequisites for reviewing MAIN. See [the MAIN review guide](gp-caserta-main-20261024/REVIEW.md).
+The six-solver MAIN table averages all 41 conditions equally for its descriptive absolute-cost comparison. The primary noisy effect averages SS, TW and DP family-specific relative reductions equally. CLEAN, mixed-noise conditions and negative values remain separately available. Do not reuse historical MEAN6 or old GP ablation values as current results.

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "corrected_size_numeric_fields_checked": 6048,
+  "max_abs_difference": 8.704148513061227e-14,
+  "forecast_binding": "28560 new ERI H10 full forecast hashes match current GP MAIN forecasts",
+  "timing_outcome_agreement": 1764,
+  "new_gp_values_not_mixed_with_retired_gp": true
+}
