@@ -2,7 +2,7 @@
 
 ## Migration status
 
-The replacement GP rule is trained and active. Its GP-only Caserta MAIN comparison against NATIVE20 is complete and published: local conditions 1–14 supply 23,520 endpoints and cloud conditions 15–41 supply 45,360, for all 68,880 formal endpoints. The 252-endpoint cross-host probe passed and is excluded from formal statistics. Tables, raw data and regenerated figures are in [the current results package](../results/gp-caserta-main-20261024/README.md). Independent numerical review passed on 2026-10-25 using a separately written statistical implementation; its record is in checks/gp_main_independent_review.json. The original `pending_review` CSV tags remain frozen source metadata. Implementation independence by the same Codex session is distinct from external human peer review. The retired GP implementation, mixed historical payload, old tables and figures are removed from the active tree. Replacement-GP ablation and the P0/multi-K controls were canceled by the project owner on 2026-10-25 and are not scheduled for rerun. Historical definitions below remain for reference and do not constitute a pending task. Timing measurements and the MAIN six-solver merge/MEAN6 remain separate unfinished work.
+The trained replacement GP remains active. The current [best-fixed-H six-solver MAIN](../results/best-h-main-20261028/README.md) contains 413,280 endpoints, with ERI H10 and all other fixed baselines H20. A separate current-runtime timing sample covers 1,764 trajectories; full-MAIN matched timing remains unmeasured. Earlier GP-only MAIN, its independent-implementation numerical review, diagnostic probe, completed partition workflow and historical ablations are preserved in the [external archive](HISTORICAL_ARCHIVE.md). Removal of duplicate historical packages does not change the current MAIN data or evidence. Replacement-GP ablation/P0/multi-K remain canceled. Historical definitions below do not schedule new work, and no external human peer review is claimed.
 
 The GP runtime uses a third-party Python reproduction attributed to Narek Sergeyan under the MIT license; it is not the original authors' implementation. The source engine performs 51,000 fitness calls per seed (1,000 initial individuals plus 50 generations of 1,000), compared with Table 3's reported 50,000 evaluations. The replacement rule is selected over 30 seeds on the separate 840-row training bank. The best fixed horizon is selected on that same bank and is not independent validation. Caserta remains the sealed evaluation benchmark for UW-SAA and is never read for GP training or model selection.
 
@@ -36,7 +36,7 @@ reproducibility.aggregate validates JSONL endpoints against their run manifest. 
 
 reproducibility.statistics accepts only the new canonical six-solver CSV produced after GP training and evaluation work. It requires all six solver cells, complete GP formula/source/protocol/training/implementation/seed-receipt bindings, and one consistent GP identity. Five-solver recovery data, a mixture of old/new GP rows, and incomplete matrices fail before statistics output is created. No MEAN6 is reported from five solvers.
 
-## Registered six-solver statistical procedure (unchanged; merge pending)
+## Registered six-solver statistical procedure (historical contract)
 
 
 The primary outcome is `relocations`, a count where lower is better. `relocations_per_container` is the count divided by the initial container count. Older outputs used `R_raw` and `R_over_N`; those names are retained only in source mappings and are normalized to the public metric names. Positive relative reductions favor the candidate named in a comparison.
@@ -58,13 +58,9 @@ For the multi-K follow-up, the seven-row-per-solver primary table consists of fo
 Positive interaction values mean the LB1 relocation penalty is larger at K1 than K8; a negative value means the rollout advantage is larger at K8. Its ordinary 95% and corrected 98.33% intervals are primary. The relative interaction is dimensionless and secondary. CLEAN comparisons and interactions are reported separately from the noisy primary.
 
 
-## GP-only MAIN comparison and analysis
+## Archived GP-only MAIN
 
-The current Caserta comparison evaluates the active GP policy in two arms only: UWSAA and NATIVE20. Registry indices 1–14 (six subset-shuffle and eight time-window conditions) form the local shard; indices 15–41 (six delayed-position, two overlay, 18 regime-mixture, and CLEAN conditions) form the cloud shard. Each condition has 840 layouts and two arms, yielding 23,520 local and 45,360 cloud endpoints. The non-overlapping shards cover 68,880 GP endpoints. The registered model formula SHA-256 is `e3cbbd12defb760be3e6afe57df7004980b1660be73b6f214bad1817473f9845`; the Caserta dataset SHA-256 is `bb471dc334ad186523bcbd436bbe103dd81e517554999d35132a5e0692c98448`.
-
-Before its formal partition, the cloud host reproduces the 252-endpoint cross-host probe: one layout per each of 21 geometries, six representative conditions, and both arms. It matches each row against the published local reference by condition, layout fingerprint, and arm, including relocations, N, decisions, retrievals, reveals, forecast-table hash, and GP model identity. Probe rows are diagnostic and are excluded from the formal cloud endpoint shard. Any mismatch stops the cloud run.
-
-The GP-only analysis is separate from `reproducibility.statistics` and never emits MEAN6. Its primary metric is `relocations`; `relocations_per_container` is secondary. It reports SS, TW, and DP family effects separately, with each family effect formed after averaging conditions within layout, layouts within geometry, and the 21 geometry means equally. The combined effect is the equal mean of the three family-specific relative reductions, `(NATIVE20 - UWSAA) / NATIVE20`. Overlay, regime-mixture, and CLEAN remain condition-level results. Paired 95% percentile intervals use 10,000 geometry-stratified layout-cluster draws from NumPy PCG64, seed `202610195903`; each sampled layout index is shared by both arms and all conditions. CLEAN's GP-only corrected lower quantile is descriptive and is not the registered all-six-solver noninferiority gate. The complete 41-condition input has passed integrity validation. The original output retains its frozen `pending_review` metadata; the separate independent-implementation numerical review has passed. This review does not claim external human peer review.
+The completed 68,880-endpoint GP-only MAIN, diagnostic probe reference and separate analysis implementation are archived together. Probe rows were excluded from formal statistics. Their historical analysis contract and numerical review are available in the archived protocol and review files, not presented as new six-solver evidence. See [the archive record](HISTORICAL_ARCHIVE.md).
 
 ## Non-GP endpoint recovery
 
@@ -72,7 +68,7 @@ The mixed historical endpoint parts are no longer in the active tree. reproducib
 
 ## Reproducibility
 
-The runner, condition registry, and statistical aggregation are in reproducibility/runner.py, reproducibility/protocol.py, and reproducibility/statistics.py. The public file inventory is generated from the explicit reproducibility/published_files.json list. The explicit inventory includes the completed GP MAIN tables, figures, raw ZIP and figure script. Scratch files and newly generated runs are excluded.
+The runner, condition registry, and statistical aggregation are in reproducibility/runner.py, reproducibility/protocol.py, and reproducibility/statistics.py. The public file inventory is generated from the explicit reproducibility/published_files.json list. The explicit inventory includes the current six-solver MAIN tables, figures, endpoints, timing sample and figure script. Scratch files and newly generated runs are excluded.
 
 
 ## Best-fixed-H six-solver MAIN publication (2026-10-28)

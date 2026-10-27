@@ -2,7 +2,7 @@
   "schema": "uwsaa_public_bundle_manifest_v1",
   "hash_algorithm": "SHA-256",
   "hash_basis": "LF text; frozen vendor/GP archive, training-bank identity input and binaries byte-preserved",
-  "scope": "Current six-solver MAIN, current timing sample and clearly labelled historical ablations; training process receipts archived outside the public repository.",
+  "scope": "Current runtime, complete six-solver best-fixed-H MAIN, stratified timing and compact external historical archive receipt.",
   "published_files_list": "reproducibility/published_files.json",
   "provenance_index": {
     "frozen_core_source_and_adaptation_map": "manifest.json",
@@ -10,12 +10,11 @@
     "current_results_inventory": "results/README.md",
     "six_solver_main": "results/best-h-main-20261028/README.md",
     "six_solver_verifier": "checks/verify_six_solver_results.py",
-    "historical_ablation": "results/historical-ablation-20261021/README.md",
-    "historical_ablation_verifier": "checks/verify_historical_ablation.py",
-    "gp_only_review": "results/gp-caserta-main-20261024/REVIEW.md"
+    "external_historical_archive": "reproducibility/HISTORICAL_ARCHIVE.md",
+    "external_historical_hashes": "reproducibility/historical_archive_receipt.json"
   },
-  "file_count": 182,
-  "total_bytes": 56977090,
+  "file_count": 134,
+  "total_bytes": 25888210,
   "files": [
     {
       "path": ".gitattributes",
@@ -29,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5894,
-      "sha256": "eec7e0df76d794780949c3043d19cab104fd8c16294925e705ea18ac2f0376ce"
+      "bytes": 5357,
+      "sha256": "5f2ca179baea8f0b683e083c13ce95bf3d235fb2fd7f6060823789840cb2967b"
     },
     {
       "path": "baseline/__init__.py",
@@ -91,41 +90,6 @@
       "path": "baseline/sequence_commit.py",
       "bytes": 3458,
       "sha256": "ef95406c98173fedb64826e60877ee56d9ead74aec750a56cbfd6cceef252934"
-    },
-    {
-      "path": "checks/gp_main_independent_comparison.csv",
-      "bytes": 126337,
-      "sha256": "0be8f5e77b946d1d0009191d1b71af9575d8389b7bd1a60ddab3cd821c64a34c"
-    },
-    {
-      "path": "checks/gp_main_independent_review.json",
-      "bytes": 13807,
-      "sha256": "697cefbdedb19b240e7860a3b36f8d4fc6650d05b97e27833610156f276d6e63"
-    },
-    {
-      "path": "checks/gp_results_verification.json",
-      "bytes": 876,
-      "sha256": "d7e7deff07a08301672313ea0d41ae6920c53915347d4f85d2a4fde32a43b75c"
-    },
-    {
-      "path": "checks/independent_gp_main_review.py",
-      "bytes": 28599,
-      "sha256": "61fe29a1fb85329d150de42bafa1a3c4569cbd38128bd5f8d556c271b9ac8aea"
-    },
-    {
-      "path": "checks/test_independent_gp_main_review.py",
-      "bytes": 2326,
-      "sha256": "5fe33d88d8b1b782b2a1e71c34e188742e6a4d572503fc08154efb07a00271b3"
-    },
-    {
-      "path": "checks/verify_gp_results.py",
-      "bytes": 8484,
-      "sha256": "3ebd74c067a70aba63c3e17e7b1649ba58182ff173acd3e243b10bac6e9d6ff5"
-    },
-    {
-      "path": "checks/verify_historical_ablation.py",
-      "bytes": 1840,
-      "sha256": "041c8c9a2be0fad76fc0b2922c47572a8350b56169685905b7aeafe77828f1f5"
     },
     {
       "path": "checks/verify_published_files.py",
@@ -189,8 +153,8 @@
     },
     {
       "path": "experiments/gp_h20/README.md",
-      "bytes": 1268,
-      "sha256": "e01824e1d205a013b7652d8b998ad116db0fb79a64b9e2aefac4cb5e10baf746"
+      "bytes": 1157,
+      "sha256": "8e87ce23f48f544fb0020867c6d61f332691abb2940feeb1e37488ae6212254d"
     },
     {
       "path": "experiments/gp_h20/data/train_bank.json",
@@ -219,18 +183,18 @@
     },
     {
       "path": "manifest.json",
-      "bytes": 25554,
-      "sha256": "b1efb09e7615ac51b2bcee33b34bc70c122ba21162e05e65ea282220f53cd170"
+      "bytes": 25769,
+      "sha256": "c2b8be55c3c88c799fb9ba6f5c5836236199f0cd5a3af160fb44d100ff593d12"
     },
     {
-      "path": "reproducibility/CLOUD_GP_MIGRATION_PROMPT.md",
-      "bytes": 10184,
-      "sha256": "201760650fca385cccd21175b70330c158b0cb896dd45493e68d29b05c30afbe"
+      "path": "reproducibility/HISTORICAL_ARCHIVE.md",
+      "bytes": 2099,
+      "sha256": "d557bd6e11d2b9ea9ed3485e0e113a56d83986a1f12baccc5934dd29978408c5"
     },
     {
       "path": "reproducibility/PROTOCOL.md",
-      "bytes": 14871,
-      "sha256": "ee251d6b8307969539d31526f444182f52cac370d69f4f33a905ad5719151ef3"
+      "bytes": 12540,
+      "sha256": "4e563bb52ebbc11403dd868e17682f20e16ef2f820ccce609d067bf1513aafc4"
     },
     {
       "path": "reproducibility/aggregate.py",
@@ -239,8 +203,8 @@
     },
     {
       "path": "reproducibility/data/README.md",
-      "bytes": 4232,
-      "sha256": "f228e3ad7cf4b1ee2381aed2277b6219094ffc5749f7d9e2cdded7581f56eaf8"
+      "bytes": 3493,
+      "sha256": "2abda20df4043d55c415c4adfad04ab3d61419e616260a042069fa7cb3be26c7"
     },
     {
       "path": "reproducibility/data/reassemble_endpoints.py",
@@ -259,18 +223,13 @@
     },
     {
       "path": "reproducibility/data_inventory.json",
-      "bytes": 6992,
-      "sha256": "32f6976c024076685e5bac0fcd005ad112ccc62ba1357d28819e2d35dd22310b"
+      "bytes": 5451,
+      "sha256": "a7758742e1ee84cf37ef564ca5190ec88f8360632f65638bbf0b6addcc1dfb54"
     },
     {
-      "path": "reproducibility/gp_arm_paired_analysis.py",
-      "bytes": 24725,
-      "sha256": "d20ca7c751778c977c0734072045c820b14d9cb5b5192e7050c13840eff5ab40"
-    },
-    {
-      "path": "reproducibility/gp_caserta_partition_runner.py",
-      "bytes": 36601,
-      "sha256": "cc596e00740634c76b4611f1563db7106cb5900932d4e19c2ee0e11fad1424a7"
+      "path": "reproducibility/historical_archive_receipt.json",
+      "bytes": 13419,
+      "sha256": "6a4f27df9f43e452176589e6f737c6a2acb9ca9205c5297c108d53967d20b9f1"
     },
     {
       "path": "reproducibility/protocol.py",
@@ -279,13 +238,8 @@
     },
     {
       "path": "reproducibility/published_files.json",
-      "bytes": 10845,
-      "sha256": "e775b48c116467bad9150132e7bd6094df3ad2c5fea8673d34ed43c10f39023f"
-    },
-    {
-      "path": "reproducibility/references/gp_caserta_crosshost_probe_reference.json",
-      "bytes": 767539,
-      "sha256": "ae752ab8a2920b3ec7035471037803e69e6340bc9b6a8c136391d62d22493e64"
+      "bytes": 7440,
+      "sha256": "b4191b44f2f8133a4592e8af334ea6f2deb29ac8bfb2e7670ba9d762e42471d5"
     },
     {
       "path": "reproducibility/runner.py",
@@ -309,8 +263,8 @@
     },
     {
       "path": "results/README.md",
-      "bytes": 1347,
-      "sha256": "279b4bbdbfbc08c727a276e19158e761ad974859ff5374028ae6e342a47e9ecd"
+      "bytes": 1124,
+      "sha256": "853f61cb5bc7c78251b35bf54194c9ce30c06e4de6e1eeb1645d10718a02aefa"
     },
     {
       "path": "results/best-h-main-20261028/README.md",
@@ -626,201 +580,6 @@
       "path": "results/best-h-main-20261028/timing_sample_audit.json",
       "bytes": 464,
       "sha256": "4d7b5bbed7d528cfec0496dbc0db5a81d867ce2f1de49454070e4d57b11db9c4"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/.gitattributes",
-      "bytes": 29,
-      "sha256": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/README.md",
-      "bytes": 3748,
-      "sha256": "3561bcdfbb15df4683430141031b83e8362b37f6d54b60edfe9139696e80d905"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/REVIEW.md",
-      "bytes": 5064,
-      "sha256": "6a5e8bfd803ada2173c4f7aeefb8c0b84849eb1c41fb8160ddfd049a36becafb"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/SHA256SUMS.txt",
-      "bytes": 1499,
-      "sha256": "b3f75579a4310b1739d5f4a929b28f4f731959c3d29b1b90c7885dc61a89e8c8"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/analysis_manifest.json",
-      "bytes": 20854,
-      "sha256": "4f746f60f345b7c9a441393f8ff27a2ea4d91d08f2e4492ed6c2b28707824890"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/condition_effects.csv",
-      "bytes": 23231,
-      "sha256": "b0702b3e56f4cfa24398238b66e12382cbdd20195726278533048cf579016fec"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/family_effects.csv",
-      "bytes": 2238,
-      "sha256": "1ba74db7a51b37836151df38b9216cdbae3ac55730eb7219e2e2ffedb3c41ed9"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_all_conditions.pdf",
-      "bytes": 56369,
-      "sha256": "0bd00c4bef9f7a176fdc272f5b2da811ef10aff0ae159cfd819b0eb3dc1f8185"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_all_conditions.png",
-      "bytes": 410438,
-      "sha256": "4c6a86776923c409369186e6b110b23c53b79e07a2c781483688f9903ec80cc0"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_complete_analysis.zip",
-      "bytes": 868247,
-      "sha256": "12a39c2b7f29b05800fd0d76685810b1e9e095273aa6ae7190c68e0737522d39"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_full_results.zip",
-      "bytes": 10571339,
-      "sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_summary.pdf",
-      "bytes": 77614,
-      "sha256": "a1cb8bebbea95a6a0a2dae2a8b4a9a7a2d10ec200c16a983ebaa84197c158907"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/gp_caserta_summary.png",
-      "bytes": 337994,
-      "sha256": "a107d5c8dfd44228c5f23ba9229c5a14f44a9335f6f55f1f687b0421eca56af8"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/independent_arithmetic_check.json",
-      "bytes": 838,
-      "sha256": "9ab08aa04dd5627eb42b417ecc8d46d7af5001e7d8c9cf1a0819382f11f74f1d"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/merge_integrity.json",
-      "bytes": 780,
-      "sha256": "e98f95e700f84137e9d75a0d9b71deacb68673e67356747c0fd65025da6d4e0b"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/scripts/generate_figures.py",
-      "bytes": 11313,
-      "sha256": "3070b8ae0f6b65c794f0d4b8b98e4843ef384bb31dc371eb314eec300efef633"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/summary.csv",
-      "bytes": 2893,
-      "sha256": "de37e0b44500316a4c47877385b83a5d2eaaddf19cc673481440db175246c9d9"
-    },
-    {
-      "path": "results/gp-caserta-main-20261024/结果说明.md",
-      "bytes": 3775,
-      "sha256": "b50b1536a379f95126166a334be1a8e6a50672412546427f214700d65ddc34ac"
-    },
-    {
-      "path": "results/historical-ablation-20261021/README.md",
-      "bytes": 2349,
-      "sha256": "24a91aef37b82063867f76708b9e79bbad6ab967e10d8648ce4d643dbc28a1fb"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/accepted_ablation_primary_contrasts.csv",
-      "bytes": 10355,
-      "sha256": "50502c2d936c8e9e39185eb8dd08083b07f20a7ee2be6132905b2b998524bf9c"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/caserta_ablation_condition_effects.csv",
-      "bytes": 681591,
-      "sha256": "fd2b991f00262686ad402c56c72430b9bedf106162af58e4ec29419b04eae83d"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/deterministic_single_condition_solver_results.csv",
-      "bytes": 6272,
-      "sha256": "c96bbda2f1fef35166192f0eb583babd4196c8f87f69938fc95cb4d65e5c851d"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.csv.gz.part-001-of-002",
-      "bytes": 8000000,
-      "sha256": "7e964141816fcb2236d59445d67a1473b01d94485c2d8bef689320a63a36ab6f"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.csv.gz.part-002-of-002",
-      "bytes": 7320532,
-      "sha256": "8407f0d433a7b35b75e00c1c0597d74e7b817227c6cc15a96a3294b15fdee2f4"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.parts.json",
-      "bytes": 725,
-      "sha256": "3c7935b83a6bd884864b2ad7273972e0014fdca673ed1a9e08d4b8f44a3192fd"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/scenario_ablation_condition_effects.csv",
-      "bytes": 29436,
-      "sha256": "6c7d8a76ff5f30c800250ec5d9879cf826447a4f2333217131e964c30cf464e2"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/scenario_ablation_geometry_outcomes.csv",
-      "bytes": 716508,
-      "sha256": "07669d4a5937cb3525ebb1f63eae9ed367c5b4afda391b5f10f4913373e3806a"
-    },
-    {
-      "path": "results/historical-ablation-20261021/data/scenario_ablation_primary_contrasts_all_solvers.csv",
-      "bytes": 19815,
-      "sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.pdf",
-      "bytes": 45531,
-      "sha256": "7a7986c6a6bd908bfb8ef6ccc52943f636f05445ff3a00991b56471d197975c8"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.png",
-      "bytes": 269503,
-      "sha256": "84318808921b4831d053925c0cd1cdf234736f29737d771699a7322df9d922cf"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.svg",
-      "bytes": 57080,
-      "sha256": "ca151514d1cb6281e2d6ad2e7edeb71f25e7d1cf01d70c6d5de7fdc80d5fc92c"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.pdf",
-      "bytes": 16227,
-      "sha256": "18a219bd1d0a0b98fecec7397c4eda4da0608cde255d543dc94144b2d7598ce2"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.png",
-      "bytes": 97753,
-      "sha256": "3ded80aafb2607cb6c1c414406311135d1e3f2b15184323ca2c3d76f61b7d825"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.svg",
-      "bytes": 16068,
-      "sha256": "6422b5c8993c2c6864c1352fcb9ffc405a26ecfc3ac8a750bb8519dd53a1847b"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.pdf",
-      "bytes": 25849,
-      "sha256": "f284654633da26e37aefa04ab0fdb88762754f874eed476181464c4b7be199a2"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.png",
-      "bytes": 299883,
-      "sha256": "aaf0576412460d1489587efadc4b2e1c95161dbfad165e492fbeaff1eea208b1"
-    },
-    {
-      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.svg",
-      "bytes": 55946,
-      "sha256": "299ce533e03dc23c5cdbda0c73e4c497e5f2384c1e0807dfb9ea8cea3176d686"
-    },
-    {
-      "path": "results/historical-ablation-20261021/scripts/generate_figures.py",
-      "bytes": 3660,
-      "sha256": "e980a1852690e24daab1764e31063f74fcac8b581bd8bdee86a3499b9497db82"
-    },
-    {
-      "path": "results/historical-ablation-20261021/source_inventory.json",
-      "bytes": 1062,
-      "sha256": "3caf8085eff87f73f6d95b482c112d7b0d4383a8ef7dc4e8e3ec75607aa29e1b"
     },
     {
       "path": "third_party/crp_online/LICENSE",

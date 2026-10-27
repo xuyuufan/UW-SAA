@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "title": "UW-SAA current endpoint and result inventory",
-  "status": "Replacement GP MAIN complete; independent numerical verification passed; canceled ablation follow-ups excluded",
+  "status": "Current six-solver best-fixed-H MAIN complete; historical GP-only MAIN, ablations and diagnostics externally archived",
   "retained_non_gp_recovery": {
     "script": "reproducibility/data/recover_non_gp_endpoints.py",
     "receipt": "reproducibility/data/retained_non_gp_endpoints.receipt.json",
@@ -64,45 +64,6 @@
     "former_row_count": 1722662,
     "reason": "Retired GP endpoints removed from the active tree; original bytes remain recoverable from the pinned Git history."
   },
-  "canonical_payload": {
-    "status": "complete_gp_only_main",
-    "path": "results/gp-caserta-main-20261024/gp_caserta_full_results.zip",
-    "sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4",
-    "endpoint_rows": 68880,
-    "paired_cells": 34440,
-    "conditions": 41,
-    "layouts": 840,
-    "geometries": 21,
-    "arms": [
-      "NATIVE20",
-      "UWSAA"
-    ],
-    "local_rows": 23520,
-    "cloud_rows": 45360,
-    "diagnostic_probe_rows_excluded": 252,
-    "format": "ZIP containing local/cloud JSONL condition shards with companion manifests and internal checksums",
-    "evidence_status": "pending_review",
-    "analysis_manifest": "results/gp-caserta-main-20261024/analysis_manifest.json",
-    "verification_command": "python -B -m checks.verify_gp_results",
-    "six_solver_canonical_available": false,
-    "numerical_review_status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
-    "evidence_status_origin": "original frozen analysis metadata; independent numerical review recorded separately"
-  },
-  "published_results": {
-    "directory": "results/gp-caserta-main-20261024",
-    "family_table_rows": 8,
-    "condition_table_rows": 82,
-    "summary_rows": 10,
-    "figure_pairs": [
-      "gp_caserta_summary",
-      "gp_caserta_all_conditions"
-    ],
-    "figure_script": "results/gp-caserta-main-20261024/scripts/generate_figures.py",
-    "raw_archive_byte_preserved": true,
-    "evidence_status": "pending_review",
-    "numerical_review_status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
-    "evidence_status_origin": "original frozen analysis metadata; independent numerical review recorded separately"
-  },
   "pending_studies": [
     "full-MAIN matched current-runtime timing (separate from the completed stratified timing sample)"
   ],
@@ -132,16 +93,6 @@
       "rerun_planned": false
     }
   ],
-  "main_review_guide": "results/gp-caserta-main-20261024/REVIEW.md",
-  "numerical_review": {
-    "status": "PASS_INDEPENDENT_NUMERICAL_REVIEW",
-    "date": "2026-10-25",
-    "receipt": "checks/gp_main_independent_review.json",
-    "comparison": "checks/gp_main_independent_comparison.csv",
-    "implementation": "checks/independent_gp_main_review.py",
-    "scope": "separately written implementation in the same Codex session; no external human peer review claimed",
-    "original_csv_evidence_tags_preserved": true
-  },
   "six_solver_best_h_main": {
     "status": "complete",
     "directory": "results/best-h-main-20261028",
@@ -159,7 +110,25 @@
       "Chain": 20,
       "Minmax": 20
     },
-    "timing": "separate 1764-trajectory current-runtime sample",
-    "historical_ablation": "results/historical-ablation-20261021; retired GP, not replacement GP"
+    "timing": "separate 1764-trajectory current-runtime sample"
+  },
+  "canonical_payload": {
+    "status": "complete_six_solver_best_fixed_h_main",
+    "path": "results/best-h-main-20261028/data/six_solver_best_h_main_endpoints.csv.gz",
+    "endpoint_rows": 413280,
+    "conditions": 41,
+    "layouts": 840,
+    "solvers": 6,
+    "arms": [
+      "BEST_FIXED_H",
+      "UWSAA"
+    ],
+    "verification_command": "python -B checks/verify_six_solver_results.py"
+  },
+  "historical_archive": {
+    "record": "reproducibility/HISTORICAL_ARCHIVE.md",
+    "hash_inventory": "reproducibility/historical_archive_receipt.json",
+    "source_commit": "a5ee84635409b8d7166d08e147e248e682e3c19b",
+    "historical_gp_and_mean6_ablation": "retired GP; not current replacement-GP evidence"
   }
 }

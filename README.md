@@ -25,11 +25,9 @@ The [current six-solver timing table](results/best-h-main-20261028/tables/timing
 
 [Timing by size](results/best-h-main-20261028/tables/timing_current_by_size.pdf) and [timing CSV](results/best-h-main-20261028/tables/timing_current_six_solvers.csv) are included. This is descriptive on-policy timing of a stratified sample, **not full-MAIN timing**. It has no hardware-load control or confidence interval. Retired-GP timings are not substituted for current GP measurements.
 
-## Historical ablation
+## Historical archive
 
-The [historical ablation package](results/historical-ablation-20261021/README.md) preserves the previously completed component/window, deterministic-single, and scenario-count/rollout ablations, with their original tables, intervals and evidence provenance.
-
-**Its GP and MEAN6 values belong to the retired GP version.** They are historical results, not ablations of the replacement GP or of the current six-solver MAIN package. Replacement-GP ablation/P0/multi-K runs remain canceled; no such new ablation results are claimed.
+The earlier GP-only MAIN package, historical ablations, old audit receipts and completed cross-host probe/execution workflow are kept outside this repository. Their original bytes were verified before removal. See [the archive record](reproducibility/HISTORICAL_ARCHIVE.md) for locations, hashes and evidence boundaries. The current six-solver MAIN retains the GP outcomes and its own complete endpoint and timing verification inputs.
 
 ## Run and verify
 
@@ -38,19 +36,16 @@ Use Python 3.12 and install `requirements-results.txt`.
 ```bash
 python -B checks/verify_published_files.py
 python -B checks/verify_six_solver_results.py
-python -B -m checks.verify_gp_results
-python -B checks/independent_gp_main_review.py
 ```
 
-The independent GP review verifies raw GP endpoints, published statistics, model/source identity, and train/evaluation layout separation. Per-seed training receipts are kept outside the public repository. Rechecking the 30-seed selection requires `--training-receipts /path/to/archived/20261024_formal_30seed`; without that argument, its report explicitly marks seed-receipt verification as not run. The retained 2026-10-25 review receipt records the earlier full check and does not imply that removed files remain distributed.
+The current verifier checks all 413,280 MAIN endpoints, recomputes statistics, and validates the 1,764-trajectory timing sample and ERI H10 completion records. Historical GP-only review tools and per-seed receipts remain in the external archive. No external human peer review is claimed.
 
 To recreate figures from the published inputs:
 
 ```bash
 python results/best-h-main-20261028/scripts/generate_figures.py --output-dir work/main-figures
-python results/historical-ablation-20261021/scripts/generate_figures.py --output-dir work/ablation-figures
 ```
 
 The [registered trajectory runner](reproducibility/runner.py) remains executable. The active GP is trained seed 5, H20 in `configs/gp_rule.json`, using the MIT-licensed Python reproduction attributed to Narek Sergeyan, not the original authors' implementation. Frozen runtime code, the model, and the minimal protocol/training-bank inputs used by its identity checks remain public; detailed seed receipts, intermediate selection outputs and training logs are not distributed.
 
-Caserta is the evaluation benchmark held out from UWSAA method development. The training-bank GP selection is not independent validation, and these results do not establish OOD generalization. See the [protocol](reproducibility/PROTOCOL.md), [result inventory](results/README.md), and [GP-only numerical review](results/gp-caserta-main-20261024/REVIEW.md) for the respective evidence boundaries.
+Caserta is the evaluation benchmark held out from UWSAA method development. The training-bank GP selection is not independent validation, and these results do not establish OOD generalization. See the [protocol](reproducibility/PROTOCOL.md), [result inventory](results/README.md), and [historical archive](reproducibility/HISTORICAL_ARCHIVE.md) for the respective evidence boundaries.

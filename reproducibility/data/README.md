@@ -1,10 +1,8 @@
 # Endpoint data
 
-The current GP-only MAIN archive is [`gp_caserta_full_results.zip`](../../results/gp-caserta-main-20261024/gp_caserta_full_results.zip). It contains 41 JSONL condition shards and companion manifests: local conditions 1–14 (23,520 rows) and cloud conditions 15–41 (45,360 rows). All 68,880 formal rows use the active trained GP and the same Caserta dataset. Diagnostic probe rows are stored separately under `integrity/probe_diagnostic_only/` and are excluded from the formal matrix.
+The current [six-solver MAIN package](../../results/best-h-main-20261028/README.md) contains all 413,280 best-fixed-H/UWSAA endpoints and a compact keyed matrix. ERI uses frozen H10; the other five baselines use H20. The separate current-runtime timing sample contains 1,764 scored trajectories and does not represent full-MAIN timing.
 
-Run `python -B -m checks.verify_gp_results` from the repository root to verify every archive hash and recompute the registered tables. It extracts only formal shards to a temporary directory under ignored `work/`, validates model identity, layout and forecast pairing, and checks the recomputed tables and manifest exactly. It removes the temporary endpoints after verification and writes `work/gp_results_verification.json`. The original statistics retain their frozen `pending_review` tags. A separately written implementation has since passed independent numerical verification; see [the review record](../../results/gp-caserta-main-20261024/REVIEW.md). It does not claim external human peer review.
-
-See [the current results guide](../../results/gp-caserta-main-20261024/README.md) for tables, plots and download links. A complete replacement six-solver canonical CSV is not yet published. Replacement-GP ablation/P0/multi-K reruns were canceled on 2026-10-25; no replacement data for them are planned. Timing data remain separate unfinished work.
+Run `python -B checks/verify_six_solver_results.py` to validate the complete matrix, statistics, timing sample and ERI H10 completion bindings. GP-only MAIN, its diagnostic probe and the historical ablations were moved to the [external archive](../HISTORICAL_ARCHIVE.md). The current six-solver dataset retains the GP outcomes used in MAIN; historical GP/MEAN6 ablations are not current replacement-GP evidence. Replacement-GP ablation/P0/multi-K remain canceled.
 
 ## Historical non-GP endpoint recovery
 

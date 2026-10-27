@@ -1,0 +1,311 @@
+{
+  "schema": "uwsaa_external_historical_archive_v1",
+  "source_commit": "a5ee84635409b8d7166d08e147e248e682e3c19b",
+  "date": "2026-10-28",
+  "verification": "Every listed source file was byte-compared with its external copy before deletion; SHA-256 recorded below.",
+  "archive_root": "D:\\DSAI\\UWSAA\\local-archive\\repo-cleanup-20261028\\a5ee84635409b8d7166d08e147e248e682e3c19b",
+  "files_removed": 50,
+  "bytes_removed": 31095726,
+  "files": [
+    {
+      "path": "checks/gp_main_independent_comparison.csv",
+      "bytes": 126337,
+      "sha256": "0be8f5e77b946d1d0009191d1b71af9575d8389b7bd1a60ddab3cd821c64a34c",
+      "git_blob": "9d49f9ea84352e6238530bb7350f15f6045c61f7"
+    },
+    {
+      "path": "checks/gp_main_independent_review.json",
+      "bytes": 13807,
+      "sha256": "697cefbdedb19b240e7860a3b36f8d4fc6650d05b97e27833610156f276d6e63",
+      "git_blob": "1754fe73f88030a279fc731fbe58c64b261bb82d"
+    },
+    {
+      "path": "checks/gp_results_verification.json",
+      "bytes": 876,
+      "sha256": "d7e7deff07a08301672313ea0d41ae6920c53915347d4f85d2a4fde32a43b75c",
+      "git_blob": "8c3e4ccc1601ef7a76d5bc2468b5c84ee3c39815"
+    },
+    {
+      "path": "checks/independent_gp_main_review.py",
+      "bytes": 28599,
+      "sha256": "61fe29a1fb85329d150de42bafa1a3c4569cbd38128bd5f8d556c271b9ac8aea",
+      "git_blob": "3ccc9b5de96a38ea4ed2db79d9588ca7ef625099"
+    },
+    {
+      "path": "checks/test_independent_gp_main_review.py",
+      "bytes": 2326,
+      "sha256": "5fe33d88d8b1b782b2a1e71c34e188742e6a4d572503fc08154efb07a00271b3",
+      "git_blob": "a7be74ef13e470b34716504c991a2e964b292a4f"
+    },
+    {
+      "path": "checks/verify_gp_results.py",
+      "bytes": 8484,
+      "sha256": "3ebd74c067a70aba63c3e17e7b1649ba58182ff173acd3e243b10bac6e9d6ff5",
+      "git_blob": "edddf57d447ee11d8ab126e1e759a26f8456b3ed"
+    },
+    {
+      "path": "checks/verify_historical_ablation.py",
+      "bytes": 1840,
+      "sha256": "041c8c9a2be0fad76fc0b2922c47572a8350b56169685905b7aeafe77828f1f5",
+      "git_blob": "a0c797eea5a22b3aec03b2fa1512fae22cbdcbe9"
+    },
+    {
+      "path": "reproducibility/CLOUD_GP_MIGRATION_PROMPT.md",
+      "bytes": 10184,
+      "sha256": "201760650fca385cccd21175b70330c158b0cb896dd45493e68d29b05c30afbe",
+      "git_blob": "627282c3ec0688fd1fe13541878e4ba037fb17a7"
+    },
+    {
+      "path": "reproducibility/gp_arm_paired_analysis.py",
+      "bytes": 24725,
+      "sha256": "d20ca7c751778c977c0734072045c820b14d9cb5b5192e7050c13840eff5ab40",
+      "git_blob": "610cb75e658eb021993489e1d161361f55939583"
+    },
+    {
+      "path": "reproducibility/gp_caserta_partition_runner.py",
+      "bytes": 36601,
+      "sha256": "cc596e00740634c76b4611f1563db7106cb5900932d4e19c2ee0e11fad1424a7",
+      "git_blob": "0ee4b37bf71806cdfed90e8748d2ef5a7516011a"
+    },
+    {
+      "path": "reproducibility/references/gp_caserta_crosshost_probe_reference.json",
+      "bytes": 767539,
+      "sha256": "ae752ab8a2920b3ec7035471037803e69e6340bc9b6a8c136391d62d22493e64",
+      "git_blob": "9df053059cea1906ef45a309be582c83dae56bf3"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/.gitattributes",
+      "bytes": 29,
+      "sha256": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d",
+      "git_blob": "4f7fc3ef1406bfab189a4a14744c344f36d77d9a"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/README.md",
+      "bytes": 3748,
+      "sha256": "3561bcdfbb15df4683430141031b83e8362b37f6d54b60edfe9139696e80d905",
+      "git_blob": "ec0e190add5459f417d517e617eb9d25b7ab5ade"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/REVIEW.md",
+      "bytes": 5064,
+      "sha256": "6a5e8bfd803ada2173c4f7aeefb8c0b84849eb1c41fb8160ddfd049a36becafb",
+      "git_blob": "76285210c5ec2b88840dcfda6a957e9416d1088e"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/SHA256SUMS.txt",
+      "bytes": 1499,
+      "sha256": "b3f75579a4310b1739d5f4a929b28f4f731959c3d29b1b90c7885dc61a89e8c8",
+      "git_blob": "6b1713d750c927b5fd55bd0df4ef9235d684abd0"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/analysis_manifest.json",
+      "bytes": 20854,
+      "sha256": "4f746f60f345b7c9a441393f8ff27a2ea4d91d08f2e4492ed6c2b28707824890",
+      "git_blob": "f33e22bd84f44c016ca901190079b415219407eb"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/condition_effects.csv",
+      "bytes": 23231,
+      "sha256": "b0702b3e56f4cfa24398238b66e12382cbdd20195726278533048cf579016fec",
+      "git_blob": "172c63de878e9148b6abeb1d94d6bd3e1a0a506c"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/family_effects.csv",
+      "bytes": 2238,
+      "sha256": "1ba74db7a51b37836151df38b9216cdbae3ac55730eb7219e2e2ffedb3c41ed9",
+      "git_blob": "fea9dd1b559dea91adcd5680da7015910841b855"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_all_conditions.pdf",
+      "bytes": 56369,
+      "sha256": "0bd00c4bef9f7a176fdc272f5b2da811ef10aff0ae159cfd819b0eb3dc1f8185",
+      "git_blob": "249d6336f36719979b0b5806cb9a82ea7beb6a64"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_all_conditions.png",
+      "bytes": 410438,
+      "sha256": "4c6a86776923c409369186e6b110b23c53b79e07a2c781483688f9903ec80cc0",
+      "git_blob": "3b177886c091dcbb3e4aface76841debd8b12570"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_complete_analysis.zip",
+      "bytes": 868247,
+      "sha256": "12a39c2b7f29b05800fd0d76685810b1e9e095273aa6ae7190c68e0737522d39",
+      "git_blob": "2de71424773cee9510fca6e3b27d67c75aedf45d"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_full_results.zip",
+      "bytes": 10571339,
+      "sha256": "5c2d76ab977dcd3e50853042a5d9452136ad7337266ecc63f1226710c4eb09a4",
+      "git_blob": "854248c5c51613bbd916c14f2546cfc95294f4fa"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_summary.pdf",
+      "bytes": 77614,
+      "sha256": "a1cb8bebbea95a6a0a2dae2a8b4a9a7a2d10ec200c16a983ebaa84197c158907",
+      "git_blob": "a430610b3c062e460de44c0f7e4b9e3390a904d3"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/gp_caserta_summary.png",
+      "bytes": 337994,
+      "sha256": "a107d5c8dfd44228c5f23ba9229c5a14f44a9335f6f55f1f687b0421eca56af8",
+      "git_blob": "c3ac205fa24480ba2c36e4b176ca1ad19f0b2c16"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/independent_arithmetic_check.json",
+      "bytes": 838,
+      "sha256": "9ab08aa04dd5627eb42b417ecc8d46d7af5001e7d8c9cf1a0819382f11f74f1d",
+      "git_blob": "d76334b493e8563ef9b44e0f3e0ac9fc69eb38f5"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/merge_integrity.json",
+      "bytes": 780,
+      "sha256": "e98f95e700f84137e9d75a0d9b71deacb68673e67356747c0fd65025da6d4e0b",
+      "git_blob": "ab2bbc77ac8a2ce186b6fe897910280078040129"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/scripts/generate_figures.py",
+      "bytes": 11313,
+      "sha256": "3070b8ae0f6b65c794f0d4b8b98e4843ef384bb31dc371eb314eec300efef633",
+      "git_blob": "ca3b3915dc6f7f2e581256d7ab2f4f2634d11062"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/summary.csv",
+      "bytes": 2893,
+      "sha256": "de37e0b44500316a4c47877385b83a5d2eaaddf19cc673481440db175246c9d9",
+      "git_blob": "9f4f4406907c6b5bdc4a38dacf46c6bee3fa4da2"
+    },
+    {
+      "path": "results/gp-caserta-main-20261024/结果说明.md",
+      "bytes": 3775,
+      "sha256": "b50b1536a379f95126166a334be1a8e6a50672412546427f214700d65ddc34ac",
+      "git_blob": "77b40d76008343edf2c566486862fa479a3904af"
+    },
+    {
+      "path": "results/historical-ablation-20261021/README.md",
+      "bytes": 2349,
+      "sha256": "24a91aef37b82063867f76708b9e79bbad6ab967e10d8648ce4d643dbc28a1fb",
+      "git_blob": "646352ef34e4f79d9c89557d9039081bd6e03b2d"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/accepted_ablation_primary_contrasts.csv",
+      "bytes": 10355,
+      "sha256": "50502c2d936c8e9e39185eb8dd08083b07f20a7ee2be6132905b2b998524bf9c",
+      "git_blob": "f19310f2d0382ee72c76b0cf8df5dea7d3669a51"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/caserta_ablation_condition_effects.csv",
+      "bytes": 681591,
+      "sha256": "fd2b991f00262686ad402c56c72430b9bedf106162af58e4ec29419b04eae83d",
+      "git_blob": "1a41b02748ebaf1eedc49dbc7c5541ffb4a454c8"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/deterministic_single_condition_solver_results.csv",
+      "bytes": 6272,
+      "sha256": "c96bbda2f1fef35166192f0eb583babd4196c8f87f69938fc95cb4d65e5c851d",
+      "git_blob": "9c3ce5e110eb013b6964bc356fe01022be984116"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.csv.gz.part-001-of-002",
+      "bytes": 8000000,
+      "sha256": "7e964141816fcb2236d59445d67a1473b01d94485c2d8bef689320a63a36ab6f",
+      "git_blob": "c0604f8ece7d43104ae000c38708d63596ba5b8b"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.csv.gz.part-002-of-002",
+      "bytes": 7320532,
+      "sha256": "8407f0d433a7b35b75e00c1c0597d74e7b817227c6cc15a96a3294b15fdee2f4",
+      "git_blob": "059b5eb23911e87f17e18f97dd3aaf6d312c093d"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/historical_ablation_endpoints.parts.json",
+      "bytes": 725,
+      "sha256": "3c7935b83a6bd884864b2ad7273972e0014fdca673ed1a9e08d4b8f44a3192fd",
+      "git_blob": "6728eed6ec0d918fa72454c2c58d0c2d5860aec7"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/scenario_ablation_condition_effects.csv",
+      "bytes": 29436,
+      "sha256": "6c7d8a76ff5f30c800250ec5d9879cf826447a4f2333217131e964c30cf464e2",
+      "git_blob": "fc27f7f37b048e8e31c942824687c70dbd024245"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/scenario_ablation_geometry_outcomes.csv",
+      "bytes": 716508,
+      "sha256": "07669d4a5937cb3525ebb1f63eae9ed367c5b4afda391b5f10f4913373e3806a",
+      "git_blob": "4eba11424f11d6f7e2d59a3ab59bb9edc2c0ba3a"
+    },
+    {
+      "path": "results/historical-ablation-20261021/data/scenario_ablation_primary_contrasts_all_solvers.csv",
+      "bytes": 19815,
+      "sha256": "3c94611fac644e2d46dfaa662ad30eca2cedd91dc2e971bca4d9680332eaac2c",
+      "git_blob": "6c083c89d397fba3779192b7bcede8f9076cc774"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.pdf",
+      "bytes": 45531,
+      "sha256": "7a7986c6a6bd908bfb8ef6ccc52943f636f05445ff3a00991b56471d197975c8",
+      "git_blob": "58ecc600bd39d9a8d624e056cb1d1b31f1a514b8"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.png",
+      "bytes": 269503,
+      "sha256": "84318808921b4831d053925c0cd1cdf234736f29737d771699a7322df9d922cf",
+      "git_blob": "11ef083a5dc423f58badf0a05ec440da58730fd1"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_component_ablation.svg",
+      "bytes": 57080,
+      "sha256": "ca151514d1cb6281e2d6ad2e7edeb71f25e7d1cf01d70c6d5de7fdc80d5fc92c",
+      "git_blob": "8058cb78cf13877065ff7782b00d83f265d9de87"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.pdf",
+      "bytes": 16227,
+      "sha256": "18a219bd1d0a0b98fecec7397c4eda4da0608cde255d543dc94144b2d7598ce2",
+      "git_blob": "9de07fe0e106b2d50dc300d294961c7da6c24ffa"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.png",
+      "bytes": 97753,
+      "sha256": "3ded80aafb2607cb6c1c414406311135d1e3f2b15184323ca2c3d76f61b7d825",
+      "git_blob": "71b9267263c6f888958693c2e408f72fe607747e"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_deterministic_single.svg",
+      "bytes": 16068,
+      "sha256": "6422b5c8993c2c6864c1352fcb9ffc405a26ecfc3ac8a750bb8519dd53a1847b",
+      "git_blob": "01f5235aa95274b2c1c16804e0819d0747d8329c"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.pdf",
+      "bytes": 25849,
+      "sha256": "f284654633da26e37aefa04ab0fdb88762754f874eed476181464c4b7be199a2",
+      "git_blob": "ebc15a6e9a4ed39bd67e6e824de4747764653b47"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.png",
+      "bytes": 299883,
+      "sha256": "aaf0576412460d1489587efadc4b2e1c95161dbfad165e492fbeaff1eea208b1",
+      "git_blob": "ff86c4b0c1abb4a4be7e27bc94b460bd0cc23924"
+    },
+    {
+      "path": "results/historical-ablation-20261021/figures/historical_scenario_ablation.svg",
+      "bytes": 55946,
+      "sha256": "299ce533e03dc23c5cdbda0c73e4c497e5f2384c1e0807dfb9ea8cea3176d686",
+      "git_blob": "983f1f5e786cec18153e8a06e4d8846f4f3dfafa"
+    },
+    {
+      "path": "results/historical-ablation-20261021/scripts/generate_figures.py",
+      "bytes": 3660,
+      "sha256": "e980a1852690e24daab1764e31063f74fcac8b581bd8bdee86a3499b9497db82",
+      "git_blob": "ec15e4545cb09f74eaa72ea54128b210999926c2"
+    },
+    {
+      "path": "results/historical-ablation-20261021/source_inventory.json",
+      "bytes": 1062,
+      "sha256": "3caf8085eff87f73f6d95b482c112d7b0d4383a8ef7dc4e8e3ec75607aa29e1b",
+      "git_blob": "5cccc36b3e519288133111b1fd32e78e8610df5e"
+    }
+  ]
+}
